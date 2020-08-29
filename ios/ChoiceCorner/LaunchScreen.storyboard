@@ -19,12 +19,29 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="q86-dC-XLm">
                                 <rect key="frame" x="0.0" y="5" width="414" height="896"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="saR-pf-rMH">
+                                <rect key="frame" x="74.5" y="127" width="265" height="173"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="173" id="jco-fC-X6P"/>
+                                    <constraint firstAttribute="width" constant="265" id="wuB-OY-7S2"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choice Corner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zef-PG-MFB">
+                                <rect key="frame" x="117" y="332" width="180" height="36"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="26"/>
+                                <color key="textColor" red="0.0039215686274509803" green="0.49411764705882355" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Bcu-3y-fUS" firstAttribute="top" secondItem="q86-dC-XLm" secondAttribute="top" constant="39" id="0Xe-44-fZX"/>
+                            <constraint firstItem="Zef-PG-MFB" firstAttribute="centerX" secondItem="q86-dC-XLm" secondAttribute="centerX" id="7Qt-f0-7M4"/>
+                            <constraint firstItem="Zef-PG-MFB" firstAttribute="top" secondItem="saR-pf-rMH" secondAttribute="bottom" constant="32" id="Kly-Hb-IKf"/>
                             <constraint firstItem="q86-dC-XLm" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" id="bzn-pk-JwN"/>
+                            <constraint firstItem="q86-dC-XLm" firstAttribute="top" secondItem="saR-pf-rMH" secondAttribute="bottom" constant="-295" id="eCi-gz-utG"/>
                             <constraint firstItem="Bcu-3y-fUS" firstAttribute="trailing" secondItem="q86-dC-XLm" secondAttribute="trailing" id="ght-7V-cLY"/>
+                            <constraint firstItem="saR-pf-rMH" firstAttribute="centerX" secondItem="q86-dC-XLm" secondAttribute="centerX" id="sn3-rP-Mfu"/>
                             <constraint firstItem="q86-dC-XLm" firstAttribute="bottom" secondItem="Bcu-3y-fUS" secondAttribute="bottom" constant="39" id="wR6-e7-h7l"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
@@ -36,6 +53,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="splash" width="360" height="640"/>
+        <image name="logo" width="150" height="150"/>
+        <image name="splash" width="180" height="320"/>
     </resources>
 </document>

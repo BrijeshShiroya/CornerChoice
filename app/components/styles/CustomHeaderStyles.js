@@ -18,8 +18,9 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   iconStyle: {
-    height: verticalScale(30),
-    width: scale(30),
+    height: verticalScale(26),
+    width: scale(26),
+    marginTop: verticalScale(8),
     resizeMode: 'contain'
   },
   title: {

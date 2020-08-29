@@ -1,5 +1,6 @@
 const type = {
-  bold: 'AvenirNext-Bold'
+  bold: 'AvenirNext-Bold',
+  regular: 'AvenirNext-Regular'
 };
 
 const size = {

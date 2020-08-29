@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     color: Colors.primary
   },
   redBorder: {
-    borderColor: Colors.red
+    borderColor: Colors.themeGreen
   },
   buttonContainer: {
     marginTop: verticalScale(30)

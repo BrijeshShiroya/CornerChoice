@@ -1,5 +1,5 @@
 const strings = {
-  namePlaceholder: 'Full name',
+  mainHeaderChoiceCorner: 'Choice Corner',
   emailPlaceholder: 'Email',
   passwordPlaceholder: 'Password',
   invalidEmail: 'Invalid email address',

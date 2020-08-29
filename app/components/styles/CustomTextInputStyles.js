@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     marginTop: verticalScale(10)
   },
   alertText: {
-    color: Colors.red,
+    color: Colors.themeGreen,
     fontSize: Fonts.size.small,
     marginLeft: scale(5)
   },
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     width: scale(280)
   },
   redBorder: {
-    borderColor: Colors.red
+    borderColor: Colors.themeGreen
   }
 });
 

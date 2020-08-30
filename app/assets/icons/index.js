@@ -5,6 +5,11 @@ const icons = {
   cart: require('./cart.png'),
   user: require('./user.png'),
   home: require('./home.png'),
+  products: require('./product.png'),
+  login: require('./login.png'),
+  orders: require('./truck.png'),
+  complains: require('./complains.png'),
+  terms: require('./terms.png'),
   back: require('./back.png')
 };
 

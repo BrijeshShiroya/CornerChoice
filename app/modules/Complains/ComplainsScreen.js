@@ -3,10 +3,10 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import { CustomHeader } from '../../components';
 import { ApplicationStyles, Icons } from '../../theme';
-import styles from './styles/LoginScreenStyle';
+import styles from './styles/ComplainsScreenStyles';
 import strings from '../../constants/Strings';
 
-const LoginScreen = ({ navigation }) => {
+const ComplainsScreen = ({ navigation }) => {
   const onLeftPress = () => {
     navigation.openDrawer();
   };
@@ -22,10 +22,10 @@ const LoginScreen = ({ navigation }) => {
         leftOnPress={onLeftPress}
       />
       <View style={styles.whiteContainerCenter}>
-        <Text>ProductList</Text>
+        <Text>ComplainsScreen</Text>
       </View>
     </Container>
   );
 };
 
-export default LoginScreen;
+export default ComplainsScreen;

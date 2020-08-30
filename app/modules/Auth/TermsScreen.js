@@ -3,10 +3,10 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import { CustomHeader } from '../../components';
 import { ApplicationStyles, Icons } from '../../theme';
-import styles from './styles/LoginScreenStyle';
+import styles from './styles/TermsScreenStyles';
 import strings from '../../constants/Strings';
 
-const LoginScreen = ({ navigation }) => {
+const TermsScreen = ({ navigation }) => {
   const onLeftPress = () => {
     navigation.openDrawer();
   };
@@ -28,4 +28,4 @@ const LoginScreen = ({ navigation }) => {
   );
 };
 
-export default LoginScreen;
+export default TermsScreen;

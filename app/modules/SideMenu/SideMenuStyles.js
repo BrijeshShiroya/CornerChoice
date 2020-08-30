@@ -25,8 +25,8 @@ const styles = StyleSheet.create({
     marginRight: scale(10)
   },
   menuIcon: {
-    height: scale(26),
-    width: scale(26),
+    height: scale(20),
+    width: scale(20),
     marginRight: scale(10)
   },
   flatlistContainer: {
@@ -44,7 +44,9 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   menuItemContainer: {
+    margin: scale(5),
     paddingHorizontal: scale(20),
+    borderRadius: scale(5),
     height: verticalScale(40),
     flexDirection: 'row',
     alignItems: 'center'
@@ -53,7 +55,7 @@ const styles = StyleSheet.create({
     fontSize: verticalScale(14),
     fontFamily: Fonts.type.regular,
     color: Colors.themeGreen,
-    fontWeight: '500'
+    fontWeight: '600'
   }
 });
 

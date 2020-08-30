@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { FlatList, Image, Text, View, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Icons, Colors } from '../../theme';
@@ -7,18 +7,37 @@ import styles from './SideMenuStyles';
 
 const MenuData = [
   {
-    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    title: 'Home'
+    title: 'Home',
+    navigationScreen: 'HomeScreen',
+    icon: Icons.home
   },
   {
-    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-    title: 'Second Item'
+    title: 'Products',
+    navigationScreen: 'ProductListScreen',
+    icon: Icons.products
   },
   {
-    id: '58694a0f-3da1-471f-bd96-145571e29d72',
-    title: 'Third Item'
+    title: 'My Orders',
+    navigationScreen: 'MyOrderScreen',
+    icon: Icons.orders
+  },
+  {
+    title: 'Complaints',
+    navigationScreen: 'ComplainsScreen',
+    icon: Icons.complains
+  },
+  {
+    title: 'Terms',
+    navigationScreen: 'TermsScreen',
+    icon: Icons.terms
+  },
+  {
+    title: 'Login',
+    navigationScreen: 'LoginScreen',
+    icon: Icons.login
   }
 ];
+
 const SideMenuHeader = (props) => {
   const userName = props?.name || 'Guest';
   const email = props?.email || '---';
@@ -34,38 +53,44 @@ const SideMenuHeader = (props) => {
 };
 
 const MenuItem = (props) => {
-  const { title, onPress } = props?.item;
-  const { selected } = props;
+  const { title, icon } = props?.item;
+  const { selected, onPress } = props;
   return (
     <TouchableOpacity
       style={[
         styles.menuItemContainer,
         {
-          backgroundColor: selected ? `red` : Colors.white
+          backgroundColor: selected ? Colors.drawerSelected : Colors.white
         }
       ]}
       onPress={onPress}
     >
-      <Image
-        source={Icons.home}
-        style={styles.menuIcon}
-        resizeMode={'contain'}
-      />
+      <Image source={icon} style={styles.menuIcon} resizeMode={'contain'} />
       <Text style={styles.menuTitle}>{title}</Text>
     </TouchableOpacity>
   );
 };
-const SideMenuScreen = () => {
+
+const SideMenuScreen = ({ navigation }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const name = 'Murtaza Tarwala';
   const email = 'Admin@admin.com';
 
-  const onItemPress = (index) => {
-    setSelectedIndex(index);
-  };
+  const onItemPress = useCallback(
+    (item, index) => {
+      navigation.closeDrawer();
+      navigation.navigate(item?.navigationScreen);
+      setSelectedIndex(index);
+    },
+    [setSelectedIndex, navigation]
+  );
 
   const renderItem = ({ item, index }) => (
-    <MenuItem item={item} selected={true} onPress={() => onItemPress(index)} />
+    <MenuItem
+      selected={selectedIndex === index}
+      item={item}
+      onPress={() => onItemPress(item, index)}
+    />
   );
 
   return (
@@ -76,7 +101,7 @@ const SideMenuScreen = () => {
           contentContainerStyle={styles.flatlistContainer}
           data={MenuData}
           renderItem={renderItem}
-          keyExtractor={(item) => item.id}
+          keyExtractor={(item) => item.title}
         />
       </View>
     </SafeAreaView>
@@ -89,8 +114,9 @@ SideMenuHeader.propTypes = {
 };
 
 MenuItem.propTypes = {
-  title: PropTypes.string,
-  selected: PropTypes.bool
+  item: PropTypes.object,
+  selected: PropTypes.bool,
+  onPress: PropTypes.func
 };
 
 SideMenuScreen.propTypes = {

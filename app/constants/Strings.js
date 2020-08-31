@@ -1,5 +1,6 @@
 const strings = {
   mainHeaderChoiceCorner: 'Choice Corner',
+  titleLogin: 'Login',
   emailPlaceholder: 'Email',
   passwordPlaceholder: 'Password',
   invalidEmail: 'Invalid email address',

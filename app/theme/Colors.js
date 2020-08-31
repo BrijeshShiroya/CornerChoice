@@ -8,7 +8,9 @@ const colors = {
   primary: '#017E3A',
   secondary: '#29DED5',
   neutral: '#3D3D3D',
-  rosyBrown: '#FFC1C1'
+  rosyBrown: '#FFC1C1',
+  overlay: '#00000040',
+  grey: 'grey'
 };
 //#009846 /  / #F4F4F4 / #FFFFFF
 export default colors;

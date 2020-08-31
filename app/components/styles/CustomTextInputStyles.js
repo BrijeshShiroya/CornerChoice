@@ -4,7 +4,8 @@ import {
   Colors,
   Fonts,
   scale,
-  verticalScale
+  verticalScale,
+  moderateScale
 } from '../../theme';
 
 const styles = StyleSheet.create({
@@ -30,6 +31,9 @@ const styles = StyleSheet.create({
   },
   redBorder: {
     borderColor: Colors.themeGreen
+  },
+  placeholderText: {
+    fontSize: moderateScale(11)
   }
 });
 

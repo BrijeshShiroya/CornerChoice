@@ -3,12 +3,12 @@ import { Colors, scale, verticalScale, Fonts } from '../../theme';
 
 const styles = StyleSheet.create({
   buttonTouchable: {
-    height: verticalScale(45),
+    height: verticalScale(38),
     width: scale(150),
-    backgroundColor: Colors.primary,
+    backgroundColor: Colors.themeLightGreen,
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 20
+    borderRadius: 10
   },
   disabledButton: {
     backgroundColor: Colors.rosyBrown
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
   buttonText: {
     color: Colors.white,
     fontSize: Fonts.size.label,
-    fontWeight: '500'
+    fontWeight: '700'
   }
 });
 

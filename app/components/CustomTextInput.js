@@ -11,20 +11,20 @@ const ErrorView = (message) => (
   </View>
 );
 
-const CustomTextInput = (
-  {
-    style,
-    error,
-    placeholderTextColor = Colors.lightSkyBlue,
-    blurOnSubmit = false,
-    returnKeyType = 'next',
-    ...otherProps
-  },
-  ref
-) => (
+const CustomTextInput = ({
+  style,
+  error,
+  placeholder = '',
+  placeholderTextColor = Colors.themeLightGreen,
+  blurOnSubmit = true,
+  returnKeyType = 'done',
+  ...otherProps
+}) => (
   <View>
+    <Text style={[styles.placeholderText, { color: placeholderTextColor }]}>
+      {placeholder}
+    </Text>
     <TextInput
-      ref={ref}
       style={[styles.textInput, style, error && styles.redBorder]}
       placeholderTextColor={placeholderTextColor}
       blurOnSubmit={blurOnSubmit}
@@ -40,7 +40,8 @@ CustomTextInput.propTypes = {
   error: PropTypes.string,
   placeholderTextColor: PropTypes.string,
   blurOnSubmit: PropTypes.bool,
-  returnKeyType: PropTypes.string
+  returnKeyType: PropTypes.string,
+  placeholder: PropTypes.string
 };
 
 export default CustomTextInput;

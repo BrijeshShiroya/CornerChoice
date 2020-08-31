@@ -33,7 +33,7 @@ const MenuData = [
   },
   {
     title: 'Login',
-    navigationScreen: 'LoginScreen',
+    navigationScreen: 'AuthStack',
     icon: Icons.login
   }
 ];

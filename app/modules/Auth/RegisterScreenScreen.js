@@ -8,16 +8,20 @@ import {
 import { CustomButton, CustomTextInput } from '../../components';
 import strings from '../../constants/Strings';
 import { ApplicationStyles, Images } from '../../theme';
-import styles from './styles/LoginScreenStyle';
+import styles from './styles/RegisterScreenScreenStyles';
 
-const LoginScreen = ({ navigation }) => {
+const RegisterScreenScreen = ({ navigation }) => {
+  const [firstname, setFirstname] = useState('');
+  const [lastname, setLastname] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const onLoginPress = () => {};
+  const [phone, setPhone] = useState('');
 
-  const onRegisterPress = () => {
-    navigation.navigate('RegisterScreenScreen');
+  const onLoginPress = () => {
+    navigation.goBack();
   };
+
+  const onRegisterPress = () => {};
 
   return (
     <KeyboardAvoidingView
@@ -25,9 +29,22 @@ const LoginScreen = ({ navigation }) => {
       style={ApplicationStyles.screen.mainContainer}
     >
       <ImageBackground source={Images.splash} style={styles.bgImage}>
+        {/* <KeyboardAvoidingView behavior={'padding'} style={styles.avoidView}> */}
         <View style={styles.overlay} />
-        <Text style={styles.mainTitle}>{strings.titleLogin}</Text>
+        <Text style={styles.mainTitle}>{strings.registerLogin}</Text>
         <View style={styles.loginContainer}>
+          <CustomTextInput
+            value={firstname}
+            placeholder={'First Name'}
+            style={styles.input}
+            onChangeText={(text) => setFirstname(text)}
+          />
+          <CustomTextInput
+            value={lastname}
+            placeholder={'Last Name'}
+            style={styles.input}
+            onChangeText={(text) => setLastname(text)}
+          />
           <CustomTextInput
             value={email}
             placeholder={'Email ID'}
@@ -42,20 +59,29 @@ const LoginScreen = ({ navigation }) => {
             style={styles.input}
             onChangeText={(text) => setPassword(text)}
           />
-          <CustomButton
-            title={'LOGIN'}
-            style={styles.loginButton}
-            onPress={onLoginPress}
+          <CustomTextInput
+            value={phone}
+            keyboardType={'numeric'}
+            maxLength={10}
+            placeholder={'Phone'}
+            style={styles.input}
+            onChangeText={(text) => setPhone(text)}
           />
           <CustomButton
             title={'REGISTER NOW'}
             style={styles.registerButton}
             onPress={onRegisterPress}
           />
+          <CustomButton
+            title={'LOGIN'}
+            style={styles.loginButton}
+            onPress={onLoginPress}
+          />
         </View>
+        {/* </KeyboardAvoidingView> */}
       </ImageBackground>
     </KeyboardAvoidingView>
   );
 };
 
-export default LoginScreen;
+export default RegisterScreenScreen;

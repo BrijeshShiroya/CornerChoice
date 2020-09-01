@@ -29,9 +29,7 @@ const ApplicationStyles = {
     },
     whiteContainerCenter: {
       flex: 1,
-      backgroundColor: Colors.white,
-      alignItems: 'center',
-      justifyContent: 'center'
+      backgroundColor: Colors.white
     },
     noBorderStyle: {
       borderBottomWidth: Metrics.zero

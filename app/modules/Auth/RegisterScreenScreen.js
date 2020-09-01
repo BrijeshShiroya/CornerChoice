@@ -1,13 +1,8 @@
 import React, { useState } from 'react';
-import {
-  ImageBackground,
-  KeyboardAvoidingView,
-  Text,
-  View
-} from 'react-native';
-import { CustomButton, CustomTextInput } from '../../components';
+import { KeyboardAvoidingView, Text, View } from 'react-native';
+import { CustomButton, CustomTextInput, ImageBg } from '../../components';
 import strings from '../../constants/Strings';
-import { ApplicationStyles, Images } from '../../theme';
+import { ApplicationStyles } from '../../theme';
 import styles from './styles/RegisterScreenScreenStyles';
 
 const RegisterScreenScreen = ({ navigation }) => {
@@ -28,9 +23,7 @@ const RegisterScreenScreen = ({ navigation }) => {
       behavior={'padding'}
       style={ApplicationStyles.screen.mainContainer}
     >
-      <ImageBackground source={Images.splash} style={styles.bgImage}>
-        {/* <KeyboardAvoidingView behavior={'padding'} style={styles.avoidView}> */}
-        <View style={styles.overlay} />
+      <ImageBg>
         <Text style={styles.mainTitle}>{strings.registerLogin}</Text>
         <View style={styles.loginContainer}>
           <CustomTextInput
@@ -78,8 +71,7 @@ const RegisterScreenScreen = ({ navigation }) => {
             onPress={onLoginPress}
           />
         </View>
-        {/* </KeyboardAvoidingView> */}
-      </ImageBackground>
+      </ImageBg>
     </KeyboardAvoidingView>
   );
 };

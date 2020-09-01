@@ -1,10 +1,10 @@
 import { Container } from 'native-base';
 import React from 'react';
-import { Text, View } from 'react-native';
-import { CustomHeader } from '../../components';
+import { Text } from 'react-native';
+import { CustomHeader, ImageBg, SearchBar } from '../../components';
+import strings from '../../constants/Strings';
 import { ApplicationStyles, Icons } from '../../theme';
 import styles from './styles/HomeScreenStyle';
-import strings from '../../constants/Strings';
 
 const HomeScreen = ({ navigation }) => {
   const onLeftPress = () => {
@@ -21,9 +21,10 @@ const HomeScreen = ({ navigation }) => {
         rightIcon={Icons.cart}
         leftOnPress={onLeftPress}
       />
-      <View style={styles.whiteContainerCenter}>
+      <ImageBg style={styles.bg}>
+        <SearchBar />
         <Text>Home</Text>
-      </View>
+      </ImageBg>
     </Container>
   );
 };

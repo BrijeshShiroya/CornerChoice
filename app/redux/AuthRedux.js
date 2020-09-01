@@ -3,7 +3,7 @@ import Immutable from 'seamless-immutable';
 
 /* ------------- Types and Action Creators ------------- */
 const { Types, Creators } = createActions({
-  authRequest: ['username', 'password'],
+  authRequest: ['payload'],
   authSuccess: ['data'],
   authFailure: ['error']
 });
@@ -14,7 +14,7 @@ export default Creators;
 /* ------------- Initial State ------------- */
 export const INITIAL_STATE = Immutable({
   user: null,
-  fetching: null,
+  fetching: false,
   error: null
 });
 
@@ -40,7 +40,7 @@ export const success = (state, action) => {
 // Something went wrong somewhere.
 export const failure = (state, action) => {
   const { error } = action;
-  return state.merge({ fetching: false, error });
+  return state.merge({ fetching: false, error, user: null });
 };
 
 /* ------------- Hookup Reducers To Types ------------- */

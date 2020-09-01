@@ -4,6 +4,7 @@ import { FlatList, Image, Text, View, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Icons, Colors } from '../../theme';
 import styles from './SideMenuStyles';
+import { useSelector } from 'react-redux';
 
 const MenuData = [
   {
@@ -73,8 +74,9 @@ const MenuItem = (props) => {
 
 const SideMenuScreen = ({ navigation }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const name = 'Murtaza Tarwala';
-  const email = 'Admin@admin.com';
+  const { user } = useSelector((state) => state.auth);
+  const name = `${user?.first_name} ${user?.last_name}`;
+  const email = user?.email || '--';
 
   const onItemPress = useCallback(
     (item, index) => {

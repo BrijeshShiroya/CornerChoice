@@ -12,8 +12,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.themeGreen,
     borderColor: Colors.white,
     borderWidth: 2,
-    borderRadius: verticalScale(22),
-    marginHorizontal: verticalScale(20)
+    borderRadius: verticalScale(22)
   }
 });
 

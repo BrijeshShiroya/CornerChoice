@@ -40,7 +40,7 @@ const PrimaryNav = () => {
   return (
     <Drawer.Navigator
       drawerContent={(props) => <SideMenuScreen {...props} />}
-      initialRouteName="HomeScreen"
+      initialRouteName="AuthStack"
     >
       <Drawer.Screen name="HomeScreen" component={HomeScreen} />
       <Drawer.Screen name="ProductListScreen" component={ProductListScreen} />

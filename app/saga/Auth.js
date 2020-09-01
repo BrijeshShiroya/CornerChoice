@@ -3,11 +3,10 @@ import AuthActions from '../redux/AuthRedux';
 import { getError } from '../services/Utils';
 
 function* handleResponse(response) {
-  if (response?.code === 200) {
+  if (response?.status) {
     yield put(
       AuthActions.authSuccess({
-        ...response.data.currentUserDetails,
-        token: response.token
+        ...response.data[0]
       })
     );
   } else {

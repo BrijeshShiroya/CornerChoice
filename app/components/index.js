@@ -4,6 +4,7 @@ import CustomButton from './CustomButton';
 import CustomHeader from './CustomHeader';
 import SearchBar from './SearchBar';
 import ImageBg from './ImageBg';
+import Loader from './Loader';
 
 export {
   CustomTextInput,
@@ -11,5 +12,6 @@ export {
   CustomButton,
   CustomHeader,
   SearchBar,
-  ImageBg
+  ImageBg,
+  Loader
 };

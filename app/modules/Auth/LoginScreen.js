@@ -1,19 +1,45 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { KeyboardAvoidingView, Text, View } from 'react-native';
-import { CustomButton, CustomTextInput, ImageBg } from '../../components';
+import {
+  CustomButton,
+  CustomTextInput,
+  ImageBg,
+  Loader
+} from '../../components';
 import strings from '../../constants/Strings';
 import { ApplicationStyles } from '../../theme';
 import styles from './styles/LoginScreenStyle';
+import AuthActions from '../../redux/AuthRedux';
+import { useSelector, useDispatch } from 'react-redux';
+import { Toast } from 'native-base';
 
 const LoginScreen = ({ navigation }) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const onLoginPress = () => {};
+  const [email, setEmail] = useState('admin@admin.com');
+  const [password, setPassword] = useState('password');
+  const dispatch = useDispatch();
+  const { fetching, user, error } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    if (!fetching && error) {
+      Toast.show({
+        text: error,
+        buttonText: 'Okay',
+        duration: 3000
+      });
+    } else if (!fetching && user) {
+      navigation.navigate('HomeScreen');
+    }
+  }, [fetching, error, navigation, user]);
+
+  const onLoginPress = useCallback(() => {
+    if (email !== '' && password !== '') {
+      dispatch(AuthActions.authRequest({ email, password }));
+    }
+  }, [dispatch, email, password]);
 
   const onRegisterPress = () => {
     navigation.navigate('RegisterScreenScreen');
   };
-
   return (
     <KeyboardAvoidingView
       behavior={'padding'}
@@ -47,6 +73,7 @@ const LoginScreen = ({ navigation }) => {
             onPress={onRegisterPress}
           />
         </View>
+        {fetching && <Loader />}
       </ImageBg>
     </KeyboardAvoidingView>
   );

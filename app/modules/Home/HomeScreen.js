@@ -1,7 +1,12 @@
 import { Container } from 'native-base';
 import React from 'react';
 import { Text } from 'react-native';
-import { CustomHeader, ImageBg, SearchBar } from '../../components';
+import {
+  CustomHeader,
+  ImageBg,
+  SearchBar,
+  CustomSwiper
+} from '../../components';
 import strings from '../../constants/Strings';
 import { ApplicationStyles, Icons } from '../../theme';
 import styles from './styles/HomeScreenStyle';
@@ -23,6 +28,7 @@ const HomeScreen = ({ navigation }) => {
       />
       <ImageBg style={styles.bg}>
         <SearchBar />
+        <CustomSwiper />
         <Text>Home</Text>
       </ImageBg>
     </Container>

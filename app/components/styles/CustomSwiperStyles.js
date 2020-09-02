@@ -3,18 +3,22 @@ import { ApplicationStyles, Colors, verticalScale } from '../../theme';
 
 const styles = StyleSheet.create({
   ...ApplicationStyles.screen,
+  mainContainer: {
+    height: verticalScale(120),
+    margin: 3,
+    borderRadius: 3,
+    overflow: 'hidden'
+  },
   sliderContainer: {
-    height: verticalScale(80),
-    width: '100%',
     color: Colors.themeGreen
   },
-  slide1: {
-    height: verticalScale(80),
-    width: '100%',
-    backgroundColor: Colors.white
+  slider: {
+    height: verticalScale(120),
+    width: '100%'
   },
-  text1: {
-    color: Colors.themeGreen
+  image: {
+    height: '100%',
+    width: '100%'
   }
 });
 

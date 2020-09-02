@@ -5,6 +5,7 @@ import CustomHeader from './CustomHeader';
 import SearchBar from './SearchBar';
 import ImageBg from './ImageBg';
 import Loader from './Loader';
+import CustomSwiper from './CustomSwiper';
 
 export {
   CustomTextInput,
@@ -13,5 +14,6 @@ export {
   CustomHeader,
   SearchBar,
   ImageBg,
-  Loader
+  Loader,
+  CustomSwiper
 };

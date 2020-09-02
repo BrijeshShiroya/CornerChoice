@@ -5,13 +5,13 @@ const api = apiConfig(__DEV__ ? Secrets.API_URL_DEBUG : Secrets.API_URL);
 
 const auth = () => {
   const loginUser = (credentials) => api.post('login', credentials);
-  const registerUser = (user) => api.post('/api/v1/user/signup', user);
+  const swiperData = () => api.post('slider');
   const forgotPassword = (email) =>
     api.post('/api/v1/user/forgot-password', { email: email });
 
   return {
     loginUser,
-    registerUser,
+    swiperData,
     forgotPassword
   };
 };

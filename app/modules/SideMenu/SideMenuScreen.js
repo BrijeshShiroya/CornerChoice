@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
-import React, { useState, useCallback } from 'react';
-import { FlatList, Image, Text, View, TouchableOpacity } from 'react-native';
+import React, { useCallback, useState } from 'react';
+import { FlatList, Image, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Icons, Colors } from '../../theme';
+import { useDispatch, useSelector } from 'react-redux';
+import { Colors, Icons } from '../../theme';
 import styles from './SideMenuStyles';
-import { useSelector } from 'react-redux';
 
 const MenuData = [
   {
@@ -31,11 +31,6 @@ const MenuData = [
     title: 'Terms',
     navigationScreen: 'TermsScreen',
     icon: Icons.terms
-  },
-  {
-    title: 'Login',
-    navigationScreen: 'AuthStack',
-    icon: Icons.login
   }
 ];
 
@@ -50,6 +45,24 @@ const SideMenuHeader = (props) => {
         <Text style={styles.title}>{email}</Text>
       </View>
     </View>
+  );
+};
+
+const SideMenuFooter = (props) => {
+  const { user } = useSelector((state) => state.auth);
+  const isLoggedIn = !!user;
+  const item = {
+    title: isLoggedIn ? 'Logout' : 'Login',
+    navigationScreen: isLoggedIn ? 'HomeScreen' : 'AuthStack',
+    icon: Icons.login
+  };
+  const { selectedIndex, onFooterPress } = props;
+  return (
+    <MenuItem
+      selected={selectedIndex === 5}
+      item={item}
+      onPress={() => onFooterPress(item, 5)}
+    />
   );
 };
 
@@ -75,16 +88,24 @@ const MenuItem = (props) => {
 const SideMenuScreen = ({ navigation }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const { user } = useSelector((state) => state.auth);
-  const name = `${user?.first_name} ${user?.last_name}`;
+  const firstname = user?.first_name || 'Guest';
+  const lastname = user?.last_name || '';
+  const name = firstname + ' ' + lastname;
   const email = user?.email || '--';
+  const dispatch = useDispatch();
 
   const onItemPress = useCallback(
     (item, index) => {
       navigation.closeDrawer();
       navigation.navigate(item?.navigationScreen);
-      setSelectedIndex(index);
+      if (index === 5) {
+        setSelectedIndex(0);
+        dispatch({ type: 'LOGOUT' });
+      } else {
+        setSelectedIndex(index);
+      }
     },
-    [setSelectedIndex, navigation]
+    [dispatch, setSelectedIndex, navigation]
   );
 
   const renderItem = ({ item, index }) => (
@@ -104,6 +125,12 @@ const SideMenuScreen = ({ navigation }) => {
           data={MenuData}
           renderItem={renderItem}
           keyExtractor={(item) => item.title}
+          ListFooterComponent={
+            <SideMenuFooter
+              selectedIndex={selectedIndex}
+              onFooterPress={onItemPress}
+            />
+          }
         />
       </View>
     </SafeAreaView>
@@ -113,6 +140,11 @@ const SideMenuScreen = ({ navigation }) => {
 SideMenuHeader.propTypes = {
   name: PropTypes.string,
   email: PropTypes.string
+};
+
+SideMenuFooter.propTypes = {
+  selectedIndex: PropTypes.number,
+  onFooterPress: PropTypes.func
 };
 
 MenuItem.propTypes = {

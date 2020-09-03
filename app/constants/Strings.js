@@ -2,6 +2,7 @@ const strings = {
   mainHeaderChoiceCorner: 'Choice Corner',
   titleLogin: 'Login',
   registerLogin: 'Register',
+  specialOffers: 'SPECIAL OFFERS',
   emailPlaceholder: 'Email',
   passwordPlaceholder: 'Password',
   invalidEmail: 'Invalid email address',

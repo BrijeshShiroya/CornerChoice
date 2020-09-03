@@ -7,11 +7,13 @@ const auth = () => {
   const loginUser = (credentials) => api.post('login', credentials);
   const swiperData = () => api.post('slider');
   const categoryData = () => api.post('categories');
+  const productData = () => api.post('products');
 
   return {
     loginUser,
     swiperData,
-    categoryData
+    categoryData,
+    productData
   };
 };
 

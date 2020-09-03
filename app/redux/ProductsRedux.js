@@ -5,7 +5,9 @@ import Immutable from 'seamless-immutable';
 const { Types, Creators } = createActions({
   categoryRequest: [],
   categorySuccess: ['payload'],
-  categoryFailure: ['error']
+  categoryFailure: ['error'],
+  productSuccess: ['payload'],
+  productFailure: ['error']
 });
 
 export const ProductsTypes = Types;
@@ -15,7 +17,8 @@ export default Creators;
 export const INITIAL_STATE = Immutable({
   fetching: null,
   error: null,
-  category: []
+  category: [],
+  product: []
 });
 
 /* ------------- Reducers ------------- */
@@ -38,10 +41,28 @@ export const failure = (state, action) => {
   return state.merge({ fetching: false, error, category: [] });
 };
 
+// product successful api lookup
+export const productSuccess = (state, action) => {
+  const { payload } = action;
+  return state.merge({
+    fetching: false,
+    error: false,
+    product: payload
+  });
+};
+
+// Something went wrong somewhere in getting product.
+export const productFailure = (state, action) => {
+  const { error } = action;
+  return state.merge({ fetching: false, error, product: [] });
+};
+
 /* ------------- Hookup Reducers To Types ------------- */
 
 export const productsReducer = createReducer(INITIAL_STATE, {
   [Types.CATEGORY_REQUEST]: request,
   [Types.CATEGORY_SUCCESS]: success,
-  [Types.CATEGORY_FAILURE]: failure
+  [Types.CATEGORY_FAILURE]: failure,
+  [Types.PRODUCT_SUCCESS]: productSuccess,
+  [Types.PRODUCT_FAILURE]: productFailure
 });

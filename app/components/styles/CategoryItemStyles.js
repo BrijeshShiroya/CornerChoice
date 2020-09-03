@@ -3,10 +3,10 @@ import { Metrics, Colors, Fonts } from '../../theme';
 
 const styles = StyleSheet.create({
   container: {
-    width: (Metrics.screenWidth - 12) / 3,
-    marginRight: 2,
-    marginBottom: 2,
-    aspectRatio: 1.3,
+    width: (Metrics.screenWidth - 16) / 3,
+    marginLeft: 4,
+    marginBottom: 4,
+    aspectRatio: 1.2,
     alignItems: 'center',
     justifyContent: 'space-around',
     backgroundColor: Colors.white

@@ -1,20 +1,28 @@
 import { Container } from 'native-base';
 import React from 'react';
-import { Text } from 'react-native';
+import { FlatList } from 'react-native';
+import { useSelector } from 'react-redux';
 import {
+  CategoryItem,
   CustomHeader,
-  ImageBg,
-  SearchBar,
   CustomSwiper,
-  HomeCategoryList
+  HomeProductList,
+  ImageBg,
+  SearchBar
 } from '../../components';
 import strings from '../../constants/Strings';
 import { ApplicationStyles, Icons } from '../../theme';
 import styles from './styles/HomeScreenStyle';
 
 const HomeScreen = ({ navigation }) => {
+  const { category } = useSelector((state) => state.products);
+
   const onLeftPress = () => {
     navigation.openDrawer();
+  };
+
+  const renderItem = ({ item }) => {
+    return <CategoryItem item={item} />;
   };
 
   return (
@@ -30,8 +38,14 @@ const HomeScreen = ({ navigation }) => {
       <ImageBg style={styles.bg}>
         <SearchBar />
         <CustomSwiper />
-        <HomeCategoryList />
-        <Text>Home</Text>
+        <FlatList
+          contentContainerStyle={styles.listContainer}
+          data={category}
+          numColumns={3}
+          renderItem={renderItem}
+          keyExtractor={(item) => item.id}
+          ListFooterComponent={() => <HomeProductList />}
+        />
       </ImageBg>
     </Container>
   );

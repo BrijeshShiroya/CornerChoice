@@ -15,3 +15,13 @@ export function* getProductsCategory(api, action) {
   const response = yield call(api.categoryData, action.payload);
   yield* handleResponse(response.data);
 }
+
+export function* getProducts(api, action) {
+  const response = yield call(api.productData, action.payload);
+  if (response?.status) {
+    yield put(ProductsActions.productSuccess(response.data?.data));
+  } else {
+    const error = yield call(getError, response);
+    yield put(ProductsActions.productFailure(error));
+  }
+}

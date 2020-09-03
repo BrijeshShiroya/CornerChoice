@@ -6,8 +6,9 @@ import SearchBar from './SearchBar';
 import ImageBg from './ImageBg';
 import Loader from './Loader';
 import CustomSwiper from './CustomSwiper';
-import HomeCategoryList from './HomeCategoryList';
+import HomeProductList from './HomeProductList';
 import CategoryItem from './CategoryItem';
+import ProductItem from './ProductItem';
 
 export {
   CustomTextInput,
@@ -18,6 +19,7 @@ export {
   ImageBg,
   Loader,
   CustomSwiper,
-  HomeCategoryList,
-  CategoryItem
+  HomeProductList,
+  CategoryItem,
+  ProductItem
 };

@@ -6,6 +6,11 @@ const styles = StyleSheet.create({
   bg: {
     justifyContent: 'flex-start',
     flex: 1
+  },
+  listContainer: {
+    paddingTop: 5,
+    paddingBottom: 20,
+    paddingRight: 4
   }
 });
 

@@ -2,6 +2,7 @@ const colors = {
   transparent: 'rgba(0,0,0,0)',
   themeGreen: '#017E3A',
   white: 'white',
+  black: 'black',
   themeLightGreen: '#009846',
   drawerSelected: '#017E3A30',
   lightSkyBlue: 'rgb(106, 207, 210)',

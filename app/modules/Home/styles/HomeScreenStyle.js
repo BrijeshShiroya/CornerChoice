@@ -4,7 +4,8 @@ import { ApplicationStyles } from '../../../theme';
 const styles = StyleSheet.create({
   ...ApplicationStyles.screen,
   bg: {
-    justifyContent: 'flex-start'
+    justifyContent: 'flex-start',
+    flex: 1
   }
 });
 

@@ -5,7 +5,8 @@ import {
   CustomHeader,
   ImageBg,
   SearchBar,
-  CustomSwiper
+  CustomSwiper,
+  HomeCategoryList
 } from '../../components';
 import strings from '../../constants/Strings';
 import { ApplicationStyles, Icons } from '../../theme';
@@ -29,6 +30,7 @@ const HomeScreen = ({ navigation }) => {
       <ImageBg style={styles.bg}>
         <SearchBar />
         <CustomSwiper />
+        <HomeCategoryList />
         <Text>Home</Text>
       </ImageBg>
     </Container>

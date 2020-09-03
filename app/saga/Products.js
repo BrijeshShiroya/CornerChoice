@@ -4,11 +4,7 @@ import { getError } from '../services/Utils';
 
 function* handleResponse(response) {
   if (response?.status) {
-    yield put(
-      ProductsActions.categorySuccess({
-        ...response.data[0]
-      })
-    );
+    yield put(ProductsActions.categorySuccess(response.data));
   } else {
     const error = yield call(getError, response);
     yield put(ProductsActions.categoryFailure(error));

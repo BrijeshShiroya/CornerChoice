@@ -8,6 +8,7 @@ import { Colors } from '../theme';
 
 const CustomSwiper = () => {
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(HomeActions.homeSwiperRequest());
   }, [dispatch]);
@@ -21,7 +22,7 @@ const CustomSwiper = () => {
         dotColor={Colors.transparent}
         style={styles.sliderContainer}
       >
-        {swiperData.map((item, index) => {
+        {swiperData?.map((item, index) => {
           return (
             <View key={item.id} style={styles.slider}>
               <Image

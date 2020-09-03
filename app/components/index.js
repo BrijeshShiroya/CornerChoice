@@ -6,6 +6,8 @@ import SearchBar from './SearchBar';
 import ImageBg from './ImageBg';
 import Loader from './Loader';
 import CustomSwiper from './CustomSwiper';
+import HomeCategoryList from './HomeCategoryList';
+import CategoryItem from './CategoryItem';
 
 export {
   CustomTextInput,
@@ -15,5 +17,7 @@ export {
   SearchBar,
   ImageBg,
   Loader,
-  CustomSwiper
+  CustomSwiper,
+  HomeCategoryList,
+  CategoryItem
 };

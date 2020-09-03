@@ -1,6 +1,7 @@
 const strings = {
   mainHeaderChoiceCorner: 'Choice Corner',
   titleLogin: 'Login',
+  titleMyOrder: 'My Orders',
   registerLogin: 'Register',
   specialOffers: 'SPECIAL OFFERS',
   emailPlaceholder: 'Email',

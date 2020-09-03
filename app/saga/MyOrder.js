@@ -1,17 +1,17 @@
 import { call, put } from 'redux-saga/effects';
-import HomeActions from '../redux/HomeRedux';
+import MyOrderActions from '../redux/MyOrderRedux';
 import { getError } from '../services/Utils';
 
 function* handleResponse(response) {
   if (response?.status) {
-    yield put(HomeActions.homeSwiperSuccess(response.data));
+    yield put(MyOrderActions.orderSuccess(response.data));
   } else {
     const error = yield call(getError, response);
-    yield put(HomeActions.homeSwiperFailure(error));
+    yield put(MyOrderActions.orderFailure(error));
   }
 }
 
-export function* getSwiperData(api) {
-  const response = yield call(api.swiperData);
+export function* getMyOrder(api, action) {
+  const response = yield call(api.orderData, action.payload);
   yield* handleResponse(response.data);
 }

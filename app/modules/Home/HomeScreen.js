@@ -1,21 +1,27 @@
 import { Container } from 'native-base';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FlatList } from 'react-native';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import {
   CategoryItem,
   CustomHeader,
   CustomSwiper,
   HomeProductList,
   ImageBg,
-  SearchBar
+  SearchBar,
+  Loader
 } from '../../components';
 import strings from '../../constants/Strings';
 import { ApplicationStyles, Icons } from '../../theme';
+import HomeActions from '../../redux/HomeRedux';
 import styles from './styles/HomeScreenStyle';
 
 const HomeScreen = ({ navigation }) => {
-  const { category } = useSelector((state) => state.products);
+  const { category, fetching } = useSelector((state) => state.products);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(HomeActions.homeSwiperRequest());
+  }, [dispatch]);
 
   const onLeftPress = () => {
     navigation.openDrawer();
@@ -37,16 +43,17 @@ const HomeScreen = ({ navigation }) => {
       />
       <ImageBg style={styles.bg}>
         <SearchBar />
-        <CustomSwiper />
         <FlatList
-          contentContainerStyle={styles.listContainer}
+          style={styles.listContainer}
           data={category}
           numColumns={3}
           renderItem={renderItem}
           keyExtractor={(item) => item.id}
-          ListFooterComponent={() => <HomeProductList />}
+          ListHeaderComponent={<CustomSwiper />}
+          ListFooterComponent={<HomeProductList header />}
         />
       </ImageBg>
+      {fetching && <Loader />}
     </Container>
   );
 };

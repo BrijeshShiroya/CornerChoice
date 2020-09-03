@@ -12,12 +12,12 @@ function* handleResponse(response) {
 }
 
 export function* getProductsCategory(api, action) {
-  const response = yield call(api.categoryData, action.payload);
+  const response = yield call(api.categoryData);
   yield* handleResponse(response.data);
 }
 
-export function* getProducts(api, action) {
-  const response = yield call(api.productData, action.payload);
+export function* getProducts(api) {
+  const response = yield call(api.productData);
   if (response?.status) {
     yield put(ProductsActions.productSuccess(response.data?.data));
   } else {

@@ -1,18 +1,11 @@
-import React, { useEffect } from 'react';
-import { View, Image } from 'react-native';
+import React from 'react';
+import { Image, View } from 'react-native';
 import Swiper from 'react-native-swiper';
-import styles from './styles/CustomSwiperStyles';
-import { useDispatch, useSelector } from 'react-redux';
-import HomeActions from '../redux/HomeRedux';
+import { useSelector } from 'react-redux';
 import { Colors } from '../theme';
+import styles from './styles/CustomSwiperStyles';
 
 const CustomSwiper = () => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(HomeActions.homeSwiperRequest());
-  }, [dispatch]);
-
   const { swiperData } = useSelector((state) => state.home);
   return (
     <View style={styles.mainContainer} showsButtons={false}>

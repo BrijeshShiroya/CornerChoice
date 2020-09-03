@@ -5,9 +5,10 @@ const styles = StyleSheet.create({
   ...ApplicationStyles.screen,
   mainContainer: {
     height: verticalScale(120),
-    margin: 3,
-    borderRadius: 3,
-    overflow: 'hidden'
+    borderRadius: 4,
+    overflow: 'hidden',
+    marginVertical: 4,
+    marginLeft: 4
   },
   sliderContainer: {
     color: Colors.themeGreen

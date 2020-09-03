@@ -18,8 +18,8 @@ export {
   SearchBar,
   ImageBg,
   Loader,
-  CustomSwiper,
   HomeProductList,
   CategoryItem,
-  ProductItem
+  ProductItem,
+  CustomSwiper
 };

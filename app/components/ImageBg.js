@@ -15,7 +15,7 @@ const ImageBg = (props) => {
 };
 
 ImageBg.propTypes = {
-  children: PropTypes.array,
+  children: PropTypes.node,
   style: PropTypes.object
 };
 

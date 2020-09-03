@@ -8,12 +8,14 @@ const auth = () => {
   const swiperData = () => api.post('slider');
   const categoryData = () => api.post('categories');
   const productData = () => api.post('products');
+  const orderData = (userId) => api.post('myorder', userId);
 
   return {
     loginUser,
     swiperData,
     categoryData,
-    productData
+    productData,
+    orderData
   };
 };
 

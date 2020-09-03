@@ -1,10 +1,14 @@
 import { Container } from 'native-base';
 import React from 'react';
-import { Text, View } from 'react-native';
-import { CustomHeader } from '../../components';
+import {
+  CustomHeader,
+  HomeProductList,
+  ImageBg,
+  SearchBar
+} from '../../components';
+import strings from '../../constants/Strings';
 import { ApplicationStyles, Icons } from '../../theme';
 import styles from './styles/ProductListScreenStyle';
-import strings from '../../constants/Strings';
 
 const ProductListScreen = ({ navigation }) => {
   const onLeftPress = () => {
@@ -21,9 +25,10 @@ const ProductListScreen = ({ navigation }) => {
         rightIcon={Icons.cart}
         leftOnPress={onLeftPress}
       />
-      <View style={styles.whiteContainerCenter}>
-        <Text>ProductList</Text>
-      </View>
+      <ImageBg style={styles.bg}>
+        <SearchBar />
+        <HomeProductList />
+      </ImageBg>
     </Container>
   );
 };

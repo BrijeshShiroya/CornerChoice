@@ -9,13 +9,15 @@ const auth = () => {
   const categoryData = () => api.post('categories');
   const productData = () => api.post('products');
   const orderData = (userId) => api.post('myorder', userId);
+  const complainData = (created_by) => api.post('complaints', created_by);
 
   return {
     loginUser,
     swiperData,
     categoryData,
     productData,
-    orderData
+    orderData,
+    complainData
   };
 };
 

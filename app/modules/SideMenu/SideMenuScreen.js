@@ -93,11 +93,16 @@ const SideMenuScreen = ({ navigation }) => {
   const name = firstname + ' ' + lastname;
   const email = user?.email || '--';
   const dispatch = useDispatch();
+  const isLoggedIn = !!user;
 
   const onItemPress = useCallback(
     (item, index) => {
       navigation.closeDrawer();
-      navigation.navigate(item?.navigationScreen);
+      if ((index === 2 || index === 3) && !isLoggedIn) {
+        navigation.navigate('AuthStack');
+      } else {
+        navigation.navigate(item?.navigationScreen);
+      }
       if (index === 5) {
         setSelectedIndex(0);
         dispatch({ type: 'LOGOUT' });
@@ -105,7 +110,7 @@ const SideMenuScreen = ({ navigation }) => {
         setSelectedIndex(index);
       }
     },
-    [dispatch, setSelectedIndex, navigation]
+    [dispatch, setSelectedIndex, navigation, isLoggedIn]
   );
 
   const renderItem = ({ item, index }) => (

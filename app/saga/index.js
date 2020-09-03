@@ -4,7 +4,7 @@ import { AuthTypes } from '../redux/AuthRedux';
 import { HomeTypes } from '../redux/HomeRedux';
 import { MyOrderTypes } from '../redux/MyOrderRedux';
 import { ComplainTypes } from '../redux/ComplainRedux';
-import { loginUser } from './Auth';
+import { loginUser, registerUser } from './Auth';
 import { getSwiperData } from './Home';
 import { getMyOrder } from './MyOrder';
 import { getProductsCategory, getProducts } from './Products';
@@ -17,6 +17,7 @@ const api = API.auth();
 export default function* rootSaga() {
   yield all([
     takeLatest(AuthTypes.AUTH_REQUEST, loginUser, api),
+    takeLatest(AuthTypes.REGISTER_REQUEST, registerUser, api),
     takeLatest(HomeTypes.HOME_SWIPER_REQUEST, getSwiperData, api),
     takeLatest(HomeTypes.HOME_SWIPER_REQUEST, getProductsCategory, api),
     takeLatest(HomeTypes.HOME_SWIPER_REQUEST, getProducts, api),

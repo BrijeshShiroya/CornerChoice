@@ -37,7 +37,7 @@ const MyOrdersScreen = ({ navigation }) => {
   const { orders, fetching } = useSelector((state) => state.orders);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(MyOrderActions.orderRequest({ user_id: user.id }));
+    dispatch(MyOrderActions.orderRequest({ user_id: user?.id }));
   }, [dispatch, user]);
 
   const onLeftPress = () => {

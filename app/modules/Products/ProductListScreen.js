@@ -20,7 +20,7 @@ const ProductListScreen = ({ navigation }) => {
       <CustomHeader
         left
         right
-        title={strings.mainHeaderChoiceCorner}
+        title={strings.titleProducts}
         leftIcon={Icons.menu}
         rightIcon={Icons.cart}
         leftOnPress={onLeftPress}

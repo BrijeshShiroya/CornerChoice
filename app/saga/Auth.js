@@ -19,3 +19,8 @@ export function* loginUser(api, action) {
   const response = yield call(api.loginUser, action.payload);
   yield* handleResponse(response.data);
 }
+
+export function* registerUser(api, action) {
+  const response = yield call(api.registerUser, action.payload);
+  yield* handleResponse(response.data);
+}

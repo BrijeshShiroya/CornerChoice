@@ -30,7 +30,7 @@ const ComplainsScreen = ({ navigation }) => {
   const { complains, fetching } = useSelector((state) => state.complain);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(ComplainActions.complainRequest({ created_by: user.id }));
+    dispatch(ComplainActions.complainRequest({ created_by: user?.id }));
   }, [dispatch, user]);
 
   const onLeftPress = () => {

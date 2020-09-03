@@ -5,7 +5,8 @@ import Immutable from 'seamless-immutable';
 const { Types, Creators } = createActions({
   authRequest: ['payload'],
   authSuccess: ['data'],
-  authFailure: ['error']
+  authFailure: ['error'],
+  registerRequest: ['payload']
 });
 
 export const AuthTypes = Types;
@@ -48,5 +49,6 @@ export const failure = (state, action) => {
 export const authReducer = createReducer(INITIAL_STATE, {
   [Types.AUTH_REQUEST]: request,
   [Types.AUTH_SUCCESS]: success,
-  [Types.AUTH_FAILURE]: failure
+  [Types.AUTH_FAILURE]: failure,
+  [Types.REGISTER_REQUEST]: request
 });

@@ -14,8 +14,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Toast } from 'native-base';
 
 const LoginScreen = ({ navigation }) => {
-  const [email, setEmail] = useState('admin@admin.com');
-  const [password, setPassword] = useState('password');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const dispatch = useDispatch();
   const { fetching, user, error } = useSelector((state) => state.auth);
 

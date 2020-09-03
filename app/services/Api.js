@@ -5,6 +5,7 @@ const api = apiConfig(__DEV__ ? Secrets.API_URL_DEBUG : Secrets.API_URL);
 
 const auth = () => {
   const loginUser = (credentials) => api.post('login', credentials);
+  const registerUser = (credentials) => api.post('registration', credentials);
   const swiperData = () => api.post('slider');
   const categoryData = () => api.post('categories');
   const productData = () => api.post('products');
@@ -13,6 +14,7 @@ const auth = () => {
 
   return {
     loginUser,
+    registerUser,
     swiperData,
     categoryData,
     productData,

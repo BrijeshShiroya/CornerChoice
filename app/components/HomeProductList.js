@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { FlatList, View, Text } from 'react-native';
-import { useSelector } from 'react-redux';
 import ProductItem from '../components/ProductItem';
 import styles from './styles/HomeProductListStyles';
 import strings from '../constants/Strings';
@@ -14,7 +13,7 @@ const SpecialProducts = () => {
 };
 
 const HomeProductList = (props) => {
-  const { product } = useSelector((state) => state.products);
+  const { product } = props;
   const renderItem = ({ item }) => {
     return <ProductItem item={item} />;
   };
@@ -31,7 +30,8 @@ const HomeProductList = (props) => {
 };
 
 HomeProductList.propTypes = {
-  header: PropTypes.bool
+  header: PropTypes.bool,
+  product: PropTypes.array
 };
 
 export default HomeProductList;

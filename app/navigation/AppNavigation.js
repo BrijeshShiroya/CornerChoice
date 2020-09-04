@@ -19,7 +19,11 @@ const Stack = createStackNavigator();
 const AuthStack = () => {
   return (
     <Stack.Navigator headerMode={'none'}>
-      <Stack.Screen name="LoginScreen" component={LoginScreen} />
+      <Stack.Screen
+        name="LoginScreen"
+        component={LoginScreen}
+        options={{ animationEnabled: false }}
+      />
       <Stack.Screen
         name="RegisterScreenScreen"
         component={RegisterScreenScreen}
@@ -27,7 +31,18 @@ const AuthStack = () => {
     </Stack.Navigator>
   );
 };
-const PrimaryNav = () => {
+const PrimaryStack = () => {
+  return (
+    <Stack.Navigator headerMode={'none'}>
+      <Stack.Screen
+        name="DrawerNav"
+        component={DrawerNav}
+        options={{ animationTypeForReplace: 'pop' }}
+      />
+    </Stack.Navigator>
+  );
+};
+const DrawerNav = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -56,7 +71,7 @@ const RootStackScreen = (props, ref) => {
   return (
     <SafeAreaProvider>
       <NavigationContainer ref={ref}>
-        <PrimaryNav />
+        <PrimaryStack />
       </NavigationContainer>
     </SafeAreaProvider>
   );

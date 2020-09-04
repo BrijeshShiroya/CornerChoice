@@ -17,11 +17,16 @@ import HomeActions from '../../redux/HomeRedux';
 import styles from './styles/HomeScreenStyle';
 
 const HomeScreen = ({ navigation }) => {
-  const { category, fetching } = useSelector((state) => state.products);
+  const { category, product } = useSelector((state) => state.products);
+  const { fetching } = useSelector((state) => state.home);
+
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(HomeActions.homeSwiperRequest());
-  }, [dispatch]);
+    const unsubscribe = navigation.addListener('focus', () => {
+      dispatch(HomeActions.homeSwiperRequest());
+    });
+    return unsubscribe;
+  }, [dispatch, navigation]);
 
   const onLeftPress = () => {
     navigation.openDrawer();
@@ -50,7 +55,7 @@ const HomeScreen = ({ navigation }) => {
           renderItem={renderItem}
           keyExtractor={(item) => item.id}
           ListHeaderComponent={<CustomSwiper />}
-          ListFooterComponent={<HomeProductList header />}
+          ListFooterComponent={<HomeProductList header product={product} />}
         />
       </ImageBg>
       {fetching && <Loader />}

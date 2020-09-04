@@ -3,6 +3,7 @@ import API from '../services/Api';
 import { AuthTypes } from '../redux/AuthRedux';
 import { HomeTypes } from '../redux/HomeRedux';
 import { MyOrderTypes } from '../redux/MyOrderRedux';
+import { ProductsTypes } from '../redux/ProductsRedux';
 import { ComplainTypes } from '../redux/ComplainRedux';
 import { loginUser, registerUser } from './Auth';
 import { getSwiperData } from './Home';
@@ -21,6 +22,7 @@ export default function* rootSaga() {
     takeLatest(HomeTypes.HOME_SWIPER_REQUEST, getSwiperData, api),
     takeLatest(HomeTypes.HOME_SWIPER_REQUEST, getProductsCategory, api),
     takeLatest(HomeTypes.HOME_SWIPER_REQUEST, getProducts, api),
+    takeLatest(ProductsTypes.PRODUCT_REQUEST, getProducts, api),
     takeLatest(MyOrderTypes.ORDER_REQUEST, getMyOrder, api),
     takeLatest(ComplainTypes.COMPLAIN_REQUEST, getComplain, api)
   ]);

@@ -29,9 +29,13 @@ const ComplainsScreen = ({ navigation }) => {
   const { user } = useSelector((state) => state.auth);
   const { complains, fetching } = useSelector((state) => state.complain);
   const dispatch = useDispatch();
+
   useEffect(() => {
-    dispatch(ComplainActions.complainRequest({ created_by: user?.id }));
-  }, [dispatch, user]);
+    const unsubscribe = navigation.addListener('focus', () => {
+      dispatch(ComplainActions.complainRequest({ created_by: user?.id }));
+    });
+    return unsubscribe;
+  }, [dispatch, user, navigation]);
 
   const onLeftPress = () => {
     navigation.openDrawer();

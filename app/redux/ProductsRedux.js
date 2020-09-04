@@ -6,6 +6,7 @@ const { Types, Creators } = createActions({
   categoryRequest: [],
   categorySuccess: ['payload'],
   categoryFailure: ['error'],
+  productRequest: [],
   productSuccess: ['payload'],
   productFailure: ['error']
 });
@@ -63,6 +64,7 @@ export const productsReducer = createReducer(INITIAL_STATE, {
   [Types.CATEGORY_REQUEST]: request,
   [Types.CATEGORY_SUCCESS]: success,
   [Types.CATEGORY_FAILURE]: failure,
+  [Types.PRODUCT_REQUEST]: request,
   [Types.PRODUCT_SUCCESS]: productSuccess,
   [Types.PRODUCT_FAILURE]: productFailure
 });

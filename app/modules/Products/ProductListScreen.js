@@ -1,16 +1,28 @@
 import { Container } from 'native-base';
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   CustomHeader,
   HomeProductList,
   ImageBg,
-  SearchBar
+  SearchBar,
+  Loader
 } from '../../components';
 import strings from '../../constants/Strings';
 import { ApplicationStyles, Icons } from '../../theme';
 import styles from './styles/ProductListScreenStyle';
+import { useDispatch, useSelector } from 'react-redux';
+import ProductsActions from '../../redux/ProductsRedux';
 
 const ProductListScreen = ({ navigation }) => {
+  const { product, fetching } = useSelector((state) => state.products);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    const unsubscribe = navigation.addListener('focus', () => {
+      dispatch(ProductsActions.productRequest());
+    });
+    return unsubscribe;
+  }, [dispatch, navigation]);
+
   const onLeftPress = () => {
     navigation.openDrawer();
   };
@@ -27,8 +39,9 @@ const ProductListScreen = ({ navigation }) => {
       />
       <ImageBg style={styles.bg}>
         <SearchBar />
-        <HomeProductList />
+        <HomeProductList product={product} />
       </ImageBg>
+      {fetching && <Loader />}
     </Container>
   );
 };

@@ -12,12 +12,14 @@ import styles from './styles/LoginScreenStyle';
 import AuthActions from '../../redux/AuthRedux';
 import { useSelector, useDispatch } from 'react-redux';
 import { Toast } from 'native-base';
+import { CommonActions } from '@react-navigation/native';
 
 const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
   const { fetching, user, error } = useSelector((state) => state.auth);
+  const resetAction = CommonActions.reset({ routes: [{ name: 'DrawerNav' }] });
 
   useEffect(() => {
     if (!fetching && error) {
@@ -27,9 +29,9 @@ const LoginScreen = ({ navigation }) => {
         duration: 3000
       });
     } else if (!fetching && user) {
-      navigation.navigate('HomeScreen');
+      navigation.dispatch(resetAction);
     }
-  }, [fetching, error, navigation, user]);
+  }, [fetching, error, navigation, user, resetAction]);
 
   const onLoginPress = useCallback(() => {
     if (email !== '' && password !== '') {

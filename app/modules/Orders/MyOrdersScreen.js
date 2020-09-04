@@ -36,9 +36,13 @@ const MyOrdersScreen = ({ navigation }) => {
   const { user } = useSelector((state) => state.auth);
   const { orders, fetching } = useSelector((state) => state.orders);
   const dispatch = useDispatch();
+
   useEffect(() => {
-    dispatch(MyOrderActions.orderRequest({ user_id: user?.id }));
-  }, [dispatch, user]);
+    const unsubscribe = navigation.addListener('focus', () => {
+      dispatch(MyOrderActions.orderRequest({ user_id: user?.id }));
+    });
+    return unsubscribe;
+  }, [dispatch, user, navigation]);
 
   const onLeftPress = () => {
     navigation.openDrawer();

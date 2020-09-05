@@ -43,6 +43,10 @@ const styles = StyleSheet.create({
     height: '100%',
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  bg: {
+    justifyContent: 'center',
+    flex: 1
   }
 });
 

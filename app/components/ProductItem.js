@@ -2,10 +2,12 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { TouchableOpacity, Text, Image, View } from 'react-native';
 import styles from './styles/ProductItemStyles';
+import { getPriceWithSymbol } from '../services/Utils';
 
 const ProductItem = (props) => {
   const { item, onPress } = props;
-  const price = `₹ ${item?.product_final_price || '--'}`;
+
+  const price = getPriceWithSymbol(item?.product_final_price);
   return (
     <TouchableOpacity style={styles.container} onPress={onPress}>
       <Image

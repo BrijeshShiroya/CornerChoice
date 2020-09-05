@@ -6,9 +6,12 @@ const { Types, Creators } = createActions({
   categoryRequest: [],
   categorySuccess: ['payload'],
   categoryFailure: ['error'],
-  productRequest: [],
+  productRequest: ['payload'],
   productSuccess: ['payload'],
-  productFailure: ['error']
+  productFailure: ['error'],
+  productAttrRequest: ['payload'],
+  productAttrSuccess: ['payload'],
+  productAttrFailure: ['error']
 });
 
 export const ProductsTypes = Types;
@@ -19,7 +22,8 @@ export const INITIAL_STATE = Immutable({
   fetching: null,
   error: null,
   category: [],
-  product: []
+  product: [],
+  productAttributes: []
 });
 
 /* ------------- Reducers ------------- */
@@ -58,6 +62,25 @@ export const productFailure = (state, action) => {
   return state.merge({ fetching: false, error, product: [] });
 };
 
+export const productAttributeRequest = (state) =>
+  state.merge({ fetching: true, productAttributes: [] });
+
+// product successful api lookup
+export const productAttributeSuccess = (state, action) => {
+  const { payload } = action;
+  return state.merge({
+    fetching: false,
+    error: false,
+    productAttributes: payload
+  });
+};
+
+// Something went wrong somewhere in getting product.
+export const productAttributeFailure = (state, action) => {
+  const { error } = action;
+  return state.merge({ fetching: false, error, productAttributes: [] });
+};
+
 /* ------------- Hookup Reducers To Types ------------- */
 
 export const productsReducer = createReducer(INITIAL_STATE, {
@@ -66,5 +89,8 @@ export const productsReducer = createReducer(INITIAL_STATE, {
   [Types.CATEGORY_FAILURE]: failure,
   [Types.PRODUCT_REQUEST]: request,
   [Types.PRODUCT_SUCCESS]: productSuccess,
-  [Types.PRODUCT_FAILURE]: productFailure
+  [Types.PRODUCT_FAILURE]: productFailure,
+  [Types.PRODUCT_ATTR_REQUEST]: productAttributeRequest,
+  [Types.PRODUCT_ATTR_SUCCESS]: productAttributeSuccess,
+  [Types.PRODUCT_ATTR_FAILURE]: productAttributeFailure
 });

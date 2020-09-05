@@ -9,12 +9,12 @@ import styles from './SideMenuStyles';
 const MenuData = [
   {
     title: 'Home',
-    navigationScreen: 'HomeScreen',
+    navigationScreen: 'HomeStack',
     icon: Icons.home
   },
   {
     title: 'Products',
-    navigationScreen: 'ProductListScreen',
+    navigationScreen: 'ProductStack',
     icon: Icons.products
   },
   {
@@ -53,7 +53,7 @@ const SideMenuFooter = (props) => {
   const isLoggedIn = !!user;
   const item = {
     title: isLoggedIn ? 'Logout' : 'Login',
-    navigationScreen: isLoggedIn ? 'HomeScreen' : 'AuthStack',
+    navigationScreen: isLoggedIn ? 'HomeStack' : 'AuthStack',
     icon: Icons.login
   };
   const { selectedIndex, onFooterPress } = props;

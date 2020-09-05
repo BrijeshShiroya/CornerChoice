@@ -8,7 +8,9 @@ const auth = () => {
   const registerUser = (credentials) => api.post('registration', credentials);
   const swiperData = () => api.post('slider');
   const categoryData = () => api.post('categories');
-  const productData = () => api.post('products');
+  const productData = (isAttributed = true) =>
+    api.post(isAttributed ? 'productsbylabel' : 'products');
+  const productAttrData = (credentials) => api.post('attributes', credentials);
   const orderData = (userId) => api.post('myorder', userId);
   const complainData = (created_by) => api.post('complaints', created_by);
 
@@ -19,7 +21,8 @@ const auth = () => {
     categoryData,
     productData,
     orderData,
-    complainData
+    complainData,
+    productAttrData
   };
 };
 

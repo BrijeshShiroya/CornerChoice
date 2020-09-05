@@ -18,7 +18,7 @@ const ProductListScreen = ({ navigation }) => {
   const dispatch = useDispatch();
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
-      dispatch(ProductsActions.productRequest());
+      dispatch(ProductsActions.productRequest(false));
     });
     return unsubscribe;
   }, [dispatch, navigation]);
@@ -39,7 +39,7 @@ const ProductListScreen = ({ navigation }) => {
       />
       <ImageBg style={styles.bg}>
         <SearchBar />
-        <HomeProductList product={product} />
+        <HomeProductList navigation={navigation} product={product} />
       </ImageBg>
       {fetching && <Loader />}
     </Container>

@@ -12,6 +12,7 @@ import ComplainsScreen from '../modules/Complains/ComplainsScreen';
 import LaunchScreen from '../modules/LaunchScreen';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import SideMenuScreen from '../modules/SideMenu/SideMenuScreen';
+import ProductDetailsScreen from '../modules/Products/ProductDetailsScreen';
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -27,6 +28,36 @@ const AuthStack = () => {
       <Stack.Screen
         name="RegisterScreenScreen"
         component={RegisterScreenScreen}
+      />
+    </Stack.Navigator>
+  );
+};
+const HomeStack = () => {
+  return (
+    <Stack.Navigator headerMode={'none'}>
+      <Stack.Screen
+        name="HomeScreen"
+        component={HomeScreen}
+        options={{ animationEnabled: false }}
+      />
+      <Stack.Screen
+        name="ProductDetailsScreen"
+        component={ProductDetailsScreen}
+      />
+    </Stack.Navigator>
+  );
+};
+const ProductStack = () => {
+  return (
+    <Stack.Navigator headerMode={'none'}>
+      <Stack.Screen
+        name="ProductListScreen"
+        component={ProductListScreen}
+        options={{ animationEnabled: false }}
+      />
+      <Stack.Screen
+        name="ProductDetailsScreen"
+        component={ProductDetailsScreen}
       />
     </Stack.Navigator>
   );
@@ -55,10 +86,10 @@ const DrawerNav = () => {
   return (
     <Drawer.Navigator
       drawerContent={(props) => <SideMenuScreen {...props} />}
-      initialRouteName="HomeScreen"
+      initialRouteName="HomeStack"
     >
-      <Drawer.Screen name="HomeScreen" component={HomeScreen} />
-      <Drawer.Screen name="ProductListScreen" component={ProductListScreen} />
+      <Drawer.Screen name="HomeStack" component={HomeStack} />
+      <Drawer.Screen name="ProductStack" component={ProductStack} />
       <Drawer.Screen name="MyOrderScreen" component={MyOrderScreen} />
       <Drawer.Screen name="TermsScreen" component={TermsScreen} />
       <Drawer.Screen name="ComplainsScreen" component={ComplainsScreen} />

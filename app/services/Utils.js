@@ -17,3 +17,7 @@ export async function getError(response) {
   }
   return 'Something went wrong';
 }
+
+export const getPriceWithSymbol = (price = '--') => {
+  return `₹ ${price}`;
+};

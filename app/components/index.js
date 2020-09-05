@@ -9,6 +9,7 @@ import CustomSwiper from './CustomSwiper';
 import HomeProductList from './HomeProductList';
 import CategoryItem from './CategoryItem';
 import ProductItem from './ProductItem';
+import PriceBox from './PriceBox';
 
 export {
   CustomTextInput,
@@ -21,5 +22,6 @@ export {
   HomeProductList,
   CategoryItem,
   ProductItem,
-  CustomSwiper
+  CustomSwiper,
+  PriceBox
 };

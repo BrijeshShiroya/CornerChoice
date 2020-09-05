@@ -13,9 +13,14 @@ const SpecialProducts = () => {
 };
 
 const HomeProductList = (props) => {
-  const { product } = props;
+  const { product, navigation } = props;
   const renderItem = ({ item }) => {
-    return <ProductItem item={item} />;
+    return (
+      <ProductItem
+        item={item}
+        onPress={() => navigation.navigate('ProductDetailsScreen', { item })}
+      />
+    );
   };
   return (
     <FlatList

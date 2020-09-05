@@ -57,7 +57,7 @@ const RegisterScreenScreen = ({ navigation }) => {
       behavior={'padding'}
       style={ApplicationStyles.screen.mainContainer}
     >
-      <ImageBg>
+      <ImageBg style={styles.bg}>
         <Text style={styles.mainTitle}>{strings.registerLogin}</Text>
         <View style={styles.loginContainer}>
           <CustomTextInput

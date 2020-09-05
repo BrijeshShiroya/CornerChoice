@@ -16,12 +16,22 @@ export function* getProductsCategory(api, action) {
   yield* handleResponse(response.data);
 }
 
-export function* getProducts(api) {
-  const response = yield call(api.productData);
+export function* getProducts(api, action) {
+  const response = yield call(api.productData, action?.payload);
   if (response?.status) {
     yield put(ProductsActions.productSuccess(response.data?.data));
   } else {
     const error = yield call(getError, response);
     yield put(ProductsActions.productFailure(error));
+  }
+}
+
+export function* getProductAttributes(api, action) {
+  const response = yield call(api.productAttrData, action?.payload);
+  if (response?.status) {
+    yield put(ProductsActions.productAttrSuccess(response.data?.data));
+  } else {
+    const error = yield call(getError, response);
+    yield put(ProductsActions.productAttrFailure(error));
   }
 }

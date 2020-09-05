@@ -10,6 +10,8 @@ const icons = {
   orders: require('./truck.png'),
   complains: require('./complains.png'),
   terms: require('./terms.png'),
+  active: require('./active.png'),
+  inactive: require('./inactive.png'),
   back: require('./back.png')
 };
 

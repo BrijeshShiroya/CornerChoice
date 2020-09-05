@@ -8,6 +8,7 @@ import styles from './styles/MyOrdersScreenStyles';
 import strings from '../../constants/Strings';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
+import { getPriceWithSymbol } from '../../services/Utils';
 
 const MyOrderItem = (props) => {
   const {
@@ -17,7 +18,7 @@ const MyOrderItem = (props) => {
     shipping,
     order_status
   } = props;
-  const price = `₹ ${Number(total_amount) + Number(shipping) || '--'}`;
+  const price = getPriceWithSymbol(Number(total_amount) + Number(shipping));
   return (
     <View style={styles.orderItemContainer}>
       <View style={styles.orderTop}>

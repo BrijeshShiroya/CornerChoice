@@ -55,7 +55,9 @@ const HomeScreen = ({ navigation }) => {
           renderItem={renderItem}
           keyExtractor={(item) => item.id}
           ListHeaderComponent={<CustomSwiper />}
-          ListFooterComponent={<HomeProductList header product={product} />}
+          ListFooterComponent={
+            <HomeProductList header navigation={navigation} product={product} />
+          }
         />
       </ImageBg>
       {fetching && <Loader />}

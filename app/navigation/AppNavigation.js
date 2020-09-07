@@ -14,6 +14,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import SideMenuScreen from '../modules/SideMenu/SideMenuScreen';
 import ProductDetailsScreen from '../modules/Products/ProductDetailsScreen';
 import CartScreen from '../modules/Cart/CartScreen';
+import SubCategoryScreen from '../modules/Products/SubCategoryScreen';
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -41,6 +42,7 @@ const HomeStack = () => {
         component={HomeScreen}
         options={{ animationEnabled: false }}
       />
+      <Stack.Screen name="SubCategoryScreen" component={SubCategoryScreen} />
       <Stack.Screen
         name="ProductDetailsScreen"
         component={ProductDetailsScreen}
@@ -65,7 +67,6 @@ const ProductStack = () => {
     </Stack.Navigator>
   );
 };
-
 
 const MyOrderStack = () => {
   return (
@@ -113,7 +114,6 @@ const DrawerNav = () => {
       <Drawer.Screen name="ComplainsScreen" component={ComplainsScreen} />
       <Drawer.Screen name="AuthStack" component={AuthStack} />
       <Drawer.Screen name="CartScreen" component={CartScreen} />
-
     </Drawer.Navigator>
   );
 };

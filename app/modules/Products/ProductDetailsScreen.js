@@ -70,7 +70,7 @@ const ProductDetailsScreen = ({ route, navigation }) => {
             <CustomButton
               title={'ADD TO CART'}
               style={styles.addToCart}
-              onPress={() => alert('hi')}
+              onPress={() => {}}
             />
             <View style={styles.separator} />
             <Text style={styles.description}>

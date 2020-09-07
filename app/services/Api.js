@@ -11,6 +11,8 @@ const auth = () => {
   const productData = (isAttributed = true) =>
     api.post(isAttributed ? 'productsbylabel' : 'products');
   const productAttrData = (credentials) => api.post('attributes', credentials);
+  const subCategoryData = (id) => api.post('subcategoriesbycatid', id);
+  const subCategoryProductData = (id) => api.post('productsbycatid', id);
   const orderData = (userId) => api.post('myorder', userId);
   const complainData = (created_by) => api.post('complaints', created_by);
 
@@ -20,6 +22,8 @@ const auth = () => {
     swiperData,
     categoryData,
     productData,
+    subCategoryData,
+    subCategoryProductData,
     orderData,
     complainData,
     productAttrData

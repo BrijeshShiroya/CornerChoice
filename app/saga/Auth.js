@@ -10,19 +10,14 @@ function* handleResponse(response) {
       })
     );
   } else {
-    // alert(JSON.stringify(response));
     const error = yield call(getError, response);
     yield put(AuthActions.authFailure(error));
   }
 }
 
 export function* loginUser(api, action) {
-  try {
-    const response = yield call(api.loginUser, action.payload);
-    yield* handleResponse(response.data);
-  } catch (error) {
-    alert(error);
-  }
+  const response = yield call(api.loginUser, action.payload);
+  yield* handleResponse(response.data);
 }
 
 export function* registerUser(api, action) {

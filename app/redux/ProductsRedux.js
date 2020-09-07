@@ -11,7 +11,12 @@ const { Types, Creators } = createActions({
   productFailure: ['error'],
   productAttrRequest: ['payload'],
   productAttrSuccess: ['payload'],
-  productAttrFailure: ['error']
+  productAttrFailure: ['error'],
+  subCategoryRequest: ['payload'],
+  subCategorySuccess: ['payload'],
+  subCategoryFailure: ['error'],
+  subCategoryProductSuccess: ['payload'],
+  subCategoryProductFailure: ['error']
 });
 
 export const ProductsTypes = Types;
@@ -23,7 +28,9 @@ export const INITIAL_STATE = Immutable({
   error: null,
   category: [],
   product: [],
-  productAttributes: []
+  productAttributes: [],
+  subCategory: [],
+  subCategoryProducts: []
 });
 
 /* ------------- Reducers ------------- */
@@ -81,6 +88,38 @@ export const productAttributeFailure = (state, action) => {
   return state.merge({ fetching: false, error, productAttributes: [] });
 };
 
+// subcategory successful api lookup
+export const subCategorySuccess = (state, action) => {
+  const { payload } = action;
+  return state.merge({
+    fetching: false,
+    error: false,
+    subCategory: payload
+  });
+};
+
+// Something went wrong somewhere in getting subcategory.
+export const subCategoryFailure = (state, action) => {
+  const { error } = action;
+  return state.merge({ fetching: false, error, subCategory: [] });
+};
+
+// subcategory's product successful api lookup
+export const subCategoryProductSuccess = (state, action) => {
+  const { payload } = action;
+  return state.merge({
+    fetching: false,
+    error: false,
+    subCategoryProducts: payload
+  });
+};
+
+// Something went wrong somewhere in getting subcategory's product.
+export const subCategoryProductFailure = (state, action) => {
+  const { error } = action;
+  return state.merge({ fetching: false, error, subCategoryProducts: [] });
+};
+
 /* ------------- Hookup Reducers To Types ------------- */
 
 export const productsReducer = createReducer(INITIAL_STATE, {
@@ -92,5 +131,10 @@ export const productsReducer = createReducer(INITIAL_STATE, {
   [Types.PRODUCT_FAILURE]: productFailure,
   [Types.PRODUCT_ATTR_REQUEST]: productAttributeRequest,
   [Types.PRODUCT_ATTR_SUCCESS]: productAttributeSuccess,
-  [Types.PRODUCT_ATTR_FAILURE]: productAttributeFailure
+  [Types.PRODUCT_ATTR_FAILURE]: productAttributeFailure,
+  [Types.SUB_CATEGORY_REQUEST]: request,
+  [Types.SUB_CATEGORY_SUCCESS]: subCategorySuccess,
+  [Types.SUB_CATEGORY_FAILURE]: subCategoryFailure,
+  [Types.SUB_CATEGORY_PRODUCT_SUCCESS]: subCategoryProductSuccess,
+  [Types.SUB_CATEGORY_PRODUCT_FAILURE]: subCategoryProductFailure
 });

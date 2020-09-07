@@ -1,36 +1,34 @@
+import PropTypes from 'prop-types';
 import { Container } from 'native-base';
 import React, { useEffect } from 'react';
 import { FlatList } from 'react-native';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   CategoryItem,
   CustomHeader,
-  CustomSwiper,
-  HomeProductList,
   ImageBg,
+  Loader,
   SearchBar,
-  Loader
+  HomeProductList
 } from '../../components';
 import strings from '../../constants/Strings';
 import { ApplicationStyles, Icons } from '../../theme';
-import HomeActions from '../../redux/HomeRedux';
-import styles from './styles/HomeScreenStyle';
+import ProductsActions from '../../redux/ProductsRedux';
+import styles from './styles/SubCategoryScreenStyles';
 
-const HomeScreen = ({ navigation }) => {
-  const { category, product } = useSelector((state) => state.products);
-  const { fetching } = useSelector((state) => state.home);
-
+const SubCategoryScreen = ({ route, navigation }) => {
+  const { fetching, subCategory, subCategoryProducts } = useSelector(
+    (state) => state.products
+  );
+  const { categoryData } = route.params;
   const dispatch = useDispatch();
+
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
-      dispatch(HomeActions.homeSwiperRequest());
+      dispatch(ProductsActions.subCategoryRequest({ id: categoryData.id }));
     });
     return unsubscribe;
-  }, [dispatch, navigation]);
-
-  useEffect(() => {
-    dispatch(HomeActions.homeSwiperRequest());
-  }, [dispatch]);
+  }, [dispatch, navigation, categoryData]);
 
   const onLeftPress = () => {
     navigation.openDrawer();
@@ -40,14 +38,8 @@ const HomeScreen = ({ navigation }) => {
     navigation.navigate('CartScreen');
   };
 
-  const navigateToSubCategory = (item) => {
-    navigation.navigate('SubCategoryScreen', { categoryData: item });
-  };
-
   const renderItem = ({ item }) => {
-    return (
-      <CategoryItem item={item} onPress={() => navigateToSubCategory(item)} />
-    );
+    return <CategoryItem item={item} onPress={() => alert('hi')} />;
   };
 
   return (
@@ -65,17 +57,16 @@ const HomeScreen = ({ navigation }) => {
         <SearchBar />
         <FlatList
           style={styles.listContainer}
-          data={category}
+          data={subCategory}
           numColumns={3}
           renderItem={renderItem}
           keyExtractor={(item) => item.id}
-          ListHeaderComponent={<CustomSwiper />}
           ListFooterComponent={
             <HomeProductList
               header
-              headerTitle={strings.specialOffers}
+              headerTitle={strings.titleProducts}
               navigation={navigation}
-              product={product}
+              product={subCategoryProducts}
             />
           }
         />
@@ -85,4 +76,8 @@ const HomeScreen = ({ navigation }) => {
   );
 };
 
-export default HomeScreen;
+SubCategoryScreen.propTypes = {
+  route: PropTypes.object,
+  item: PropTypes.object
+};
+export default SubCategoryScreen;

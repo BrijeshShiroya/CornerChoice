@@ -13,6 +13,7 @@ import LaunchScreen from '../modules/LaunchScreen';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import SideMenuScreen from '../modules/SideMenu/SideMenuScreen';
 import ProductDetailsScreen from '../modules/Products/ProductDetailsScreen';
+import CartScreen from '../modules/Cart/CartScreen';
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -34,7 +35,7 @@ const AuthStack = () => {
 };
 const HomeStack = () => {
   return (
-    <Stack.Navigator headerMode={'none'}>
+    <Stack.Navigator headerMode={'none'} initialRouteName={'HomeScreen'}>
       <Stack.Screen
         name="HomeScreen"
         component={HomeScreen}
@@ -44,6 +45,7 @@ const HomeStack = () => {
         name="ProductDetailsScreen"
         component={ProductDetailsScreen}
       />
+      <Stack.Screen name="CartScreen" component={CartScreen} />
     </Stack.Navigator>
   );
 };
@@ -59,9 +61,25 @@ const ProductStack = () => {
         name="ProductDetailsScreen"
         component={ProductDetailsScreen}
       />
+      <Stack.Screen name="CartScreen" component={CartScreen} />
     </Stack.Navigator>
   );
 };
+
+
+const MyOrderStack = () => {
+  return (
+    <Stack.Navigator headerMode={'none'}>
+      <Stack.Screen
+        name="MyOrderScreen"
+        component={MyOrderScreen}
+        options={{ animationEnabled: false }}
+      />
+      <Stack.Screen name="CartScreen" component={CartScreen} />
+    </Stack.Navigator>
+  );
+};
+
 const PrimaryStack = () => {
   return (
     <Stack.Navigator headerMode={'none'}>
@@ -90,10 +108,12 @@ const DrawerNav = () => {
     >
       <Drawer.Screen name="HomeStack" component={HomeStack} />
       <Drawer.Screen name="ProductStack" component={ProductStack} />
-      <Drawer.Screen name="MyOrderScreen" component={MyOrderScreen} />
+      <Drawer.Screen name="MyOrderStack" component={MyOrderStack} />
       <Drawer.Screen name="TermsScreen" component={TermsScreen} />
       <Drawer.Screen name="ComplainsScreen" component={ComplainsScreen} />
       <Drawer.Screen name="AuthStack" component={AuthStack} />
+      <Drawer.Screen name="CartScreen" component={CartScreen} />
+
     </Drawer.Navigator>
   );
 };

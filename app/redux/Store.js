@@ -13,7 +13,7 @@ const middleWare = [sagaMiddleware];
 const persistConfig = {
   key: '@choicecorner',
   storage: AsyncStorage,
-  blacklist: ['nav'],
+  blacklist: ['nav', 'home', 'products'],
   transforms: [immutablePersistenceTransform]
 };
 

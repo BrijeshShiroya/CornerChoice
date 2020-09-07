@@ -49,6 +49,10 @@ const MyOrdersScreen = ({ navigation }) => {
     navigation.openDrawer();
   };
 
+  const onRightPress = () => {
+    navigation.navigate('CartScreen');
+  };
+
   const renderItem = ({ item }) => {
     return <MyOrderItem {...item} />;
   };
@@ -62,6 +66,7 @@ const MyOrdersScreen = ({ navigation }) => {
         leftIcon={Icons.menu}
         rightIcon={Icons.cart}
         leftOnPress={onLeftPress}
+        rightOnPress={onRightPress}
       />
       <ImageBg style={styles.bg}>
         <FlatList

@@ -28,8 +28,16 @@ const HomeScreen = ({ navigation }) => {
     return unsubscribe;
   }, [dispatch, navigation]);
 
+  useEffect(() => {
+    dispatch(HomeActions.homeSwiperRequest());
+  }, [dispatch]);
+
   const onLeftPress = () => {
     navigation.openDrawer();
+  };
+
+  const onRightPress = () => {
+    navigation.navigate('CartScreen');
   };
 
   const renderItem = ({ item }) => {
@@ -45,6 +53,7 @@ const HomeScreen = ({ navigation }) => {
         leftIcon={Icons.menu}
         rightIcon={Icons.cart}
         leftOnPress={onLeftPress}
+        rightOnPress={onRightPress}
       />
       <ImageBg style={styles.bg}>
         <SearchBar />

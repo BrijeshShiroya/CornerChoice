@@ -27,6 +27,10 @@ const ProductListScreen = ({ navigation }) => {
     navigation.openDrawer();
   };
 
+  const onRightPress = () => {
+    navigation.navigate('CartScreen');
+  };
+
   return (
     <Container style={ApplicationStyles.screen.mainContainer}>
       <CustomHeader
@@ -36,6 +40,7 @@ const ProductListScreen = ({ navigation }) => {
         leftIcon={Icons.menu}
         rightIcon={Icons.cart}
         leftOnPress={onLeftPress}
+        rightOnPress={onRightPress}
       />
       <ImageBg style={styles.bg}>
         <SearchBar />

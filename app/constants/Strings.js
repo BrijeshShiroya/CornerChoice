@@ -3,6 +3,7 @@ const strings = {
   titleLogin: 'Login',
   titleProducts: 'Products',
   titleMyOrder: 'My Orders',
+  titleMyCart: 'My Cart',
   titleComplaints: 'Complaints',
   registerLogin: 'Register',
   specialOffers: 'SPECIAL OFFERS',

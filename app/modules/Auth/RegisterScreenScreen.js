@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { KeyboardAvoidingView, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 import { CustomButton, CustomTextInput, ImageBg } from '../../components';
 import strings from '../../constants/Strings';
 import { ApplicationStyles } from '../../theme';
@@ -53,10 +53,7 @@ const RegisterScreenScreen = ({ navigation }) => {
   }, [dispatch, email, password, phone, firstname, lastname]);
 
   return (
-    <KeyboardAvoidingView
-      behavior={'padding'}
-      style={ApplicationStyles.screen.mainContainer}
-    >
+    <View style={ApplicationStyles.screen.mainContainer}>
       <ImageBg style={styles.bg}>
         <Text style={styles.mainTitle}>{strings.registerLogin}</Text>
         <View style={styles.loginContainer}>
@@ -106,7 +103,7 @@ const RegisterScreenScreen = ({ navigation }) => {
           />
         </View>
       </ImageBg>
-    </KeyboardAvoidingView>
+    </View>
   );
 };
 

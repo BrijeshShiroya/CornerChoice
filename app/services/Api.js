@@ -1,5 +1,5 @@
 import Secrets from 'react-native-config';
-import { apiConfig } from './Utils';
+import { apiConfig } from './Utils'; //apiConfig('http://choicecorner.in/admin/api/');
 
 const api = apiConfig(__DEV__ ? Secrets.API_URL_DEBUG : Secrets.API_URL);
 

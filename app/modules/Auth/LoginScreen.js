@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useEffect } from 'react';
-import { KeyboardAvoidingView, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 import {
   CustomButton,
   CustomTextInput,
@@ -43,8 +43,8 @@ const LoginScreen = ({ navigation }) => {
     navigation.navigate('RegisterScreenScreen');
   };
   return (
-    <KeyboardAvoidingView
-      behavior={'padding'}
+    <View
+      // behavior={'padding'}
       style={ApplicationStyles.screen.mainContainer}
     >
       <ImageBg>
@@ -77,7 +77,7 @@ const LoginScreen = ({ navigation }) => {
         </View>
         {fetching && <Loader />}
       </ImageBg>
-    </KeyboardAvoidingView>
+    </View>
   );
 };
 

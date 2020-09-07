@@ -14,7 +14,13 @@ const CustomButton = ({ onPress, disabled, isLoading, style, title }) => (
     {isLoading ? (
       <ActivityIndicator size={'small'} color={Colors.white} />
     ) : (
-      <Text style={styles.buttonText}>{title}</Text>
+      <Text
+        adjustsFontSizeToFit
+        style={styles.buttonText}
+        textBreakStrategy={'simple'}
+      >
+        {title}
+      </Text>
     )}
   </TouchableOpacity>
 );

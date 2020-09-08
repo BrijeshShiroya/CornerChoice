@@ -1,16 +1,28 @@
-import { Container } from 'native-base';
-import React, { useEffect } from 'react';
-import { FlatList } from 'react-native';
+import { Toast } from 'native-base';
+import React, { useCallback, useEffect } from 'react';
+import { FlatList, Text, View } from 'react-native';
+import { SafeAreaView } from 'react-navigation';
 import { useDispatch, useSelector } from 'react-redux';
-import { CartItem, CustomHeader, ImageBg, Loader } from '../../components';
+import {
+  CartItem,
+  CustomButton,
+  CustomHeader,
+  ImageBg,
+  Loader
+} from '../../components';
 import strings from '../../constants/Strings';
 import CartActions from '../../redux/CartRedux';
+import API from '../../services/Api';
+import { getPriceWithSymbol } from '../../services/Utils';
 import { ApplicationStyles, Icons } from '../../theme';
 import styles from './styles/CartScreenStyles';
 
+const api = API.auth();
 const CartScreen = ({ navigation }) => {
   const { user } = useSelector((state) => state.auth);
-  const { fetching, cartList } = useSelector((state) => state.cart);
+  const { fetching, cartList, total, shipping } = useSelector(
+    (state) => state.cart
+  );
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -26,12 +38,45 @@ const CartScreen = ({ navigation }) => {
     navigation.goBack();
   };
 
-  const renderItem = ({ item }) => {
-    return <CartItem item={item} />;
-  };
+  const onPlusPress = useCallback(
+    async (item, isMinus) => {
+      const payload = {
+        id: item?.id,
+        qty: isMinus ? Number(item?.qty) - 1 : Number(item?.qty) + 1,
+        user_id: user?.id,
+        session_id: user?.id
+      };
+      const response = await api.updateCart(payload);
+      if (response?.data?.status && response?.data?.message === 'Success') {
+        dispatch(
+          CartActions.cartRequest({ user_id: user?.id, session_id: user?.id })
+        );
+      } else {
+        Toast.show({
+          text: 'Something went wrong',
+          buttonText: 'Okay',
+          duration: 3000
+        });
+      }
+    },
+    [user, dispatch]
+  );
 
+  const renderItem = ({ item }) => {
+    return item.qty > 0 ? (
+      <CartItem
+        item={item}
+        onMinusPress={() => onPlusPress(item, true)}
+        onPlusPress={() => onPlusPress(item, false)}
+      />
+    ) : null;
+  };
+  const grandTotal = Number(shipping) + Number(total);
   return (
-    <Container style={ApplicationStyles.screen.mainContainer}>
+    <SafeAreaView
+      forceInset={{ top: 0 }}
+      style={ApplicationStyles.screen.mainContainer}
+    >
       <CustomHeader
         left
         title={strings.titleMyCart}
@@ -46,8 +91,12 @@ const CartScreen = ({ navigation }) => {
           renderItem={renderItem}
         />
       </ImageBg>
+      <View style={styles.bottomView}>
+        <Text style={styles.total}>{getPriceWithSymbol(grandTotal)}</Text>
+        <CustomButton title={'CHECK OUT'} />
+      </View>
       {fetching && <Loader />}
-    </Container>
+    </SafeAreaView>
   );
 };
 

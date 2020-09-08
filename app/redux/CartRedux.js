@@ -36,7 +36,7 @@ export const success = (state, action) => {
     error: false,
     cartList: payload.cartList,
     shipping: payload.shipping,
-    total: payload.message,
+    total: payload.total,
     count: payload.count
   });
 };

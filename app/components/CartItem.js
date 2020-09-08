@@ -5,18 +5,21 @@ import styles from './styles/CartItemStyles';
 import { getPriceWithSymbol } from '../services/Utils';
 
 const CartButton = (props) => {
+  const { count, onPlusPress, onMinusPress } = props;
+  const plus = '+';
+  const minus = '-';
   return (
-    <View style={{ flexDirection: 'row', height: 40, borderRadius: 4, backgroundColor: 'red', width: 80, justifyContent: 'space-around', alignItems: 'center' }}>
-      <TouchableOpacity>
-        <Text>-</Text>
+    <View style={styles.cartButtonContainer}>
+      <TouchableOpacity style={styles.plusContainer} onPress={onMinusPress}>
+        <Text style={styles.plus}>{minus}</Text>
       </TouchableOpacity>
-      <Text>1</Text>
-      <TouchableOpacity>
-        <Text>+</Text>
+      <Text style={styles.plus}>{count}</Text>
+      <TouchableOpacity style={styles.plusContainer} onPress={onPlusPress}>
+        <Text style={styles.plus}>{plus}</Text>
       </TouchableOpacity>
     </View>
-  )
-}
+  );
+};
 
 const CartItem = (props) => {
   const { item } = props;
@@ -29,17 +32,28 @@ const CartItem = (props) => {
           uri: `http://choicecorner.in/media/source/${item.image}`
         }}
       />
-      <View style={{ flex: 1, marginLeft: 10, justifyContent: 'space-between' }}>
-        <Text>{item?.title || ''}</Text>
-        <Text>{getPriceWithSymbol(item?.price)}</Text>
+      <View style={styles.titleContainer}>
+        <Text style={styles.title}>{item?.title || ''}</Text>
+        {!!item.attributes && (
+          <Text style={styles.titleAttr}>{item?.attributes || ''}</Text>
+        )}
+        <Text style={styles.title}>
+          {getPriceWithSymbol(item?.total_amount)}
+        </Text>
       </View>
-      <CartButton />
+      <CartButton count={item?.qty} {...props} />
     </View>
   );
 };
 
 CartItem.propTypes = {
   item: PropTypes.object
+};
+
+CartButton.propTypes = {
+  count: PropTypes.string,
+  onPlusPress: PropTypes.func,
+  onMinusPress: PropTypes.func
 };
 
 export default CartItem;

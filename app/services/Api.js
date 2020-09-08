@@ -17,6 +17,7 @@ const auth = () => {
   const complainData = (created_by) => api.post('complaints', created_by);
   const cartData = (userId) => api.post('mycart', userId);
   const addTocart = (userId) => api.post('cart', userId);
+  const updateCart = (updatedData) => api.post('cartupdate', updatedData);
 
   return {
     loginUser,
@@ -30,7 +31,8 @@ const auth = () => {
     complainData,
     productAttrData,
     cartData,
-    addTocart
+    addTocart,
+    updateCart
   };
 };
 

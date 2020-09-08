@@ -3,6 +3,7 @@ import React from 'react';
 import { View, Image, Text, TouchableOpacity } from 'react-native';
 import styles from './styles/PriceBoxStyles';
 import { Icons } from '../theme';
+import { getPriceWithSymbol } from '../services/Utils';
 
 const RadioButton = (props) => {
   const { selected, title, onPress } = props;
@@ -22,14 +23,18 @@ const PriceBox = (props) => {
 
   return (
     <View style={styles.priceContainer}>
-      {items.map((item, index) => (
-        <RadioButton
-          key={item.id}
-          title={JSON.parse(item.attributes)}
-          selected={index === selected}
-          onPress={() => setSelected(index)}
-        />
-      ))}
+      {items.map((item, index) => {
+        const price = getPriceWithSymbol(item?.price);
+        const att = `${JSON.parse(item.attributes)}`;
+        return (
+          <RadioButton
+            key={item.id}
+            title={`${price} / ${att.split(':')?.[1]}`}
+            selected={index === selected}
+            onPress={() => setSelected(index)}
+          />
+        );
+      })}
     </View>
   );
 };

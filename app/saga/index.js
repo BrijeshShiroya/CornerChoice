@@ -17,7 +17,7 @@ import {
   getSubCategoryProducts
 } from './Products';
 import { getComplain } from './Complain';
-import { cart, cartOnAuth } from './Cart';
+import { cart, cartOnAuth, addToCart } from './Cart';
 
 // The API we use is only used from Sagas, so we create it here and pass along
 // to the sagas which need it.
@@ -42,6 +42,8 @@ export default function* rootSaga() {
     ),
     takeLatest(MyOrderTypes.ORDER_REQUEST, getMyOrder, api),
     takeLatest(ComplainTypes.COMPLAIN_REQUEST, getComplain, api),
-    takeLatest(CartTypes.CART_REQUEST, cart, api)
+    takeLatest(CartTypes.CART_REQUEST, cart, api),
+    takeLatest(CartTypes.ADD_TO_CART_REQUEST, addToCart, api)
+    // takeLatest(CartTypes.ADD_TO_CART_SUCCESS, cartOnAuth, api)
   ]);
 }

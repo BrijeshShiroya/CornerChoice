@@ -5,7 +5,10 @@ import Immutable from 'seamless-immutable';
 const { Types, Creators } = createActions({
   cartRequest: ['payload'],
   cartSuccess: ['payload'],
-  cartFailure: ['error']
+  cartFailure: ['error'],
+  addToCartRequest: ['payload'],
+  addToCartSuccess: ['payload'],
+  addToCartFailure: ['error']
 });
 
 export const CartTypes = Types;
@@ -34,7 +37,7 @@ export const success = (state, action) => {
     cartList: payload.cartData,
     shipping: payload.shipping,
     total: payload.message,
-    count: payload.count
+    count: payload.cartData.length
   });
 };
 
@@ -50,10 +53,21 @@ export const failure = (state, action) => {
   });
 };
 
+// successful api lookup add to cart success
+export const addToCartSuccess = (state, action) => {
+  return state.merge({
+    fetching: false,
+    error: false
+  });
+};
+
 /* ------------- Hookup Reducers To Types ------------- */
 
 export const cartReducer = createReducer(INITIAL_STATE, {
   [Types.CART_REQUEST]: request,
   [Types.CART_SUCCESS]: success,
-  [Types.CART_FAILURE]: failure
+  [Types.CART_FAILURE]: failure,
+  [Types.ADD_TO_CART_REQUEST]: request,
+  [Types.ADD_TO_CART_SUCCESS]: addToCartSuccess,
+  [Types.ADD_TO_CART_FAILURE]: addToCartSuccess
 });

@@ -63,16 +63,16 @@ const ProductDetailsScreen = ({ route, navigation }) => {
               setSelected={setSelected}
             />
           ) : (
-              <Text style={styles.price}>
-                {getPriceWithSymbol(item.product_final_price)}
-              </Text>
-            )}
+            <Text style={styles.price}>
+              {getPriceWithSymbol(item.product_final_price)}
+            </Text>
+          )}
 
           <View style={styles.bottomContainer}>
             <CustomButton
               title={'ADD TO CART'}
               style={styles.addToCart}
-              onPress={() => { }}
+              onPress={() => {}}
             />
             <View style={styles.separator} />
             <Text style={styles.description}>

@@ -35,6 +35,11 @@ export default function* rootSaga() {
     takeLatest(ProductsTypes.PRODUCT_ATTR_REQUEST, getProductAttributes, api),
     takeLatest(ProductsTypes.SUB_CATEGORY_REQUEST, getSubCategory, api),
     takeLatest(ProductsTypes.SUB_CATEGORY_REQUEST, getSubCategoryProducts, api),
+    takeLatest(
+      ProductsTypes.SUB_CATEGORY_PRODUCT_REQUEST,
+      getSubCategoryProducts,
+      api
+    ),
     takeLatest(MyOrderTypes.ORDER_REQUEST, getMyOrder, api),
     takeLatest(ComplainTypes.COMPLAIN_REQUEST, getComplain, api),
     takeLatest(CartTypes.CART_REQUEST, cart, api)

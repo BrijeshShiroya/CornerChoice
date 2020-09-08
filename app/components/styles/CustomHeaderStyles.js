@@ -1,6 +1,5 @@
 import { StyleSheet } from 'react-native';
 import { Colors, scale, verticalScale, Fonts } from '../../theme';
-import { cps } from 'redux-saga/effects';
 
 const styles = StyleSheet.create({
   headerContainer: {
@@ -16,7 +15,7 @@ const styles = StyleSheet.create({
     height: verticalScale(50),
     width: scale(40),
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   iconStyle: {
     height: verticalScale(26),

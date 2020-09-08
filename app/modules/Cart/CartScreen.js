@@ -10,7 +10,7 @@ import CartActions from '../../redux/CartRedux';
 
 const CartScreen = ({ navigation }) => {
   const { user } = useSelector((state) => state.auth);
-  const { cartList, fetching, total, shipping, count } = useSelector((state) => state.cart);
+  const { fetching, count } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
   useEffect(() => {

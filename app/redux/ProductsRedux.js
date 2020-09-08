@@ -15,6 +15,7 @@ const { Types, Creators } = createActions({
   subCategoryRequest: ['payload'],
   subCategorySuccess: ['payload'],
   subCategoryFailure: ['error'],
+  subCategoryProductRequest: ['payload'],
   subCategoryProductSuccess: ['payload'],
   subCategoryProductFailure: ['error']
 });
@@ -135,6 +136,7 @@ export const productsReducer = createReducer(INITIAL_STATE, {
   [Types.SUB_CATEGORY_REQUEST]: request,
   [Types.SUB_CATEGORY_SUCCESS]: subCategorySuccess,
   [Types.SUB_CATEGORY_FAILURE]: subCategoryFailure,
+  [Types.SUB_CATEGORY_PRODUCT_REQUEST]: request,
   [Types.SUB_CATEGORY_PRODUCT_SUCCESS]: subCategoryProductSuccess,
   [Types.SUB_CATEGORY_PRODUCT_FAILURE]: subCategoryProductFailure
 });

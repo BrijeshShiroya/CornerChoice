@@ -15,6 +15,7 @@ import SideMenuScreen from '../modules/SideMenu/SideMenuScreen';
 import ProductDetailsScreen from '../modules/Products/ProductDetailsScreen';
 import CartScreen from '../modules/Cart/CartScreen';
 import SubCategoryScreen from '../modules/Products/SubCategoryScreen';
+import SubCategoryProductsScreen from '../modules/Products/SubCategoryProductsScreen';
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -43,6 +44,10 @@ const HomeStack = () => {
         options={{ animationEnabled: false }}
       />
       <Stack.Screen name="SubCategoryScreen" component={SubCategoryScreen} />
+      <Stack.Screen
+        name="SubCategoryProductsScreen"
+        component={SubCategoryProductsScreen}
+      />
       <Stack.Screen
         name="ProductDetailsScreen"
         component={ProductDetailsScreen}

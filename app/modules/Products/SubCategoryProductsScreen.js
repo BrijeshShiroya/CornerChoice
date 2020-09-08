@@ -1,33 +1,31 @@
 import PropTypes from 'prop-types';
 import { Container } from 'native-base';
 import React, { useEffect } from 'react';
-import { FlatList } from 'react-native';
-import { useDispatch, useSelector } from 'react-redux';
 import {
-  CategoryItem,
   CustomHeader,
+  HomeProductList,
   ImageBg,
-  Loader,
   SearchBar,
-  HomeProductList
+  Loader
 } from '../../components';
 import strings from '../../constants/Strings';
 import { ApplicationStyles, Icons } from '../../theme';
+import styles from './styles/ProductListScreenStyle';
+import { useDispatch, useSelector } from 'react-redux';
 import ProductsActions from '../../redux/ProductsRedux';
-import styles from './styles/SubCategoryScreenStyles';
 
-const SubCategoryScreen = ({ route, navigation }) => {
-  const { fetching, subCategory, subCategoryProducts } = useSelector(
+const SubCategoryProductsScreen = ({ route, navigation }) => {
+  const { categoryData } = route.params;
+  const { subCategoryProducts, fetching } = useSelector(
     (state) => state.products
   );
   const { count } = useSelector((state) => state.cart);
-
-  const { categoryData } = route.params;
   const dispatch = useDispatch();
-
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
-      dispatch(ProductsActions.subCategoryRequest({ id: categoryData.id }));
+      dispatch(
+        ProductsActions.subCategoryProductRequest({ id: categoryData?.id })
+      );
     });
     return unsubscribe;
   }, [dispatch, navigation, categoryData]);
@@ -40,26 +38,13 @@ const SubCategoryScreen = ({ route, navigation }) => {
     navigation.navigate('CartScreen');
   };
 
-  const renderItem = ({ item }) => {
-    return (
-      <CategoryItem
-        item={item}
-        onPress={() =>
-          navigation.navigate('SubCategoryProductsScreen', {
-            categoryData: item
-          })
-        }
-      />
-    );
-  };
-
   return (
     <Container style={ApplicationStyles.screen.mainContainer}>
       <CustomHeader
         left
         right
         rightTitle={count > 0 ? count : null}
-        title={strings.mainHeaderChoiceCorner}
+        title={strings.titleProducts}
         leftIcon={Icons.menu}
         rightIcon={Icons.cart}
         leftOnPress={onLeftPress}
@@ -67,20 +52,9 @@ const SubCategoryScreen = ({ route, navigation }) => {
       />
       <ImageBg style={styles.bg}>
         <SearchBar />
-        <FlatList
-          style={styles.listContainer}
-          data={subCategory}
-          numColumns={3}
-          renderItem={renderItem}
-          keyExtractor={(item) => item.id}
-          ListFooterComponent={
-            <HomeProductList
-              header
-              headerTitle={strings.titleProducts}
-              navigation={navigation}
-              product={subCategoryProducts}
-            />
-          }
+        <HomeProductList
+          navigation={navigation}
+          product={subCategoryProducts}
         />
       </ImageBg>
       {fetching && <Loader />}
@@ -88,8 +62,9 @@ const SubCategoryScreen = ({ route, navigation }) => {
   );
 };
 
-SubCategoryScreen.propTypes = {
+SubCategoryProductsScreen.propTypes = {
   route: PropTypes.object,
   item: PropTypes.object
 };
-export default SubCategoryScreen;
+
+export default SubCategoryProductsScreen;

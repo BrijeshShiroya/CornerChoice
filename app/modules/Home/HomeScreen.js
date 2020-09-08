@@ -19,7 +19,7 @@ import styles from './styles/HomeScreenStyle';
 const HomeScreen = ({ navigation }) => {
   const { category, product } = useSelector((state) => state.products);
   const { fetching } = useSelector((state) => state.home);
-  const { count } = useSelector((state) => state.cart);
+  const { count, cartList } = useSelector((state) => state.cart);
 
   const dispatch = useDispatch();
   useEffect(() => {

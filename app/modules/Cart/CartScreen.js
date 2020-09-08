@@ -1,16 +1,16 @@
 import { Container } from 'native-base';
 import React, { useEffect } from 'react';
-import { Text, View } from 'react-native';
-import { CustomHeader, ImageBg, Loader } from '../../components';
+import { FlatList } from 'react-native';
+import { useDispatch, useSelector } from 'react-redux';
+import { CartItem, CustomHeader, ImageBg, Loader } from '../../components';
+import strings from '../../constants/Strings';
+import CartActions from '../../redux/CartRedux';
 import { ApplicationStyles, Icons } from '../../theme';
 import styles from './styles/CartScreenStyles';
-import strings from '../../constants/Strings';
-import { useSelector, useDispatch } from 'react-redux';
-import CartActions from '../../redux/CartRedux';
 
 const CartScreen = ({ navigation }) => {
   const { user } = useSelector((state) => state.auth);
-  const { fetching, count } = useSelector((state) => state.cart);
+  const { fetching, cartList } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -26,6 +26,10 @@ const CartScreen = ({ navigation }) => {
     navigation.goBack();
   };
 
+  const renderItem = ({ item }) => {
+    return <CartItem item={item} />;
+  };
+
   return (
     <Container style={ApplicationStyles.screen.mainContainer}>
       <CustomHeader
@@ -36,9 +40,11 @@ const CartScreen = ({ navigation }) => {
         leftIconStyle={styles.leftIcon}
       />
       <ImageBg style={styles.bg}>
-        <View style={styles.whiteContainerCenter}>
-          <Text>{'total' + count}</Text>
-        </View>
+        <FlatList
+          style={styles.listContainer}
+          data={cartList}
+          renderItem={renderItem}
+        />
       </ImageBg>
       {fetching && <Loader />}
     </Container>

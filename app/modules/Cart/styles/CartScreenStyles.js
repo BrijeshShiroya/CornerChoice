@@ -11,6 +11,10 @@ const styles = StyleSheet.create({
   bg: {
     justifyContent: 'flex-start',
     flex: 1
+  },
+  listContainer: {
+    width: '100%',
+    flex: 1
   }
 });
 

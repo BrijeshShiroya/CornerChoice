@@ -42,8 +42,8 @@ export default function* rootSaga() {
     ),
     takeLatest(MyOrderTypes.ORDER_REQUEST, getMyOrder, api),
     takeLatest(ComplainTypes.COMPLAIN_REQUEST, getComplain, api),
-    takeLatest(CartTypes.CART_REQUEST, cart, api),
-    takeLatest(CartTypes.ADD_TO_CART_REQUEST, addToCart, api)
+    takeLatest(CartTypes.CART_REQUEST, cart, api)
+    // takeLatest(CartTypes.ADD_TO_CART_REQUEST, addToCart, api)
     // takeLatest(CartTypes.ADD_TO_CART_SUCCESS, cartOnAuth, api)
   ]);
 }

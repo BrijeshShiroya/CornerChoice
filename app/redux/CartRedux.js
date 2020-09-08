@@ -34,10 +34,10 @@ export const success = (state, action) => {
   return state.merge({
     fetching: false,
     error: false,
-    cartList: payload.cartData,
+    cartList: payload.cartList,
     shipping: payload.shipping,
     total: payload.message,
-    count: payload.cartData.length
+    count: payload.count
   });
 };
 

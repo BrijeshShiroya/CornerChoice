@@ -19,6 +19,7 @@ import { getPriceWithSymbol } from '../../services/Utils';
 const ProductDetailsScreen = ({ route, navigation }) => {
   const { item } = route.params;
   const [selected, setSelected] = useState(0);
+  const { count } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -39,6 +40,7 @@ const ProductDetailsScreen = ({ route, navigation }) => {
       <CustomHeader
         left
         right
+        rightTitle={count > 0 ? count : null}
         title={strings.mainHeaderChoiceCorner}
         leftIcon={Icons.menu}
         rightIcon={Icons.cart}
@@ -61,16 +63,16 @@ const ProductDetailsScreen = ({ route, navigation }) => {
               setSelected={setSelected}
             />
           ) : (
-            <Text style={styles.price}>
-              {getPriceWithSymbol(item.product_final_price)}
-            </Text>
-          )}
+              <Text style={styles.price}>
+                {getPriceWithSymbol(item.product_final_price)}
+              </Text>
+            )}
 
           <View style={styles.bottomContainer}>
             <CustomButton
               title={'ADD TO CART'}
               style={styles.addToCart}
-              onPress={() => {}}
+              onPress={() => { }}
             />
             <View style={styles.separator} />
             <Text style={styles.description}>

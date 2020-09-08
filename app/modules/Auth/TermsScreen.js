@@ -5,8 +5,11 @@ import { CustomHeader } from '../../components';
 import { ApplicationStyles, Icons } from '../../theme';
 import styles from './styles/TermsScreenStyles';
 import strings from '../../constants/Strings';
+import { useSelector } from 'react-redux';
 
 const TermsScreen = ({ navigation }) => {
+  const { count } = useSelector((state) => state.cart);
+
   const onLeftPress = () => {
     navigation.openDrawer();
   };
@@ -16,6 +19,7 @@ const TermsScreen = ({ navigation }) => {
       <CustomHeader
         left
         right
+        rightTitle={count > 0 ? count : null}
         title={strings.mainHeaderChoiceCorner}
         leftIcon={Icons.menu}
         rightIcon={Icons.cart}

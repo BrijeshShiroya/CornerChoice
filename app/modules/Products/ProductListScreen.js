@@ -15,6 +15,7 @@ import ProductsActions from '../../redux/ProductsRedux';
 
 const ProductListScreen = ({ navigation }) => {
   const { product, fetching } = useSelector((state) => state.products);
+  const { count } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
@@ -36,6 +37,7 @@ const ProductListScreen = ({ navigation }) => {
       <CustomHeader
         left
         right
+        rightTitle={count > 0 ? count : null}
         title={strings.titleProducts}
         leftIcon={Icons.menu}
         rightIcon={Icons.cart}

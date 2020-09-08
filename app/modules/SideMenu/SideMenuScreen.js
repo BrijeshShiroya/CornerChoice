@@ -19,7 +19,7 @@ const MenuData = [
   },
   {
     title: 'My Orders',
-    navigationScreen: 'MyOrderScreen',
+    navigationScreen: 'MyOrderStack',
     icon: Icons.orders
   },
   {

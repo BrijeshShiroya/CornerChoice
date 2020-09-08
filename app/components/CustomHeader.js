@@ -25,12 +25,13 @@ const centerSection = (title, titleStyle) => (
   </Text>
 );
 
-const rightSection = (rightIcon, rightIconStyle, rightOnPress) => (
+const rightSection = (rightIcon, rightIconStyle, rightOnPress, rightTitle) => (
   <TouchableOpacity
     activeOpacity={0.7}
     hitSlop={styles.hitSlop}
     onPress={rightOnPress}
   >
+    {rightTitle && <Text style={styles.rightTitle}>{rightTitle}</Text>}
     <Image source={rightIcon} style={[styles.iconStyle, rightIconStyle]} />
   </TouchableOpacity>
 );
@@ -42,6 +43,7 @@ const CustomHeader = ({
   right = false,
   leftIcon,
   rightIcon,
+  rightTitle,
   leftOnPress,
   rightOnPress,
   rightIconStyle,
@@ -49,24 +51,25 @@ const CustomHeader = ({
   titleStyle,
   headerStyle
 }) => (
-  <SafeAreaView
-    style={[styles.headerContainer, headerStyle]}
-    forceInset={{ bottom: 'never' }}
-  >
-    <View style={styles.iconView}>
-      {left && leftSection(leftIcon, leftIconStyle, leftOnPress)}
-    </View>
-    {center && centerSection(title, titleStyle)}
-    <View style={styles.iconView}>
-      {right && rightSection(rightIcon, rightIconStyle, rightOnPress)}
-    </View>
-  </SafeAreaView>
-);
+    <SafeAreaView
+      style={[styles.headerContainer, headerStyle]}
+      forceInset={{ bottom: 'never' }}
+    >
+      <View style={styles.iconView}>
+        {left && leftSection(leftIcon, leftIconStyle, leftOnPress)}
+      </View>
+      {center && centerSection(title, titleStyle)}
+      <View style={styles.iconView}>
+        {right && rightSection(rightIcon, rightIconStyle, rightOnPress, rightTitle)}
+      </View>
+    </SafeAreaView>
+  );
 
 CustomHeader.propTypes = {
   left: PropTypes.bool,
   right: PropTypes.bool,
   center: PropTypes.bool,
+  rightTitle: PropTypes.string,
   title: PropTypes.string,
   leftIcon: PropTypes.number,
   rightIcon: PropTypes.number,

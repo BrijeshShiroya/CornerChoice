@@ -19,6 +19,7 @@ import styles from './styles/HomeScreenStyle';
 const HomeScreen = ({ navigation }) => {
   const { category, product } = useSelector((state) => state.products);
   const { fetching } = useSelector((state) => state.home);
+  const { count } = useSelector((state) => state.cart);
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -56,6 +57,7 @@ const HomeScreen = ({ navigation }) => {
         left
         right
         title={strings.mainHeaderChoiceCorner}
+        rightTitle={count > 0 ? count : null}
         leftIcon={Icons.menu}
         rightIcon={Icons.cart}
         leftOnPress={onLeftPress}

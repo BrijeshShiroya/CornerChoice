@@ -1,12 +1,27 @@
 import { Container } from 'native-base';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Text, View } from 'react-native';
-import { CustomHeader } from '../../components';
+import { CustomHeader, ImageBg, Loader } from '../../components';
 import { ApplicationStyles, Icons } from '../../theme';
 import styles from './styles/CartScreenStyles';
 import strings from '../../constants/Strings';
+import { useSelector, useDispatch } from 'react-redux';
+import CartActions from '../../redux/CartRedux';
 
 const CartScreen = ({ navigation }) => {
+  const { user } = useSelector((state) => state.auth);
+  const { cartList, fetching, total, shipping, count } = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const unsubscribe = navigation.addListener('focus', () => {
+      dispatch(
+        CartActions.cartRequest({ user_id: user?.id, session_id: user?.id })
+      );
+    });
+    return unsubscribe;
+  }, [dispatch, user, navigation]);
+
   const onLeftPress = () => {
     navigation.goBack();
   };
@@ -20,9 +35,12 @@ const CartScreen = ({ navigation }) => {
         leftOnPress={onLeftPress}
         leftIconStyle={styles.leftIcon}
       />
-      <View style={styles.whiteContainerCenter}>
-        <Text>My Cart</Text>
-      </View>
+      <ImageBg style={styles.bg}>
+        <View style={styles.whiteContainerCenter}>
+          <Text>{'total' + count}</Text>
+        </View>
+      </ImageBg>
+      {fetching && <Loader />}
     </Container>
   );
 };

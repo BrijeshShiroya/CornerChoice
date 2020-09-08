@@ -7,6 +7,10 @@ const styles = StyleSheet.create({
   leftIcon: {
     height: 24,
     width: 24
+  },
+  bg: {
+    justifyContent: 'flex-start',
+    flex: 1
   }
 });
 

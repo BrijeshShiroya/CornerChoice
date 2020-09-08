@@ -28,6 +28,7 @@ const ComplainsItem = (props) => {
 const ComplainsScreen = ({ navigation }) => {
   const { user } = useSelector((state) => state.auth);
   const { complains, fetching } = useSelector((state) => state.complain);
+  const { count } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -50,6 +51,7 @@ const ComplainsScreen = ({ navigation }) => {
       <CustomHeader
         left
         right
+        rightTitle={count > 0 ? count : null}
         title={strings.titleComplaints}
         leftIcon={Icons.menu}
         rightIcon={Icons.cart}

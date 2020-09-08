@@ -15,6 +15,7 @@ const auth = () => {
   const subCategoryProductData = (id) => api.post('productsbycatid', id);
   const orderData = (userId) => api.post('myorder', userId);
   const complainData = (created_by) => api.post('complaints', created_by);
+  const cartData = (userId) => api.post('mycart', userId);
 
   return {
     loginUser,
@@ -26,7 +27,8 @@ const auth = () => {
     subCategoryProductData,
     orderData,
     complainData,
-    productAttrData
+    productAttrData,
+    cartData
   };
 };
 

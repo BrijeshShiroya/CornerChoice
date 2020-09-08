@@ -20,6 +20,8 @@ const SubCategoryScreen = ({ route, navigation }) => {
   const { fetching, subCategory, subCategoryProducts } = useSelector(
     (state) => state.products
   );
+  const { count } = useSelector((state) => state.cart);
+
   const { categoryData } = route.params;
   const dispatch = useDispatch();
 
@@ -47,6 +49,7 @@ const SubCategoryScreen = ({ route, navigation }) => {
       <CustomHeader
         left
         right
+        rightTitle={count > 0 ? count : null}
         title={strings.mainHeaderChoiceCorner}
         leftIcon={Icons.menu}
         rightIcon={Icons.cart}

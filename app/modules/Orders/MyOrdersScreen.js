@@ -36,6 +36,7 @@ const MyOrderItem = (props) => {
 const MyOrdersScreen = ({ navigation }) => {
   const { user } = useSelector((state) => state.auth);
   const { orders, fetching } = useSelector((state) => state.orders);
+  const { count } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -62,6 +63,7 @@ const MyOrdersScreen = ({ navigation }) => {
       <CustomHeader
         left
         right
+        rightTitle={count > 0 ? count : null}
         title={strings.titleMyOrder}
         leftIcon={Icons.menu}
         rightIcon={Icons.cart}

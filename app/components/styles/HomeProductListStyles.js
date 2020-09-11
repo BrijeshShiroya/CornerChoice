@@ -17,6 +17,14 @@ const styles = StyleSheet.create({
   },
   listContainer: {
     paddingRight: 10
+  },
+  emptyContainer: {
+    flex: 1
+  },
+  emptyIcon: {
+    height: 240,
+    width: 240,
+    marginTop: 40
   }
 });
 

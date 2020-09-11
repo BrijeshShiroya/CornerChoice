@@ -16,6 +16,7 @@ import ProductDetailsScreen from '../modules/Products/ProductDetailsScreen';
 import CartScreen from '../modules/Cart/CartScreen';
 import SubCategoryScreen from '../modules/Products/SubCategoryScreen';
 import SubCategoryProductsScreen from '../modules/Products/SubCategoryProductsScreen';
+import SearchProductScreen from '../modules/Products/SearchProductScreen';
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -45,6 +46,10 @@ const HomeStack = () => {
       />
       <Stack.Screen name="SubCategoryScreen" component={SubCategoryScreen} />
       <Stack.Screen
+        name="SearchProductScreen"
+        component={SearchProductScreen}
+      />
+      <Stack.Screen
         name="SubCategoryProductsScreen"
         component={SubCategoryProductsScreen}
       />
@@ -67,6 +72,10 @@ const ProductStack = () => {
       <Stack.Screen
         name="ProductDetailsScreen"
         component={ProductDetailsScreen}
+      />
+      <Stack.Screen
+        name="SearchProductScreen"
+        component={SearchProductScreen}
       />
       <Stack.Screen name="CartScreen" component={CartScreen} />
     </Stack.Navigator>

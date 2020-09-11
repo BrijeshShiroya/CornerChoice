@@ -9,6 +9,7 @@ const strings = {
   specialOffers: 'SPECIAL OFFERS',
   emailPlaceholder: 'Email',
   passwordPlaceholder: 'Password',
+  searchKeywoard: 'Type your keyword here',
   invalidEmail: 'Invalid email address',
   invalidPassword:
     'It must contain atleast 8 characters with atleast 1 lowercase letter, 1 uppercase letter, 1 number and 1 special character',

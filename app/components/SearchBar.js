@@ -1,21 +1,20 @@
-import React, { useState } from 'react';
-import { TextInput, View } from 'react-native';
+import PropTypes from 'prop-types';
+import React from 'react';
+import { TouchableOpacity, View, Image } from 'react-native';
+import { Icons } from '../theme';
 import styles from './styles/SearchBarStyles';
 
-const SearchBar = () => {
-  const [value, setValue] = useState('');
-
+const SearchBar = (props) => {
   return (
     <View style={styles.container}>
-      <TextInput
-        style={styles.input}
-        value={value}
-        onChangeText={(text) => setValue(text)}
-      />
+      <TouchableOpacity style={styles.input} onPress={props?.onSelect} />
+      <Image source={Icons.search} style={styles.imageIcon} />
     </View>
   );
 };
 
-SearchBar.propTypes = {};
+SearchBar.propTypes = {
+  onSelect: PropTypes.func
+};
 
 export default SearchBar;

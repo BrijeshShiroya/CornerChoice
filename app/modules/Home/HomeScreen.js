@@ -45,6 +45,10 @@ const HomeScreen = ({ navigation }) => {
     navigation.navigate('SubCategoryScreen', { categoryData: item });
   };
 
+  const navigateSearchProduct = () => {
+    navigation.navigate('SearchProductScreen');
+  };
+
   const renderItem = ({ item }) => {
     return (
       <CategoryItem item={item} onPress={() => navigateToSubCategory(item)} />
@@ -64,7 +68,7 @@ const HomeScreen = ({ navigation }) => {
         rightOnPress={onRightPress}
       />
       <ImageBg style={styles.bg}>
-        <SearchBar />
+        <SearchBar onSelect={navigateSearchProduct} />
         <FlatList
           style={styles.listContainer}
           data={category}

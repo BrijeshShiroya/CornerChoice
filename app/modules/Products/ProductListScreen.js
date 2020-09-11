@@ -32,6 +32,10 @@ const ProductListScreen = ({ navigation }) => {
     navigation.navigate('CartScreen');
   };
 
+  const navigateSearchProduct = () => {
+    navigation.navigate('SearchProductScreen');
+  };
+
   return (
     <Container style={ApplicationStyles.screen.mainContainer}>
       <CustomHeader
@@ -45,7 +49,7 @@ const ProductListScreen = ({ navigation }) => {
         rightOnPress={onRightPress}
       />
       <ImageBg style={styles.bg}>
-        <SearchBar />
+        <SearchBar onSelect={navigateSearchProduct} />
         <HomeProductList navigation={navigation} product={product} />
       </ImageBg>
       {fetching && <Loader />}

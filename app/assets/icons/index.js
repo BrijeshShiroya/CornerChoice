@@ -12,7 +12,8 @@ const icons = {
   terms: require('./terms.png'),
   active: require('./active.png'),
   inactive: require('./inactive.png'),
-  back: require('./back.png')
+  back: require('./back.png'),
+  search: require('./search.png')
 };
 
 export default icons;

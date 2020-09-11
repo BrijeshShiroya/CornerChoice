@@ -1,7 +1,6 @@
 const images = {
-  logo: require('./logo.png'),
   splash: require('./splash.png'),
-  avatar: require('./user.png')
+  noProduct: require('./noproduct.png')
 };
 
 export default images;

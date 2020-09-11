@@ -1,7 +1,12 @@
 import { StyleSheet } from 'react-native';
-import { Colors, verticalScale } from '../../theme';
+import { ApplicationStyles, Colors, verticalScale } from '../../../theme';
 
 const styles = StyleSheet.create({
+  ...ApplicationStyles.screen,
+  bg: {
+    justifyContent: 'flex-start',
+    flex: 1
+  },
   container: {
     height: 44,
     width: '100%',

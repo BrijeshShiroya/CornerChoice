@@ -5,6 +5,7 @@ const strings = {
   titleMyOrder: 'My Orders',
   titleMyCart: 'My Cart',
   titleComplaints: 'Complaints',
+  titlePolicy: 'Policy',
   registerLogin: 'Register',
   specialOffers: 'SPECIAL OFFERS',
   emailPlaceholder: 'Email',

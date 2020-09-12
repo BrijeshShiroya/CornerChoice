@@ -18,6 +18,7 @@ const auth = () => {
   const cartData = (userId) => api.post('mycart', userId);
   const addTocart = (userId) => api.post('cart', userId);
   const updateCart = (updatedData) => api.post('cartupdate', updatedData);
+  const policy = (updatedData) => api.post('settings');
 
   return {
     loginUser,
@@ -32,7 +33,8 @@ const auth = () => {
     productAttrData,
     cartData,
     addTocart,
-    updateCart
+    updateCart,
+    policy
   };
 };
 

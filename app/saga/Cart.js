@@ -29,12 +29,17 @@ export function* cartOnAuth(api, action) {
   yield* handleResponse(response.data);
 }
 
-// export function* addToCart(api, action) {
-//   const response = yield call(api.addTocart, action.payload);
-//   if (response?.data?.status) {
-//     yield put(CartActions.addToCartSuccess(action.payload));
-//   } else {
-//     const error = yield call(getError, response?.data);
-//     yield put(CartActions.addToCartFailure(error));
-//   }
-// }
+export function* addToCart(api, action) {
+  const response = yield call(api.addTocart, action.payload);
+  if (response?.data?.status) {
+    yield put(
+      CartActions.addToCartSuccess({
+        user_id: action.payload?.user_id,
+        session_id: action?.payload?.session_id
+      })
+    );
+  } else {
+    const error = yield call(getError, response?.data);
+    yield put(CartActions.addToCartFailure(error));
+  }
+}

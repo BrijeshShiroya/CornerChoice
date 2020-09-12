@@ -1,25 +1,27 @@
 import { Container } from 'native-base';
 import PropTypes from 'prop-types';
-import React, { useState, useEffect } from 'react';
-import { Text, View, Image } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { Image, Text, View } from 'react-native';
+import { useDispatch, useSelector } from 'react-redux';
 import {
+  CustomButton,
   CustomHeader,
   ImageBg,
-  PriceBox,
   Loader,
-  CustomButton
+  PriceBox
 } from '../../components';
+import strings from '../../constants/Strings';
+import CartActions from '../../redux/CartRedux';
+import ProductsActions from '../../redux/ProductsRedux';
+import { getPriceWithSymbol } from '../../services/Utils';
 import { ApplicationStyles, Icons } from '../../theme';
 import styles from './styles/ProductDetailsScreenStyles';
-import strings from '../../constants/Strings';
-import ProductsActions from '../../redux/ProductsRedux';
-import { useDispatch, useSelector } from 'react-redux';
-import { getPriceWithSymbol } from '../../services/Utils';
 
 const ProductDetailsScreen = ({ route, navigation }) => {
   const { item } = route.params;
   const [selected, setSelected] = useState(0);
-  const { count } = useSelector((state) => state.cart);
+  const { count, fetching } = useSelector((state) => state.cart);
+  const { user } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -28,9 +30,43 @@ const ProductDetailsScreen = ({ route, navigation }) => {
     });
     return unsubscribe;
   }, [dispatch, navigation, item]);
-  const { productAttributes, fetching } = useSelector(
+  const { productAttributes, fetching: fetchingAttr } = useSelector(
     (state) => state.products
   );
+
+  // useEffect(() => {
+  //   if (!fetching && error) {
+  //     Toast.show({
+  //       text: error,
+  //       buttonText: 'Okay',
+  //       duration: 3000
+  //     });
+  //   }
+  // }, [fetching, error]);
+
+  const onAddCartPress = () => {
+    const att =
+      productAttributes.length !== 0
+        ? `${JSON?.parse(productAttributes?.[selected]?.attributes)}`?.split(
+            ':'
+          )?.[1]
+        : '';
+    const payload = {
+      attributes: att,
+      created_by: item?.created_by,
+      image: item?.intro_image,
+      json_data: productAttributes?.[selected]?.attributes || '',
+      mrp: item?.product_final_price,
+      price: item?.product_final_price,
+      product_id: item?.id,
+      qty: 1,
+      session_id: user?.id,
+      title: item?.title,
+      total_amount: item?.product_final_price,
+      user_id: user?.id
+    };
+    dispatch(CartActions.addToCartRequest(payload));
+  };
 
   const onLeftPress = () => {
     navigation.openDrawer();
@@ -72,7 +108,7 @@ const ProductDetailsScreen = ({ route, navigation }) => {
             <CustomButton
               title={'ADD TO CART'}
               style={styles.addToCart}
-              onPress={() => {}}
+              onPress={onAddCartPress}
             />
             <View style={styles.separator} />
             <Text style={styles.description}>
@@ -83,7 +119,7 @@ const ProductDetailsScreen = ({ route, navigation }) => {
           </View>
         </View>
       </ImageBg>
-      {fetching && <Loader />}
+      {fetching || (fetchingAttr && <Loader />)}
     </Container>
   );
 };

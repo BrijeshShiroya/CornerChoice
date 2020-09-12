@@ -73,6 +73,8 @@ const PlaceOrderScreen = ({ route, navigation }) => {
             <View style={styles.inputContainer}>
               <CustomTextInput
                 value={pincode}
+                keyboardType={'number-pad'}
+                maxLength={6}
                 placeholder={'pincode'}
                 style={styles.input}
                 onChangeText={(text) => setPincode(text)}

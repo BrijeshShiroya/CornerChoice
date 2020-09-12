@@ -26,7 +26,7 @@ export const INITIAL_STATE = Immutable({
 
 /* ------------- Reducers ------------- */
 // request the data from an api
-export const request = (state) => state.merge({ fetching: true });
+export const request = (state) => state.merge({ fetching: true, error: false });
 
 // successful api lookup
 export const success = (state, action) => {
@@ -61,6 +61,14 @@ export const addToCartSuccess = (state, action) => {
   });
 };
 
+// Something went wrong somewhere.
+export const addToCartFailure = (state, action) => {
+  return state.merge({
+    fetching: false,
+    error: action?.error
+  });
+};
+
 /* ------------- Hookup Reducers To Types ------------- */
 
 export const cartReducer = createReducer(INITIAL_STATE, {
@@ -69,5 +77,5 @@ export const cartReducer = createReducer(INITIAL_STATE, {
   [Types.CART_FAILURE]: failure,
   [Types.ADD_TO_CART_REQUEST]: request,
   [Types.ADD_TO_CART_SUCCESS]: addToCartSuccess,
-  [Types.ADD_TO_CART_FAILURE]: addToCartSuccess
+  [Types.ADD_TO_CART_FAILURE]: addToCartFailure
 });

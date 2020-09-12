@@ -6,7 +6,7 @@ import { ApplicationStyles } from '../theme';
 
 const LaunchScreen = () => {
   useEffect(() => {
-    // SplashScreen.hide();
+    SplashScreen.hide();
   }, []);
 
   return (

@@ -93,7 +93,16 @@ const CartScreen = ({ navigation }) => {
       </ImageBg>
       <View style={styles.bottomView}>
         <Text style={styles.total}>{getPriceWithSymbol(grandTotal)}</Text>
-        <CustomButton title={'CHECK OUT'} />
+        <CustomButton
+          title={'CHECK OUT'}
+          onPress={() =>
+            navigation.navigate('PlaceOrderScreen', {
+              cartList,
+              total,
+              shipping
+            })
+          }
+        />
       </View>
       {fetching && <Loader />}
     </SafeAreaView>

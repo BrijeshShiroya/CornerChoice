@@ -11,7 +11,8 @@ import CategoryItem from './CategoryItem';
 import ProductItem from './ProductItem';
 import PriceBox from './PriceBox';
 import CartItem from './CartItem';
-
+import RadioButton from './RadioButton';
+import CheckBox from './CheckBox';
 export {
   CustomTextInput,
   ProfileImage,
@@ -25,5 +26,7 @@ export {
   ProductItem,
   CustomSwiper,
   PriceBox,
-  CartItem
+  CartItem,
+  RadioButton,
+  CheckBox
 };

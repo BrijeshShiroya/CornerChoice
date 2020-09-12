@@ -43,10 +43,7 @@ const LoginScreen = ({ navigation }) => {
     navigation.navigate('RegisterScreenScreen');
   };
   return (
-    <View
-      // behavior={'padding'}
-      style={ApplicationStyles.screen.mainContainer}
-    >
+    <View style={ApplicationStyles.screen.mainContainer}>
       <ImageBg>
         <Text style={styles.mainTitle}>{strings.titleLogin}</Text>
         <View style={styles.loginContainer}>

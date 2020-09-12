@@ -1,22 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { View, Image, Text, TouchableOpacity } from 'react-native';
-import styles from './styles/PriceBoxStyles';
-import { Icons } from '../theme';
+import { View } from 'react-native';
+import { RadioButton } from '../components';
 import { getPriceWithSymbol } from '../services/Utils';
-
-const RadioButton = (props) => {
-  const { selected, title, onPress } = props;
-  return (
-    <TouchableOpacity style={styles.radioContainer} onPress={onPress}>
-      <Image
-        style={styles.radio}
-        source={selected ? Icons.active : Icons.inactive}
-      />
-      <Text style={styles.radioTitle}>{title}</Text>
-    </TouchableOpacity>
-  );
-};
+import styles from './styles/PriceBoxStyles';
 
 const PriceBox = (props) => {
   const { items = [], selected, setSelected } = props;
@@ -37,12 +24,6 @@ const PriceBox = (props) => {
       })}
     </View>
   );
-};
-
-RadioButton.propTypes = {
-  selected: PropTypes.bool,
-  title: PropTypes.string,
-  onPress: PropTypes.func
 };
 
 PriceBox.propTypes = {

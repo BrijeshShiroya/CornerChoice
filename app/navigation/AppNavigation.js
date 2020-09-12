@@ -14,6 +14,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import SideMenuScreen from '../modules/SideMenu/SideMenuScreen';
 import ProductDetailsScreen from '../modules/Products/ProductDetailsScreen';
 import CartScreen from '../modules/Cart/CartScreen';
+import PlaceOrderScreen from '../modules/Cart/PlaceOrderScreen';
 import SubCategoryScreen from '../modules/Products/SubCategoryScreen';
 import SubCategoryProductsScreen from '../modules/Products/SubCategoryProductsScreen';
 import SearchProductScreen from '../modules/Products/SearchProductScreen';
@@ -58,6 +59,7 @@ const HomeStack = () => {
         component={ProductDetailsScreen}
       />
       <Stack.Screen name="CartScreen" component={CartScreen} />
+      <Stack.Screen name={'PlaceOrderScreen'} component={PlaceOrderScreen} />
     </Stack.Navigator>
   );
 };

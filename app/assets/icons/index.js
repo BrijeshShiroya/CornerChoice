@@ -13,7 +13,9 @@ const icons = {
   active: require('./active.png'),
   inactive: require('./inactive.png'),
   back: require('./back.png'),
-  search: require('./search.png')
+  search: require('./search.png'),
+  selected: require('./selected.png'),
+  unselected: require('./unselected.png')
 };
 
 export default icons;

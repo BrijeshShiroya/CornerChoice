@@ -16,7 +16,7 @@ import { Image, TextInput, View } from 'react-native';
 const SearchProductScreen = ({ navigation }) => {
   const { product, fetching } = useSelector((state) => state.products);
   const [value, setValue] = useState('');
-  const [filtered, setFiltered] = useState('');
+  const [filtered, setFiltered] = useState([]);
   const { count } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 

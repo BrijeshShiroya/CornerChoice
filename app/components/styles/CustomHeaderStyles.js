@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
   headerContainer: {
     width: '100%',
     height: verticalScale(60),
-    backgroundColor: Colors.primary,
+    backgroundColor: Colors.white,
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: scale(10),
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     maxWidth: scale(200),
     fontSize: verticalScale(18),
     fontFamily: Fonts.type.bold,
-    color: Colors.white,
+    color: Colors.themeGreen,
     textAlign: 'center'
   },
   rightTitle: {

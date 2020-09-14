@@ -30,10 +30,18 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   rightTitle: {
-    color: Colors.white,
+    color: Colors.themeGreen,
     fontFamily: Fonts.type.bold,
     fontSize: verticalScale(12),
     textAlign: 'center'
+  },
+  bottomLine: {
+    height: 0.7,
+    backgroundColor: Colors.grey,
+    position: 'absolute',
+    bottom: 0,
+    right: 0,
+    left: 0
   },
   hitSlop: { left: 20, right: 20, top: 20, bottom: 20 }
 });

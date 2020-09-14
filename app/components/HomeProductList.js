@@ -22,7 +22,7 @@ const EmptyList = () => {
 };
 
 const HomeProductList = (props) => {
-  const { product, navigation, headerTitle } = props;
+  const { product, navigation, headerTitle, isEmptyShow = false } = props;
   const renderItem = ({ item }) => {
     return (
       <ProductItem
@@ -41,13 +41,14 @@ const HomeProductList = (props) => {
       ListHeaderComponent={
         props?.header ? <SpecialProducts headerTitle={headerTitle} /> : null
       }
-      ListEmptyComponent={() => <EmptyList />}
+      ListEmptyComponent={isEmptyShow ? () => <EmptyList /> : null}
     />
   );
 };
 
 HomeProductList.propTypes = {
   header: PropTypes.bool,
+  isEmptyShow: PropTypes.bool,
   headerTitle: PropTypes.string,
   product: PropTypes.array
 };

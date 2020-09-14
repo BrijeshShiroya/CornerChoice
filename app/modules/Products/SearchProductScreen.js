@@ -77,7 +77,11 @@ const SearchProductScreen = ({ navigation }) => {
       />
       <ImageBg style={styles.bg}>
         {renderSearchBar()}
-        <HomeProductList navigation={navigation} product={filtered} />
+        <HomeProductList
+          isEmptyShow
+          navigation={navigation}
+          product={filtered}
+        />
       </ImageBg>
       {fetching && <Loader />}
     </Container>

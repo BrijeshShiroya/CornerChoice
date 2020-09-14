@@ -1,6 +1,6 @@
-import { Container } from 'native-base';
+import { Container, Toast } from 'native-base';
 import PropTypes from 'prop-types';
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Image, Text, View } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -10,17 +10,20 @@ import {
   Loader,
   PriceBox
 } from '../../components';
+import API from '../../services/Api';
 import strings from '../../constants/Strings';
 import CartActions from '../../redux/CartRedux';
 import ProductsActions from '../../redux/ProductsRedux';
 import { getPriceWithSymbol } from '../../services/Utils';
 import { ApplicationStyles, Icons } from '../../theme';
 import styles from './styles/ProductDetailsScreenStyles';
+const api = API.auth();
 
 const ProductDetailsScreen = ({ route, navigation }) => {
   const { item } = route.params;
   const [selected, setSelected] = useState(0);
-  const { count, fetching } = useSelector((state) => state.cart);
+  const [fetching, setFetching] = useState(false);
+  const { count } = useSelector((state) => state.cart);
   const { user } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 
@@ -34,17 +37,29 @@ const ProductDetailsScreen = ({ route, navigation }) => {
     (state) => state.products
   );
 
-  // useEffect(() => {
-  //   if (!fetching && error) {
-  //     Toast.show({
-  //       text: error,
-  //       buttonText: 'Okay',
-  //       duration: 3000
-  //     });
-  //   }
-  // }, [fetching, error]);
+  const handleResponse = useCallback(
+    (response) => {
+      if (response?.data?.status && response?.data?.message === 'Success') {
+        Toast.show({
+          text: 'Product added to Cart',
+          buttonText: 'Okay',
+          duration: 3000
+        });
+        dispatch(
+          CartActions.cartRequest({ user_id: user?.id, session_id: user?.id })
+        );
+      } else {
+        Toast.show({
+          text: response?.data?.message || 'Something went wrong',
+          buttonText: 'Okay',
+          duration: 3000
+        });
+      }
+    },
+    [user, dispatch]
+  );
 
-  const onAddCartPress = () => {
+  const onAddCartPress = useCallback(async () => {
     const att =
       productAttributes.length !== 0
         ? `${JSON?.parse(productAttributes?.[selected]?.attributes)}`?.split(
@@ -65,12 +80,20 @@ const ProductDetailsScreen = ({ route, navigation }) => {
       total_amount: item?.product_final_price,
       user_id: user?.id
     };
-    dispatch(CartActions.addToCartRequest(payload));
-  };
+    setFetching(true);
+    const response = await api.addTocart(payload);
+    setFetching(false);
+    handleResponse(response);
+  }, [item, selected, productAttributes, user, handleResponse]);
 
   const onLeftPress = () => {
     navigation.openDrawer();
   };
+
+  const onRightPress = () => {
+    navigation.navigate('CartScreen');
+  };
+
   return (
     <Container style={ApplicationStyles.screen.mainContainer}>
       <CustomHeader
@@ -81,6 +104,7 @@ const ProductDetailsScreen = ({ route, navigation }) => {
         leftIcon={Icons.menu}
         rightIcon={Icons.cart}
         leftOnPress={onLeftPress}
+        rightOnPress={onRightPress}
       />
       <ImageBg style={styles.bg}>
         <View style={styles.container}>

@@ -63,6 +63,7 @@ const CustomHeader = ({
       {right &&
         rightSection(rightIcon, rightIconStyle, rightOnPress, rightTitle)}
     </View>
+    <View style={styles.bottomLine} />
   </SafeAreaView>
 );
 

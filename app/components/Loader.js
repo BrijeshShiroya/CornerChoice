@@ -5,7 +5,7 @@ import { Colors } from '../theme';
 
 const Loader = () => (
   <View style={styles.container}>
-    <ActivityIndicator size={'large'} color={Colors.white} />
+    <ActivityIndicator size={'large'} color={Colors.themeGreen} />
   </View>
 );
 

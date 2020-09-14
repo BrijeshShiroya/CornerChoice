@@ -40,6 +40,10 @@ const TermsScreen = ({ navigation }) => {
     navigation.openDrawer();
   };
 
+  const onRightPress = () => {
+    navigation.navigate('CartScreen');
+  };
+
   return (
     <Container style={ApplicationStyles.screen.mainContainer}>
       <CustomHeader
@@ -50,6 +54,7 @@ const TermsScreen = ({ navigation }) => {
         leftIcon={Icons.menu}
         rightIcon={Icons.cart}
         leftOnPress={onLeftPress}
+        rightOnPress={onRightPress}
       />
       <View style={styles.container}>
         <WebView

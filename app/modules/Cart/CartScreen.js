@@ -62,6 +62,18 @@ const CartScreen = ({ navigation }) => {
     [user, dispatch]
   );
 
+  const checkoutPress = () => {
+    if (user) {
+      navigation.navigate('PlaceOrderScreen', {
+        cartList,
+        total,
+        shipping
+      });
+    } else {
+      navigation.navigate('AuthStack');
+    }
+  };
+
   const renderItem = ({ item }) => {
     return item.qty > 0 ? (
       <CartItem
@@ -93,16 +105,7 @@ const CartScreen = ({ navigation }) => {
       </ImageBg>
       <View style={styles.bottomView}>
         <Text style={styles.total}>{getPriceWithSymbol(grandTotal)}</Text>
-        <CustomButton
-          title={'CHECK OUT'}
-          onPress={() =>
-            navigation.navigate('PlaceOrderScreen', {
-              cartList,
-              total,
-              shipping
-            })
-          }
-        />
+        <CustomButton title={'CHECK OUT'} onPress={checkoutPress} />
       </View>
       {fetching && <Loader />}
     </SafeAreaView>

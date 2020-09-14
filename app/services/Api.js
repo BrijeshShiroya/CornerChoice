@@ -20,6 +20,7 @@ const auth = () => {
   const addTocart = (cartInfo) => api.post('cart', cartInfo);
   const updateCart = (updatedData) => api.post('cartupdate', updatedData);
   const policy = (updatedData) => api.post('settings');
+  const placeOrder = (orderDetail) => api.post('order', orderDetail);
 
   return {
     loginUser,
@@ -36,7 +37,8 @@ const auth = () => {
     cartData,
     addTocart,
     updateCart,
-    policy
+    policy,
+    placeOrder
   };
 };
 

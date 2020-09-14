@@ -42,6 +42,10 @@ const ComplainsScreen = ({ navigation }) => {
     navigation.openDrawer();
   };
 
+  const onRightPress = () => {
+    navigation.navigate('CartScreen');
+  };
+
   const renderItem = ({ item }) => {
     return <ComplainsItem {...item} />;
   };
@@ -56,6 +60,7 @@ const ComplainsScreen = ({ navigation }) => {
         leftIcon={Icons.menu}
         rightIcon={Icons.cart}
         leftOnPress={onLeftPress}
+        rightOnPress={onRightPress}
       />
       <ImageBg style={styles.bg}>
         <FlatList

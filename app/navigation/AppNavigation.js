@@ -97,6 +97,15 @@ const MyOrderStack = () => {
   );
 };
 
+const ComplainStack = () => {
+  return (
+    <Stack.Navigator headerMode={'none'}>
+      <Stack.Screen name="ComplainsScreen" component={ComplainsScreen} />
+      <Stack.Screen name="CartScreen" component={CartScreen} />
+    </Stack.Navigator>
+  );
+};
+
 const PrimaryStack = () => {
   return (
     <Stack.Navigator headerMode={'none'}>
@@ -127,7 +136,7 @@ const DrawerNav = () => {
       <Drawer.Screen name="ProductStack" component={ProductStack} />
       <Drawer.Screen name="MyOrderStack" component={MyOrderStack} />
       <Drawer.Screen name="TermsScreen" component={TermsScreen} />
-      <Drawer.Screen name="ComplainsScreen" component={ComplainsScreen} />
+      <Drawer.Screen name="ComplainStack" component={ComplainStack} />
       <Drawer.Screen name="AuthStack" component={AuthStack} />
       <Drawer.Screen name="CartScreen" component={CartScreen} />
     </Drawer.Navigator>

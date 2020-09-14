@@ -1,7 +1,7 @@
 import { Container } from 'native-base';
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { Text, View, FlatList } from 'react-native';
-import { CustomHeader, ImageBg, Loader } from '../../components';
+import { CustomButton, CustomHeader, ImageBg, Loader } from '../../components';
 import { ApplicationStyles, Icons } from '../../theme';
 import MyOrderActions from '../../redux/MyOrderRedux';
 import styles from './styles/MyOrdersScreenStyles';
@@ -18,6 +18,11 @@ const MyOrderItem = (props) => {
     shipping,
     order_status
   } = props;
+
+  const onCancelPress = useCallback(() => {
+    alert('hi');
+  }, []);
+
   const price = getPriceWithSymbol(Number(total_amount) + Number(shipping));
   return (
     <View style={styles.orderItemContainer}>
@@ -29,6 +34,13 @@ const MyOrderItem = (props) => {
         <Text style={styles.order}>{order_number}</Text>
         <Text style={styles.orderStatus}>{order_status}</Text>
       </View>
+      {order_status === 'Pending' && (
+        <CustomButton
+          title={strings.cancelOrder}
+          style={styles.cancelOrder}
+          onPress={onCancelPress}
+        />
+      )}
     </View>
   );
 };

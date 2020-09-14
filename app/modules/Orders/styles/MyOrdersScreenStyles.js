@@ -37,6 +37,11 @@ const styles = StyleSheet.create({
     fontFamily: Fonts.type.regular,
     fontSize: Fonts.size.small,
     fontWeight: '600'
+  },
+  cancelOrder: {
+    backgroundColor: Colors.grey,
+    alignSelf: 'flex-end',
+    marginTop: 10
   }
 });
 

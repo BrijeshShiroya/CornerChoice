@@ -24,7 +24,7 @@ const MenuData = [
   },
   {
     title: 'Complaints',
-    navigationScreen: 'ComplainsScreen',
+    navigationScreen: 'ComplainStack',
     icon: Icons.complains
   },
   {

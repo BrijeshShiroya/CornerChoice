@@ -7,6 +7,7 @@ import ProductListScreen from '../modules/Products/ProductListScreen';
 import LoginScreen from '../modules/Auth/LoginScreen';
 import RegisterScreenScreen from '../modules/Auth/RegisterScreenScreen';
 import MyOrderScreen from '../modules/Orders/MyOrdersScreen';
+import OrderDetailsScreen from '../modules/Orders/OrderDetailsScreen';
 import TermsScreen from '../modules/Auth/TermsScreen';
 import ComplainsScreen from '../modules/Complains/ComplainsScreen';
 import LaunchScreen from '../modules/LaunchScreen';
@@ -93,6 +94,7 @@ const MyOrderStack = () => {
         options={{ animationEnabled: false }}
       />
       <Stack.Screen name="CartScreen" component={CartScreen} />
+      <Stack.Screen name="OrderDetailsScreen" component={OrderDetailsScreen} />
     </Stack.Navigator>
   );
 };

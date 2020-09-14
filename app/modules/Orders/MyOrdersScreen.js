@@ -9,6 +9,7 @@ import strings from '../../constants/Strings';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { getPriceWithSymbol } from '../../services/Utils';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const MyOrderItem = (props) => {
   const {
@@ -16,7 +17,9 @@ const MyOrderItem = (props) => {
     created_date,
     total_amount,
     shipping,
-    order_status
+    order_status,
+    id,
+    navigation
   } = props;
 
   const onCancelPress = useCallback(() => {
@@ -26,14 +29,20 @@ const MyOrderItem = (props) => {
   const price = getPriceWithSymbol(Number(total_amount) + Number(shipping));
   return (
     <View style={styles.orderItemContainer}>
-      <View style={styles.orderTop}>
-        <Text style={styles.order}>{created_date}</Text>
-        <Text style={styles.order}>{price}</Text>
-      </View>
-      <View style={styles.orderBottom}>
-        <Text style={styles.order}>{order_number}</Text>
-        <Text style={styles.orderStatus}>{order_status}</Text>
-      </View>
+      <TouchableOpacity
+        onPress={() =>
+          navigation.navigate('OrderDetailsScreen', { id, order_status })
+        }
+      >
+        <View style={styles.orderTop}>
+          <Text style={styles.order}>{created_date}</Text>
+          <Text style={styles.order}>{price}</Text>
+        </View>
+        <View style={styles.orderBottom}>
+          <Text style={styles.order}>{order_number}</Text>
+          <Text style={styles.orderStatus}>{order_status}</Text>
+        </View>
+      </TouchableOpacity>
       {order_status === 'Pending' && (
         <CustomButton
           title={strings.cancelOrder}
@@ -67,7 +76,7 @@ const MyOrdersScreen = ({ navigation }) => {
   };
 
   const renderItem = ({ item }) => {
-    return <MyOrderItem {...item} />;
+    return <MyOrderItem {...item} navigation={navigation} />;
   };
 
   return (
@@ -99,6 +108,7 @@ MyOrderItem.propTypes = {
   created_date: PropTypes.string,
   total_amount: PropTypes.string,
   shipping: PropTypes.string,
-  order_status: PropTypes.string
+  order_status: PropTypes.string,
+  id: PropTypes.string
 };
 export default MyOrdersScreen;

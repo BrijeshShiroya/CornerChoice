@@ -1,6 +1,6 @@
-import { Container } from 'native-base';
+import { Container, Toast } from 'native-base';
 import PropTypes from 'prop-types';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { FlatList, View, Text } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -10,10 +10,12 @@ import {
   ImageBg,
   Loader
 } from '../../components';
+import API from '../../services/Api';
 import strings from '../../constants/Strings';
 import { ApplicationStyles, Icons } from '../../theme';
 import styles from './styles/OrderDetailsScreenStyles';
 import MyOrderActions from '../../redux/MyOrderRedux';
+const api = API.auth();
 
 const OrderDetailsItem = (props) => {
   const { title, created_date } = props;
@@ -26,9 +28,11 @@ const OrderDetailsItem = (props) => {
 };
 
 const OrderDetailsScreen = ({ route, navigation }) => {
+  const [loading, setLoading] = useState(false);
   const { id, order_status } = route.params;
   const [remarks, setRemarks] = useState('');
   const { count } = useSelector((state) => state.cart);
+  const { user } = useSelector((state) => state.auth);
   const { fetching, orderDetail } = useSelector((state) => state.orders);
   const dispatch = useDispatch();
 
@@ -38,6 +42,24 @@ const OrderDetailsScreen = ({ route, navigation }) => {
     });
     return unsubscribe;
   }, [dispatch, navigation, id]);
+
+  const cancelOrder = useCallback(async () => {
+    setLoading(true);
+    const payload = {
+      order_id: id,
+      user_id: user?.id,
+      remarks: remarks
+    };
+    const response = await api.ordercancel(payload);
+    setLoading(false);
+    if (response?.data?.status && response?.data?.message === 'Success') {
+      Toast.show({
+        text: 'Order cancel successfully',
+        duration: 3000
+      });
+      navigation.goBack();
+    }
+  }, [id, user, setLoading, remarks, navigation]);
 
   const onLeftPress = () => {
     navigation.openDrawer();
@@ -61,7 +83,11 @@ const OrderDetailsScreen = ({ route, navigation }) => {
           placeholder={'Remarks'}
           onChangeText={(text) => setRemarks(text)}
         />
-        <CustomButton title={strings.cancelOrder} style={styles.cancelOrder} />
+        <CustomButton
+          title={strings.cancelOrder}
+          style={styles.cancelOrder}
+          onPress={cancelOrder}
+        />
       </View>
     );
   };
@@ -83,12 +109,10 @@ const OrderDetailsScreen = ({ route, navigation }) => {
           style={styles.listContainer}
           data={orderDetail}
           renderItem={renderItem}
-          ListFooterComponent={
-            order_status === 'Pending' ? () => CancelView() : null
-          }
+          ListFooterComponent={order_status === 'Pending' ? CancelView() : null}
         />
       </ImageBg>
-      {fetching && <Loader />}
+      {(fetching || loading) && <Loader />}
     </Container>
   );
 };

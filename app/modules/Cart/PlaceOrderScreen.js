@@ -25,7 +25,7 @@ const PlaceOrderScreen = ({ route, navigation }) => {
   const [address, setAddress] = useState('Surat');
   const [city, setCity] = useState('Surat');
   const [pincode, setPincode] = useState('');
-  const [state, setState] = useState('Gujarat');
+  const [addState, setAddState] = useState('Gujarat');
   const [country, setCountry] = useState('India');
   const [fetching, setFetching] = useState(false);
   const { user } = useSelector((state) => state.auth);
@@ -138,10 +138,10 @@ const PlaceOrderScreen = ({ route, navigation }) => {
             <View style={styles.subContainer}>
               <CustomTextInput
                 editable={false}
-                value={state}
+                value={addState}
                 placeholder={'State'}
                 style={styles.input}
-                onChangeText={(text) => setState(text)}
+                onChangeText={(text) => setAddState(text)}
               />
             </View>
             <View style={styles.inputContainer}>

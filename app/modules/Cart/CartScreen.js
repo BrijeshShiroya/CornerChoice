@@ -103,10 +103,13 @@ const CartScreen = ({ navigation }) => {
           renderItem={renderItem}
         />
       </ImageBg>
-      <View style={styles.bottomView}>
-        <Text style={styles.total}>{getPriceWithSymbol(grandTotal)}</Text>
-        <CustomButton title={'CHECK OUT'} onPress={checkoutPress} />
-      </View>
+      {cartList.length > 0 && (
+        <View style={styles.bottomView}>
+          <Text style={styles.total}>{getPriceWithSymbol(grandTotal)}</Text>
+          <CustomButton title={'CHECK OUT'} onPress={checkoutPress} />
+        </View>
+      )}
+
       {fetching && <Loader />}
     </SafeAreaView>
   );

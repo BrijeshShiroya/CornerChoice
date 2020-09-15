@@ -16,6 +16,7 @@ import API from '../../services/Api';
 import { getPriceWithSymbol } from '../../services/Utils';
 import { ApplicationStyles, Icons } from '../../theme';
 import styles from './styles/CartScreenStyles';
+import DeviceInfo from 'react-native-device-info';
 
 const api = API.auth();
 const CartScreen = ({ navigation }) => {
@@ -24,32 +25,32 @@ const CartScreen = ({ navigation }) => {
     (state) => state.cart
   );
   const dispatch = useDispatch();
+  const deviceId = DeviceInfo.getUniqueId();
 
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
       dispatch(
-        CartActions.cartRequest({ user_id: user?.id, session_id: user?.id })
+        CartActions.cartRequest({
+          user_id: user?.id || deviceId,
+          session_id: user?.id || deviceId
+        })
       );
     });
     return unsubscribe;
-  }, [dispatch, user, navigation]);
+  }, [dispatch, user, navigation, deviceId]);
 
   const onLeftPress = () => {
     navigation.goBack();
   };
 
-  const onPlusPress = useCallback(
-    async (item, isMinus) => {
-      const payload = {
-        id: item?.id,
-        qty: isMinus ? Number(item?.qty) - 1 : Number(item?.qty) + 1,
-        user_id: user?.id,
-        session_id: user?.id
-      };
-      const response = await api.updateCart(payload);
+  const handleResponse = useCallback(
+    (response) => {
       if (response?.data?.status && response?.data?.message === 'Success') {
         dispatch(
-          CartActions.cartRequest({ user_id: user?.id, session_id: user?.id })
+          CartActions.cartRequest({
+            user_id: user?.id || deviceId,
+            session_id: user?.id || deviceId
+          })
         );
       } else {
         Toast.show({
@@ -59,7 +60,21 @@ const CartScreen = ({ navigation }) => {
         });
       }
     },
-    [user, dispatch]
+    [dispatch, user, deviceId]
+  );
+
+  const onPlusPress = useCallback(
+    async (item, isMinus) => {
+      const payload = {
+        id: item?.id,
+        qty: isMinus ? Number(item?.qty) - 1 : Number(item?.qty) + 1,
+        user_id: user?.id || deviceId,
+        session_id: user?.id || deviceId
+      };
+      const response = await api.updateCart(payload);
+      handleResponse(response);
+    },
+    [user, handleResponse, deviceId]
   );
 
   const checkoutPress = () => {

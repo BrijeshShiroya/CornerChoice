@@ -13,7 +13,7 @@ export default combineReducers({
   auth: resettable(authReducer),
   home: homeReducer,
   products: productsReducer,
-  cart: resettable(cartReducer),
+  cart: cartReducer,
   orders: resettable(myorderReducer),
   complain: resettable(complainReducer)
 });

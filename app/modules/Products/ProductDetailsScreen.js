@@ -17,6 +17,8 @@ import ProductsActions from '../../redux/ProductsRedux';
 import { getPriceWithSymbol } from '../../services/Utils';
 import { ApplicationStyles, Icons } from '../../theme';
 import styles from './styles/ProductDetailsScreenStyles';
+import DeviceInfo from 'react-native-device-info';
+
 const api = API.auth();
 
 const ProductDetailsScreen = ({ route, navigation }) => {
@@ -26,7 +28,7 @@ const ProductDetailsScreen = ({ route, navigation }) => {
   const { count } = useSelector((state) => state.cart);
   const { user } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
-
+  const deviceId = DeviceInfo.getUniqueId();
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
       dispatch(ProductsActions.productAttrRequest({ product_id: item.id }));
@@ -38,6 +40,7 @@ const ProductDetailsScreen = ({ route, navigation }) => {
   );
 
   const handleResponse = useCallback(
+    // eslint-disable-next-line complexity
     (response) => {
       if (response?.data?.status && response?.data?.message === 'Success') {
         Toast.show({
@@ -46,7 +49,10 @@ const ProductDetailsScreen = ({ route, navigation }) => {
           duration: 3000
         });
         dispatch(
-          CartActions.cartRequest({ user_id: user?.id, session_id: user?.id })
+          CartActions.cartRequest({
+            user_id: user?.id || deviceId,
+            session_id: user?.id || deviceId
+          })
         );
       } else {
         Toast.show({
@@ -56,7 +62,7 @@ const ProductDetailsScreen = ({ route, navigation }) => {
         });
       }
     },
-    [user, dispatch]
+    [user, dispatch, deviceId]
   );
 
   const onAddCartPress = useCallback(async () => {
@@ -75,16 +81,16 @@ const ProductDetailsScreen = ({ route, navigation }) => {
       price: item?.product_final_price,
       product_id: item?.id,
       qty: 1,
-      session_id: user?.id,
+      session_id: user?.id || deviceId,
       title: item?.title,
       total_amount: item?.product_final_price,
-      user_id: user?.id
+      user_id: user?.id || deviceId
     };
     setFetching(true);
     const response = await api.addTocart(payload);
     setFetching(false);
     handleResponse(response);
-  }, [item, selected, productAttributes, user, handleResponse]);
+  }, [item, selected, productAttributes, user, handleResponse, deviceId]);
 
   const onLeftPress = () => {
     navigation.goBack();

@@ -31,11 +31,15 @@ const SubCategoryProductsScreen = ({ route, navigation }) => {
   }, [dispatch, navigation, categoryData]);
 
   const onLeftPress = () => {
-    navigation.openDrawer();
+    navigation.goBack();
   };
 
   const onRightPress = () => {
     navigation.navigate('CartScreen');
+  };
+
+  const navigateSearchProduct = () => {
+    navigation.navigate('SearchProductScreen');
   };
 
   return (
@@ -45,13 +49,13 @@ const SubCategoryProductsScreen = ({ route, navigation }) => {
         right
         rightTitle={count > 0 ? count : null}
         title={strings.titleProducts}
-        leftIcon={Icons.menu}
+        leftIcon={Icons.back}
         rightIcon={Icons.cart}
         leftOnPress={onLeftPress}
         rightOnPress={onRightPress}
       />
       <ImageBg style={styles.bg}>
-        <SearchBar />
+        <SearchBar onSelect={navigateSearchProduct} />
         <HomeProductList
           navigation={navigation}
           product={subCategoryProducts}

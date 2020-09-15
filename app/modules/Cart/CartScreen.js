@@ -86,7 +86,7 @@ const CartScreen = ({ navigation }) => {
   const grandTotal = Number(shipping) + Number(total);
   return (
     <SafeAreaView
-      forceInset={{ top: 0 }}
+      forceInset={{ top: 0, bottom: grandTotal > 0 ? 22 : 0 }}
       style={ApplicationStyles.screen.mainContainer}
     >
       <CustomHeader
@@ -103,12 +103,12 @@ const CartScreen = ({ navigation }) => {
           renderItem={renderItem}
         />
       </ImageBg>
-      {cartList.length > 0 && (
+      {grandTotal > 0 ? (
         <View style={styles.bottomView}>
           <Text style={styles.total}>{getPriceWithSymbol(grandTotal)}</Text>
           <CustomButton title={'CHECK OUT'} onPress={checkoutPress} />
         </View>
-      )}
+      ) : null}
 
       {fetching && <Loader />}
     </SafeAreaView>

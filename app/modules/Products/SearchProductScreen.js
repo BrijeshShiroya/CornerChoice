@@ -25,7 +25,7 @@ const SearchProductScreen = ({ navigation }) => {
   }, [dispatch, navigation]);
 
   const onLeftPress = () => {
-    navigation.openDrawer();
+    navigation.goBack();
   };
 
   const onChangeSearch = useCallback(
@@ -70,7 +70,7 @@ const SearchProductScreen = ({ navigation }) => {
         right
         rightTitle={count > 0 ? count : null}
         title={strings.titleProducts}
-        leftIcon={Icons.menu}
+        leftIcon={Icons.back}
         rightIcon={Icons.cart}
         leftOnPress={onLeftPress}
         rightOnPress={onRightPress}

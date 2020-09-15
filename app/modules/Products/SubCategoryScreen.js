@@ -33,11 +33,15 @@ const SubCategoryScreen = ({ route, navigation }) => {
   }, [dispatch, navigation, categoryData]);
 
   const onLeftPress = () => {
-    navigation.openDrawer();
+    navigation.goBack();
   };
 
   const onRightPress = () => {
     navigation.navigate('CartScreen');
+  };
+
+  const navigateSearchProduct = () => {
+    navigation.navigate('SearchProductScreen');
   };
 
   const renderItem = ({ item }) => {
@@ -60,13 +64,13 @@ const SubCategoryScreen = ({ route, navigation }) => {
         right
         rightTitle={count > 0 ? count : null}
         title={strings.mainHeaderChoiceCorner}
-        leftIcon={Icons.menu}
+        leftIcon={Icons.back}
         rightIcon={Icons.cart}
         leftOnPress={onLeftPress}
         rightOnPress={onRightPress}
       />
       <ImageBg style={styles.bg}>
-        <SearchBar />
+        <SearchBar onSelect={navigateSearchProduct} />
         <FlatList
           style={styles.listContainer}
           data={subCategory}

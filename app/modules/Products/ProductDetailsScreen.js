@@ -87,7 +87,7 @@ const ProductDetailsScreen = ({ route, navigation }) => {
   }, [item, selected, productAttributes, user, handleResponse]);
 
   const onLeftPress = () => {
-    navigation.openDrawer();
+    navigation.goBack();
   };
 
   const onRightPress = () => {
@@ -101,7 +101,7 @@ const ProductDetailsScreen = ({ route, navigation }) => {
         right
         rightTitle={count > 0 ? count : null}
         title={strings.mainHeaderChoiceCorner}
-        leftIcon={Icons.menu}
+        leftIcon={Icons.back}
         rightIcon={Icons.cart}
         leftOnPress={onLeftPress}
         rightOnPress={onRightPress}

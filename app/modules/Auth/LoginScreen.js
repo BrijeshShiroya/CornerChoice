@@ -36,6 +36,12 @@ const LoginScreen = ({ navigation }) => {
   const onLoginPress = useCallback(() => {
     if (email !== '' && password !== '') {
       dispatch(AuthActions.authRequest({ email, password }));
+    } else {
+      Toast.show({
+        text: 'Please fill all Data',
+        buttonText: 'Okay',
+        duration: 3000
+      });
     }
   }, [dispatch, email, password]);
 

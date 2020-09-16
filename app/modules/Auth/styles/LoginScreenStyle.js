@@ -11,7 +11,8 @@ const styles = StyleSheet.create({
   mainTitle: {
     fontFamily: Fonts.type.bold,
     fontSize: verticalScale(24),
-    color: Colors.themeLightGreen
+    color: Colors.themeLightGreen,
+    marginBottom: verticalScale(12)
   },
   loginContainer: {
     width: '90%',

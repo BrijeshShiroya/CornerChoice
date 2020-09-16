@@ -33,6 +33,14 @@ const RegisterScreenScreen = ({ navigation }) => {
     navigation.goBack();
   };
 
+  const showToast = () => {
+    Toast.show({
+      text: 'Please fill all Data',
+      buttonText: 'Okay',
+      duration: 3000
+    });
+  };
+
   const onRegisterPress = useCallback(() => {
     if (
       email !== '' &&
@@ -49,6 +57,8 @@ const RegisterScreenScreen = ({ navigation }) => {
           last_name: lastname
         })
       );
+    } else {
+      showToast();
     }
   }, [dispatch, email, password, phone, firstname, lastname]);
 

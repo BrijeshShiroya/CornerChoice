@@ -5,6 +5,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useDispatch, useSelector } from 'react-redux';
 import { Colors, Icons } from '../../theme';
 import styles from './SideMenuStyles';
+import DeviceInfo from 'react-native-device-info';
 
 const MenuData = [
   {
@@ -94,6 +95,7 @@ const SideMenuScreen = ({ navigation }) => {
   const email = user?.email || '--';
   const dispatch = useDispatch();
   const isLoggedIn = !!user;
+  const userId = DeviceInfo.getUniqueId();
 
   const onItemPress = useCallback(
     (item, index) => {
@@ -105,12 +107,18 @@ const SideMenuScreen = ({ navigation }) => {
       }
       if (index === 5) {
         setSelectedIndex(0);
-        dispatch({ type: 'LOGOUT' });
+        dispatch({
+          type: 'LOGOUT',
+          payload: {
+            user_id: userId,
+            session_id: userId
+          }
+        });
       } else {
         setSelectedIndex(index);
       }
     },
-    [dispatch, setSelectedIndex, navigation, isLoggedIn]
+    [dispatch, setSelectedIndex, navigation, isLoggedIn, userId]
   );
 
   const renderItem = ({ item, index }) => (

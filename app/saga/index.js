@@ -43,6 +43,7 @@ export default function* rootSaga() {
     takeLatest(MyOrderTypes.ORDER_REQUEST, getMyOrder, api),
     takeLatest(ComplainTypes.COMPLAIN_REQUEST, getComplain, api),
     takeLatest(CartTypes.CART_REQUEST, cart, api),
-    takeLatest(MyOrderTypes.ORDER_DETAIL_REQUEST, getOrderDetails, api)
+    takeLatest(MyOrderTypes.ORDER_DETAIL_REQUEST, getOrderDetails, api),
+    takeLatest('LOGOUT', cart, api)
   ]);
 }

@@ -46,7 +46,8 @@ export const failure = (state, action) => {
     fetching: false,
     cartList: [],
     shipping: 0,
-    total: 0
+    total: 0,
+    count: 0
   });
 };
 

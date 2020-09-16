@@ -7,9 +7,9 @@ function* handleResponse(response) {
     yield put(
       CartActions.cartSuccess({
         cartList: response?.data,
-        total: response?.message,
-        shipping: response?.shipping,
-        count: response?.count
+        total: response?.message || 0,
+        shipping: response?.shipping || 0,
+        count: response?.count || 0
       })
     );
   } else {

@@ -149,7 +149,7 @@ const ProductDetailsScreen = ({ route, navigation }) => {
           </View>
         </View>
       </ImageBg>
-      {fetching || (fetchingAttr && <Loader />)}
+      {(fetching || fetchingAttr) && <Loader />}
     </Container>
   );
 };

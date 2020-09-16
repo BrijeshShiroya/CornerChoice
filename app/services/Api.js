@@ -17,6 +17,7 @@ const auth = () => {
   const orderDetailData = (id) => api.post('myorderbyid', id);
   const complainData = (created_by) => api.post('complaints', created_by);
   const cartData = (userId) => api.post('mycart', userId);
+  const cartDelete = (userId) => api.post('cartdelete', userId);
   const addTocart = (cartInfo) => api.post('cart', cartInfo);
   const updateCart = (updatedData) => api.post('cartupdate', updatedData);
   const policy = (updatedData) => api.post('settings');
@@ -36,6 +37,7 @@ const auth = () => {
     complainData,
     productAttrData,
     cartData,
+    cartDelete,
     addTocart,
     updateCart,
     policy,

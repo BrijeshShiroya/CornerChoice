@@ -62,7 +62,7 @@ const OrderDetailsScreen = ({ route, navigation }) => {
   }, [id, user, setLoading, remarks, navigation]);
 
   const onLeftPress = () => {
-    navigation.openDrawer();
+    navigation.goBack();
   };
 
   const onRightPress = () => {
@@ -99,7 +99,7 @@ const OrderDetailsScreen = ({ route, navigation }) => {
         right
         rightTitle={count > 0 ? count : null}
         title={strings.titleMyOrder}
-        leftIcon={Icons.menu}
+        leftIcon={Icons.back}
         rightIcon={Icons.cart}
         leftOnPress={onLeftPress}
         rightOnPress={onRightPress}

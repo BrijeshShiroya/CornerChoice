@@ -1,13 +1,12 @@
 import { Container } from 'native-base';
-import React, { useEffect } from 'react';
-import { Text, View, FlatList } from 'react-native';
-import { CustomHeader, ImageBg, Loader } from '../../components';
-import { ApplicationStyles, Icons } from '../../theme';
-import ComplainActions from '../../redux/ComplainRedux';
-import styles from './styles/ComplainsScreenStyles';
-import strings from '../../constants/Strings';
 import PropTypes from 'prop-types';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
+import { Text, View } from 'react-native';
+import { useSelector } from 'react-redux';
+import { CustomHeader, ImageBg, Loader } from '../../components';
+import strings from '../../constants/Strings';
+import { ApplicationStyles, Icons } from '../../theme';
+import styles from './styles/ComplainsScreenStyles';
 
 const ComplainsItem = (props) => {
   const { order_id, created_date, description, status } = props;
@@ -26,17 +25,17 @@ const ComplainsItem = (props) => {
 };
 
 const ComplainsScreen = ({ navigation }) => {
-  const { user } = useSelector((state) => state.auth);
-  const { complains, fetching } = useSelector((state) => state.complain);
+  // const { user } = useSelector((state) => state.auth);
+  const { fetching } = useSelector((state) => state.complain);
   const { count } = useSelector((state) => state.cart);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    const unsubscribe = navigation.addListener('focus', () => {
-      dispatch(ComplainActions.complainRequest({ created_by: user?.id }));
-    });
-    return unsubscribe;
-  }, [dispatch, user, navigation]);
+  // useEffect(() => {
+  //   const unsubscribe = navigation.addListener('focus', () => {
+  //     dispatch(ComplainActions.complainRequest({ created_by: user?.id }));
+  //   });
+  //   return unsubscribe;
+  // }, [dispatch, user, navigation]);
 
   const onLeftPress = () => {
     navigation.openDrawer();
@@ -46,10 +45,10 @@ const ComplainsScreen = ({ navigation }) => {
     navigation.navigate('CartScreen');
   };
 
-  const renderItem = ({ item }) => {
-    return <ComplainsItem {...item} />;
-  };
-
+  // const renderItem = ({ item }) => {
+  //   return <ComplainsItem {...item} />;
+  // };
+  const title = 'Coming Soon..';
   return (
     <Container style={ApplicationStyles.screen.mainContainer}>
       <CustomHeader
@@ -63,11 +62,14 @@ const ComplainsScreen = ({ navigation }) => {
         rightOnPress={onRightPress}
       />
       <ImageBg style={styles.bg}>
-        <FlatList
+        {/* <FlatList
           style={styles.listContainer}
           data={complains}
           renderItem={renderItem}
-        />
+        /> */}
+        <View style={styles.container}>
+          <Text style={styles.coming}>{title}</Text>
+        </View>
       </ImageBg>
       {fetching && <Loader />}
     </Container>

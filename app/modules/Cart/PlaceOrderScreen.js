@@ -13,10 +13,11 @@ import {
 } from '../../components';
 import API from '../../services/Api';
 import strings from '../../constants/Strings';
+import CartActions from '../../redux/CartRedux';
 import { getPriceWithSymbol } from '../../services/Utils';
 import { ApplicationStyles, Icons } from '../../theme';
 import styles from './styles/PlaceOrderScreenStyles';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { CommonActions } from '@react-navigation/native';
 const api = API.auth();
 
@@ -30,6 +31,7 @@ const PlaceOrderScreen = ({ route, navigation }) => {
   const [fetching, setFetching] = useState(false);
   const { user } = useSelector((state) => state.auth);
   const { shipping, total, cartList } = route.params;
+  const dispatch = useDispatch();
   const onLeftPress = () => {
     navigation.goBack();
   };
@@ -41,13 +43,28 @@ const PlaceOrderScreen = ({ route, navigation }) => {
     });
   };
 
-  const handleResponse = (response) => {
+  const handleResponse = async (response) => {
     const resetAction = CommonActions.reset({
       routes: [{ name: 'HomeStack' }]
     });
     if (response?.data?.status && response?.data?.message === 'Success') {
       showToast(response?.data?.data);
-      navigation.dispatch(resetAction);
+      const resCartDel = await api.cartDelete({
+        id: '',
+        user_id: user?.id,
+        session_id: user?.id
+      });
+      if (resCartDel?.data?.status && resCartDel?.data?.message === 'Success') {
+        navigation.dispatch(resetAction);
+        dispatch(
+          CartActions.cartRequest({
+            user_id: user?.id,
+            session_id: user?.id
+          })
+        );
+      } else {
+        showToast(resCartDel?.data?.message);
+      }
     } else {
       showToast(response?.data?.message);
     }

@@ -11,6 +11,18 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.white,
     justifyContent: 'space-between'
   },
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  coming: {
+    alignSelf: 'center',
+    fontFamily: Fonts.type.bold,
+    fontSize: Fonts.size.h3,
+    color: Colors.themeGreen,
+    marginBottom: 50
+  },
   listContainer: {
     width: '100%'
   },

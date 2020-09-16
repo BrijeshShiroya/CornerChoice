@@ -50,6 +50,9 @@ const styles = StyleSheet.create({
   addToCart: {
     alignSelf: 'flex-end',
     marginBottom: verticalScale(10)
+  },
+  viewCart: {
+    color: Colors.orange
   }
 });
 

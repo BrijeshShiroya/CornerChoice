@@ -44,8 +44,10 @@ const ProductDetailsScreen = ({ route, navigation }) => {
     (response) => {
       if (response?.data?.status && response?.data?.message === 'Success') {
         Toast.show({
-          text: 'Product added to Cart',
-          buttonText: 'Okay',
+          text: 'Item added to Cart',
+          buttonText: 'VIEW CART',
+          buttonTextStyle: styles.viewCart,
+          onClose: () => navigation.navigate('CartScreen'),
           duration: 3000
         });
         dispatch(
@@ -62,7 +64,7 @@ const ProductDetailsScreen = ({ route, navigation }) => {
         });
       }
     },
-    [user, dispatch, deviceId]
+    [user, dispatch, deviceId, navigation]
   );
 
   const onAddCartPress = useCallback(async () => {

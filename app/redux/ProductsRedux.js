@@ -36,7 +36,15 @@ export const INITIAL_STATE = Immutable({
 
 /* ------------- Reducers ------------- */
 // request the data from an api
-export const request = (state) => state.merge({ fetching: true });
+export const request = (state) =>
+  state.merge({
+    fetching: true,
+    category: [],
+    subCategory: [],
+    product: [],
+    productAttributes: [],
+    subCategoryProducts: []
+  });
 
 // successful api lookup
 export const success = (state, action) => {

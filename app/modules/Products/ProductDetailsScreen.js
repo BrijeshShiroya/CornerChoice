@@ -2,7 +2,7 @@
 import { Container, Toast } from 'native-base';
 import PropTypes from 'prop-types';
 import React, { useCallback, useEffect, useState } from 'react';
-import { Image, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   CustomButton,
@@ -19,6 +19,7 @@ import { getPriceWithSymbol } from '../../services/Utils';
 import { ApplicationStyles, Icons } from '../../theme';
 import styles from './styles/ProductDetailsScreenStyles';
 import DeviceInfo from 'react-native-device-info';
+import FastImage from 'react-native-fast-image';
 
 const api = API.auth();
 
@@ -116,9 +117,9 @@ const ProductDetailsScreen = ({ route, navigation }) => {
       />
       <ImageBg style={styles.bg}>
         <View style={styles.container}>
-          <Image
+          <FastImage
             style={styles.itemImage}
-            resizeMode={'contain'}
+            resizeMode={FastImage.resizeMode.contain}
             source={{
               uri: `http://choicecorner.in/media/source/${item.intro_image}`
             }}

@@ -1,14 +1,15 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { TouchableOpacity, Text, Image } from 'react-native';
+import { TouchableOpacity, Text } from 'react-native';
 import { Icons } from '../theme';
 import styles from './styles/RadioButtonStyles';
+import FastImage from 'react-native-fast-image';
 
 const RadioButton = (props) => {
   const { selected, title, onPress, titleStyle } = props;
   return (
     <TouchableOpacity style={styles.radioContainer} onPress={onPress}>
-      <Image
+      <FastImage
         style={styles.radio}
         source={selected ? Icons.active : Icons.inactive}
       />

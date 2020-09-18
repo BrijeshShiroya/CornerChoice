@@ -28,7 +28,6 @@ export const INITIAL_STATE = Immutable({
   fetching: null,
   error: null,
   category: [],
-  product: [],
   productAttributes: [],
   subCategory: [],
   subCategoryProducts: []

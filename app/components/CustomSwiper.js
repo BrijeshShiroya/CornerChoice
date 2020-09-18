@@ -1,9 +1,10 @@
 import React from 'react';
-import { Image, View } from 'react-native';
+import { View } from 'react-native';
 import Swiper from 'react-native-swiper';
 import { useSelector } from 'react-redux';
 import { Colors } from '../theme';
 import styles from './styles/CustomSwiperStyles';
+import FastImage from 'react-native-fast-image';
 
 const CustomSwiper = () => {
   const { swiperData } = useSelector((state) => state.home);
@@ -18,7 +19,7 @@ const CustomSwiper = () => {
         {swiperData?.map((item, index) => {
           return (
             <View key={item.id} style={styles.slider}>
-              <Image
+              <FastImage
                 style={styles.image}
                 source={{
                   uri: `http://choicecorner.in/media/source/${item.image}`

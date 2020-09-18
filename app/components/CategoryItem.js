@@ -1,13 +1,14 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { TouchableOpacity, Text, Image } from 'react-native';
+import { TouchableOpacity, Text } from 'react-native';
+import FastImage from 'react-native-fast-image';
 import styles from './styles/CategoryItemStyles';
 
 const CategoryItem = (props) => {
   const { item, onPress } = props;
   return (
     <TouchableOpacity style={styles.container} onPress={onPress}>
-      <Image
+      <FastImage
         style={styles.image}
         source={{
           uri: `http://choicecorner.in/media/source/${item.menu_icon}`

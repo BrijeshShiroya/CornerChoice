@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import styles from './styles/CartItemStyles';
 import { getPriceWithSymbol } from '../services/Utils';
+import FastImage from 'react-native-fast-image';
 
 const CartButton = (props) => {
   const { count, onPlusPress, onMinusPress } = props;
@@ -25,9 +26,9 @@ const CartItem = (props) => {
   const { item } = props;
   return (
     <View style={styles.container}>
-      <Image
+      <FastImage
         style={styles.itemImage}
-        resizeMode={'contain'}
+        resizeMode={FastImage.resizeMode.contain}
         source={{
           uri: `http://choicecorner.in/media/source/${item.image}`
         }}

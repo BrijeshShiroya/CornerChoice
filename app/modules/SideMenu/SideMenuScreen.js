@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types';
 import React, { useCallback, useState } from 'react';
-import { FlatList, Image, Text, TouchableOpacity, View } from 'react-native';
+import { FlatList, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useDispatch, useSelector } from 'react-redux';
 import { Colors, Icons } from '../../theme';
 import styles from './SideMenuStyles';
 import DeviceInfo from 'react-native-device-info';
+import FastImage from 'react-native-fast-image';
 
 const MenuData = [
   {
@@ -40,7 +41,7 @@ const SideMenuHeader = (props) => {
   const email = props?.email || '---';
   return (
     <View style={styles.header}>
-      <Image source={Icons.user} style={styles.userIcon} />
+      <FastImage source={Icons.user} style={styles.userIcon} />
       <View>
         <Text style={styles.title}>{userName}</Text>
         <Text style={styles.title}>{email}</Text>
@@ -80,7 +81,11 @@ const MenuItem = (props) => {
       ]}
       onPress={onPress}
     >
-      <Image source={icon} style={styles.menuIcon} resizeMode={'contain'} />
+      <FastImage
+        source={icon}
+        style={styles.menuIcon}
+        resizeMode={FastImage.resizeMode.contain}
+      />
       <Text style={styles.menuTitle}>{title}</Text>
     </TouchableOpacity>
   );

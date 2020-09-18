@@ -11,7 +11,8 @@ import { ApplicationStyles, Colors, Icons } from '../../theme';
 import styles from './styles/SearchProductScreenStyles';
 import { useDispatch, useSelector } from 'react-redux';
 import ProductsActions from '../../redux/ProductsRedux';
-import { Image, TextInput, View } from 'react-native';
+import { TextInput, View } from 'react-native';
+import FastImage from 'react-native-fast-image';
 
 const SearchProductScreen = ({ navigation }) => {
   const { product, fetching } = useSelector((state) => state.products);
@@ -58,7 +59,7 @@ const SearchProductScreen = ({ navigation }) => {
           value={value}
           onChangeText={onChangeSearch}
         />
-        <Image source={Icons.search} style={styles.imageIcon} />
+        <FastImage source={Icons.search} style={styles.imageIcon} />
       </View>
     );
   };

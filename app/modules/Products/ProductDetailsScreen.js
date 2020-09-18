@@ -1,3 +1,4 @@
+/* eslint-disable complexity */
 import { Container, Toast } from 'native-base';
 import PropTypes from 'prop-types';
 import React, { useCallback, useEffect, useState } from 'react';
@@ -53,7 +54,7 @@ const ProductDetailsScreen = ({ route, navigation }) => {
         dispatch(
           CartActions.cartRequest({
             user_id: user?.id || deviceId,
-            session_id: user?.id || deviceId
+            session_id: deviceId
           })
         );
       } else {
@@ -68,24 +69,23 @@ const ProductDetailsScreen = ({ route, navigation }) => {
   );
 
   const onAddCartPress = useCallback(async () => {
+    const selectedAttr = productAttributes?.[selected];
     const att =
       productAttributes.length !== 0
-        ? `${JSON?.parse(productAttributes?.[selected]?.attributes)}`?.split(
-            ':'
-          )?.[1]
+        ? `${JSON?.parse(selectedAttr?.attributes)}`?.split(':')?.[1]
         : '';
     const payload = {
       attributes: att,
       created_by: item?.created_by,
       image: item?.intro_image,
-      json_data: productAttributes?.[selected]?.attributes || '',
-      mrp: item?.product_final_price,
-      price: item?.product_final_price,
-      product_id: item?.id,
+      json_data: selectedAttr?.attributes || '',
+      mrp: selectedAttr?.mrp || item?.product_final_price,
+      price: selectedAttr?.price || item?.product_final_price,
+      product_id: selectedAttr?.product_id || item?.id,
       qty: 1,
-      session_id: user?.id || deviceId,
+      session_id: deviceId,
       title: item?.title,
-      total_amount: item?.product_final_price,
+      total_amount: selectedAttr?.price || item?.product_final_price,
       user_id: user?.id || deviceId
     };
     setFetching(true);

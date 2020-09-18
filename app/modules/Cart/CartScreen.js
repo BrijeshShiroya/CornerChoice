@@ -32,7 +32,7 @@ const CartScreen = ({ navigation }) => {
       dispatch(
         CartActions.cartRequest({
           user_id: user?.id || deviceId,
-          session_id: user?.id || deviceId
+          session_id: deviceId
         })
       );
     });
@@ -49,7 +49,7 @@ const CartScreen = ({ navigation }) => {
         dispatch(
           CartActions.cartRequest({
             user_id: user?.id || deviceId,
-            session_id: user?.id || deviceId
+            session_id: deviceId
           })
         );
       } else {
@@ -65,14 +65,24 @@ const CartScreen = ({ navigation }) => {
 
   const onPlusPress = useCallback(
     async (item, isMinus) => {
+      const qty = isMinus ? Number(item?.qty) - 1 : Number(item?.qty) + 1;
       const payload = {
         id: item?.id,
-        qty: isMinus ? Number(item?.qty) - 1 : Number(item?.qty) + 1,
+        qty: qty,
         user_id: user?.id || deviceId,
-        session_id: user?.id || deviceId
+        session_id: deviceId
       };
-      const response = await api.updateCart(payload);
-      handleResponse(response);
+      if (qty === 0) {
+        const response = await api.cartDelete({
+          id: item?.id,
+          user_id: '',
+          session_id: ''
+        });
+        handleResponse(response);
+      } else {
+        const response = await api.updateCart(payload);
+        handleResponse(response);
+      }
     },
     [user, handleResponse, deviceId]
   );

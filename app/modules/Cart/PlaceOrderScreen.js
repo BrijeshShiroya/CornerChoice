@@ -19,6 +19,7 @@ import { ApplicationStyles, Icons } from '../../theme';
 import styles from './styles/PlaceOrderScreenStyles';
 import { useDispatch, useSelector } from 'react-redux';
 import { CommonActions } from '@react-navigation/native';
+import DeviceInfo from 'react-native-device-info';
 const api = API.auth();
 
 const PlaceOrderScreen = ({ route, navigation }) => {
@@ -44,6 +45,7 @@ const PlaceOrderScreen = ({ route, navigation }) => {
   };
 
   const handleResponse = async (response) => {
+    const deviceId = DeviceInfo?.getUniqueId();
     const resetAction = CommonActions.reset({
       routes: [{ name: 'HomeStack' }]
     });
@@ -52,14 +54,14 @@ const PlaceOrderScreen = ({ route, navigation }) => {
       const resCartDel = await api.cartDelete({
         id: '',
         user_id: user?.id,
-        session_id: user?.id
+        session_id: deviceId
       });
       if (resCartDel?.data?.status && resCartDel?.data?.message === 'Success') {
         navigation.dispatch(resetAction);
         dispatch(
           CartActions.cartRequest({
             user_id: user?.id,
-            session_id: user?.id
+            session_id: deviceId
           })
         );
       } else {

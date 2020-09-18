@@ -1,6 +1,7 @@
 import { call, put } from 'redux-saga/effects';
 import CartActions from '../redux/CartRedux';
 import { getError } from '../services/Utils';
+import DeviceInfo from 'react-native-device-info';
 
 function* handleResponse(response) {
   if (response?.status) {
@@ -25,6 +26,9 @@ export function* cart(api, action) {
 
 export function* cartOnAuth(api, action) {
   const { id } = action?.data;
-  const response = yield call(api.cartData, { user_id: id, session_id: id });
+  const response = yield call(api.cartData, {
+    user_id: id,
+    session_id: DeviceInfo?.getUniqueId()
+  });
   yield* handleResponse(response.data);
 }

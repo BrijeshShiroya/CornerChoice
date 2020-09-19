@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { verticalScale, Colors, Fonts } from '../../theme';
+import { verticalScale, Colors, Fonts, Metrics } from '../../theme';
 
 const styles = StyleSheet.create({
   headerContainers: {
@@ -8,7 +8,9 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.white,
     alignItems: 'center',
     justifyContent: 'center',
-    marginVertical: 6
+    marginVertical: 6,
+    width: Metrics.screenWidth - 12,
+    alignSelf: 'center'
   },
   headerTitle: {
     fontFamily: Fonts.type.bold,

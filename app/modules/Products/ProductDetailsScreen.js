@@ -1,4 +1,3 @@
-/* eslint-disable complexity */
 import { Container, Toast } from 'native-base';
 import PropTypes from 'prop-types';
 import React, { useCallback, useEffect, useState } from 'react';
@@ -42,14 +41,17 @@ const ProductDetailsScreen = ({ route, navigation }) => {
   );
 
   const handleResponse = useCallback(
-    // eslint-disable-next-line complexity
     (response) => {
       if (response?.data?.status && response?.data?.message === 'Success') {
         Toast.show({
           text: 'Item added to Cart',
           buttonText: 'VIEW CART',
           buttonTextStyle: styles.viewCart,
-          onClose: () => navigation.navigate('CartScreen'),
+          onClose: (reason) => {
+            if (reason === 'user') {
+              navigation.navigate('CartScreen');
+            }
+          },
           duration: 3000
         });
         dispatch(
@@ -69,6 +71,7 @@ const ProductDetailsScreen = ({ route, navigation }) => {
     [user, dispatch, deviceId, navigation]
   );
 
+  // eslint-disable-next-line complexity
   const onAddCartPress = useCallback(async () => {
     const selectedAttr = productAttributes?.[selected];
     const att =

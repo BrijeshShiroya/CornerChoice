@@ -1,7 +1,8 @@
 import { Container, Toast } from 'native-base';
 import PropTypes from 'prop-types';
-import React, { useEffect, useState, useCallback } from 'react';
-import { FlatList, View, Text } from 'react-native';
+import React, { useCallback, useEffect, useState } from 'react';
+import { Text, View } from 'react-native';
+import StepIndicator, { stepIndicatorStyle } from 'react-native-step-indicator';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   CustomButton,
@@ -10,11 +11,11 @@ import {
   ImageBg,
   Loader
 } from '../../components';
-import API from '../../services/Api';
 import strings from '../../constants/Strings';
+import MyOrderActions from '../../redux/MyOrderRedux';
+import API from '../../services/Api';
 import { ApplicationStyles, Icons } from '../../theme';
 import styles from './styles/OrderDetailsScreenStyles';
-import MyOrderActions from '../../redux/MyOrderRedux';
 const api = API.auth();
 
 const OrderDetailsItem = (props) => {
@@ -27,6 +28,7 @@ const OrderDetailsItem = (props) => {
   );
 };
 
+// eslint-disable-next-line complexity
 const OrderDetailsScreen = ({ route, navigation }) => {
   const [loading, setLoading] = useState(false);
   const { id, order_status } = route.params;
@@ -69,8 +71,32 @@ const OrderDetailsScreen = ({ route, navigation }) => {
     navigation.navigate('CartScreen');
   };
 
-  const renderItem = ({ item }) => {
-    return <OrderDetailsItem {...item} />;
+  const renderItem = (item) => {
+    return (
+      <View>
+        <Text style={styles.stepTitle}>{item?.title}</Text>
+        <Text style={styles.stepTitle}>{item?.created_date}</Text>
+      </View>
+    );
+  };
+
+  const renderStepIndicator = () => {
+    return (
+      <View style={styles.stepIndicatorContainer}>
+        {orderDetail?.length > 0 && (
+          <StepIndicator
+            customStyles={stepIndicatorStyle}
+            stepCount={orderDetail?.length}
+            currentPosition={
+              orderDetail?.length > 1 ? orderDetail?.length - 1 : 0
+            }
+            labels={orderDetail?.map((order) => order?.title)}
+            renderStepIndicator={() => <View />}
+            renderLabel={({ position }) => renderItem(orderDetail[position])}
+          />
+        )}
+      </View>
+    );
   };
 
   const CancelView = () => {
@@ -105,12 +131,8 @@ const OrderDetailsScreen = ({ route, navigation }) => {
         rightOnPress={onRightPress}
       />
       <ImageBg style={styles.bg}>
-        <FlatList
-          style={styles.listContainer}
-          data={orderDetail}
-          renderItem={renderItem}
-          ListFooterComponent={order_status === 'Pending' ? CancelView() : null}
-        />
+        {renderStepIndicator()}
+        {order_status === 'Pending' && CancelView()}
       </ImageBg>
       {(fetching || loading) && <Loader />}
     </Container>

@@ -40,6 +40,7 @@
     "react-native-safe-area-context": "^3.1.6",
     "react-native-screens": "^2.10.1",
     "react-native-splash-screen": "^3.2.0",
+    "react-native-step-indicator": "^1.0.3",
     "react-native-swiper": "^1.6.0",
     "react-native-webview": "^10.8.3",
     "react-navigation": "^4.4.0",

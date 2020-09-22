@@ -6,6 +6,30 @@ import {
   verticalScale
 } from '../../../theme';
 
+export const stepIndicatorStyle = {
+  stepIndicatorSize: 10,
+  currentStepIndicatorSize: 10,
+  separatorStrokeWidth: 2,
+  currentStepStrokeWidth: 3,
+  stepStrokeCurrentColor: Colors.themeGreen,
+  stepStrokeWidth: 3,
+  stepStrokeFinishedColor: Colors.themeGreen,
+  stepStrokeUnFinishedColor: Colors.themeGreen,
+  separatorFinishedColor: Colors.themeGreen,
+  separatorUnFinishedColor: Colors.themeGreen,
+  stepIndicatorFinishedColor: Colors.themeGreen,
+  stepIndicatorUnFinishedColor: Colors.themeGreen,
+  stepIndicatorCurrentColor: Colors.themeGreen,
+  stepIndicatorLabelFontSize: 0,
+  currentStepIndicatorLabelFontSize: 0,
+  stepIndicatorLabelCurrentColor: Colors.transparent,
+  stepIndicatorLabelFinishedColor: Colors.transparent,
+  stepIndicatorLabelUnFinishedColor: Colors.transparent,
+  labelColor: Colors.themeGreen,
+  labelSize: 13,
+  currentStepLabelColor: Colors.themeGreen
+};
+
 const styles = StyleSheet.create({
   ...ApplicationStyles.screen,
   container: {
@@ -17,6 +41,10 @@ const styles = StyleSheet.create({
   bg: {
     justifyContent: 'flex-start',
     flex: 1
+  },
+  stepIndicatorContainer: {
+    width: '100%',
+    marginVertical: verticalScale(15)
   },
   orderDetailsItemContainer: {
     padding: 10,
@@ -39,8 +67,8 @@ const styles = StyleSheet.create({
     fontWeight: '400'
   },
   footerContainer: {
-    marginTop: 20,
-    marginHorizontal: 15
+    marginHorizontal: 15,
+    width: '90%'
   },
   cancelOrder: {
     width: '100%',
@@ -56,6 +84,11 @@ const styles = StyleSheet.create({
     marginBottom: verticalScale(15),
     backgroundColor: Colors.white,
     textAlignVertical: 'top'
+  },
+  stepTitle: {
+    fontFamily: Fonts.type.regular,
+    fontSize: 10,
+    textAlign: 'center'
   }
 });
 

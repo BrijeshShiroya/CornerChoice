@@ -90,10 +90,11 @@ const PlaceOrderScreen = ({ route, navigation }) => {
         customer_phonenumber: user?.phone,
         customer_pincode: pincode,
         shipping: shipping,
-        total_amount: `${Number(total) + Number(shipping)}`,
+        total_amount: total,
         user_id: user?.id,
-        order_details: `"{${JSON.stringify(order_details)}"`
+        order_details: order_details
       };
+
       const response = await api.placeOrder(payload);
       setFetching(false);
       handleResponse(response);

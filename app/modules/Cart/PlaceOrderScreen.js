@@ -1,7 +1,7 @@
 import { Toast } from 'native-base';
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Platform } from 'react-native';
 import {
   CustomHeader,
   CustomTextInput,
@@ -92,6 +92,7 @@ const PlaceOrderScreen = ({ route, navigation }) => {
         shipping: shipping,
         total_amount: total,
         user_id: user?.id,
+        device_type: Platform.OS === 'ios' ? '3' : '2',
         order_details: order_details
       };
 

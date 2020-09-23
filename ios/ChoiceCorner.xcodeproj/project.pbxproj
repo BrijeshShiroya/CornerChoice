@@ -679,6 +679,7 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = ChoiceCorner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0.1;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -705,6 +706,7 @@
 				DEVELOPMENT_TEAM = L4VHZ5JU94;
 				INFOPLIST_FILE = ChoiceCorner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0.1;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",

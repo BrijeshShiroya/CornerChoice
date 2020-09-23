@@ -108,7 +108,7 @@ const CartScreen = ({ navigation }) => {
       />
     ) : null;
   };
-  const grandTotal = Number(shipping) + Number(total);
+  const grandTotal = Number(total);
   return (
     <SafeAreaView
       forceInset={{ top: 0, bottom: grandTotal > 0 ? 22 : 0 }}

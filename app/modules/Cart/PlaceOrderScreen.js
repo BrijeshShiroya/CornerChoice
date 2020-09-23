@@ -93,9 +93,8 @@ const PlaceOrderScreen = ({ route, navigation }) => {
         total_amount: total,
         user_id: user?.id,
         device_type: Platform.OS === 'ios' ? '3' : '2',
-        order_details: order_details
+        order_details: `{${order_details}}`
       };
-
       const response = await api.placeOrder(payload);
       setFetching(false);
       handleResponse(response);

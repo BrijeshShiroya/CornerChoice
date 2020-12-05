@@ -3,7 +3,6 @@ import { applyMiddleware, compose, createStore } from 'redux';
 import { persistReducer, persistStore } from 'redux-persist';
 import createSagaMiddleware from 'redux-saga';
 import rootSaga from '../saga/index';
-import immutablePersistenceTransform from '../services/immutablePersistenceTransform';
 import rootReducer from './index';
 
 const sagaMonitor = __DEV__ ? console.tron.createSagaMonitor() : null;
@@ -13,8 +12,7 @@ const middleWare = [sagaMiddleware];
 const persistConfig = {
   key: '@choicecorner',
   storage: AsyncStorage,
-  blacklist: ['nav'],
-  transforms: [immutablePersistenceTransform]
+  blacklist: ['nav']
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

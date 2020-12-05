@@ -1,6 +1,6 @@
 const colors = {
-  transparent: 'rgba(0,0,0,0)',
-  error: 'rgba(200, 0, 0, 0.8)',
+  appBgBlur: 'rgba(0,0,0,0.3)',
+  btnOrange: 'rgba(248, 156, 33)',
   white: 'white',
   black: 'black',
   green: 'rgb(19, 213, 33)',
@@ -11,5 +11,4 @@ const colors = {
   neutral: '#3D3D3D',
   rosyBrown: '#FFC1C1'
 };
-//#009846 / #017E3A / #F4F4F4 / #FFFFFF
 export default colors;

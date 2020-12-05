@@ -1,5 +1,6 @@
 const images = {
-  logo: require('./logo.png')
+  logo: require('./logo.png'),
+  appBg: require('./bitmap.png')
 };
 
 export default images;

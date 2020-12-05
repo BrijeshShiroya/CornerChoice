@@ -1,28 +1,23 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import React, { forwardRef, useEffect, useState } from 'react';
+import React, { forwardRef, useEffect } from 'react';
 import HomeScreen from '../modules/Home/HomeScreen';
-import LaunchScreen from '../modules/LaunchScreen';
+import SplashScreen from 'react-native-splash-screen';
 
 const Stack = createStackNavigator();
 
 const RootStackScreen = (props, ref) => {
-  const [loading, setLoading] = useState(true);
   useEffect(() => {
-    setLoading(false);
+    SplashScreen.hide();
   }, []);
 
   return (
     <SafeAreaProvider>
       <NavigationContainer ref={ref}>
-        {loading ? (
-          <LaunchScreen />
-        ) : (
-          <Stack.Navigator headerMode="none">
-            <Stack.Screen name="HomeScreen" component={HomeScreen} />
-          </Stack.Navigator>
-        )}
+        <Stack.Navigator headerMode="none">
+          <Stack.Screen name="HomeScreen" component={HomeScreen} />
+        </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
   );

@@ -1,9 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import { Image, TouchableOpacity, Text } from 'react-native';
+import { Image, TouchableOpacity, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-navigation';
 import styles from './styles/CustomHeaderStyles';
-import { View } from 'native-base';
 
 const leftSection = (leftIcon, leftIconStyle, leftOnPress) => (
   <TouchableOpacity

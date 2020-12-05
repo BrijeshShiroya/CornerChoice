@@ -1,6 +1,5 @@
 const images = {
-  logo: require('./logo.png'),
-  avatar: require('./user.png')
+  logo: require('./logo.png')
 };
 
 export default images;

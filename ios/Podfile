@@ -3,12 +3,12 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 
 platform :ios, '10.0'
 
-target 'ChoiceCorner' do
+target 'SightSpecDemo' do
   config = use_native_modules!
 
   use_react_native!(:path => config["reactNativePath"])
 
-  target 'ChoiceCornerTests' do
+  target 'SightSpecDemoTests' do
     inherit! :complete
     # Pods for testing
   end
@@ -23,10 +23,10 @@ target 'ChoiceCorner' do
   end
 end
 
-target 'ChoiceCorner-tvOS' do
-  # Pods for ChoiceCorner-tvOS
+target 'SightSpecDemo-tvOS' do
+  # Pods for SightSpecDemo-tvOS
 
-  target 'ChoiceCorner-tvOSTests' do
+  target 'SightSpecDemo-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end

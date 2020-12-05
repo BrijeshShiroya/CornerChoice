@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* ChoiceCornerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ChoiceCornerTests.m */; };
+		00E356F31AD99517003FC87E /* SightSpecDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* SightSpecDemoTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2DCD954D1E0B4F2C00145EB5 /* ChoiceCornerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ChoiceCornerTests.m */; };
-		462633760074044A11104751 /* libPods-ChoiceCorner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3B0B9B550CD2633C0061B26 /* libPods-ChoiceCorner.a */; };
-		492FDAA3E59DEFED2A6BBE61 /* libPods-ChoiceCorner-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83BD9347CE40F3B4C5285EF5 /* libPods-ChoiceCorner-tvOS.a */; };
-		56B882EF0ECB31DD055B03A1 /* libPods-ChoiceCorner-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3054F6E2642623F7942593EF /* libPods-ChoiceCorner-tvOSTests.a */; };
+		2DCD954D1E0B4F2C00145EB5 /* SightSpecDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* SightSpecDemoTests.m */; };
+		462633760074044A11104751 /* libPods-SightSpecDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B3B0B9B550CD2633C0061B26 /* libPods-SightSpecDemo.a */; };
+		492FDAA3E59DEFED2A6BBE61 /* libPods-SightSpecDemo-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83BD9347CE40F3B4C5285EF5 /* libPods-SightSpecDemo-tvOS.a */; };
+		56B882EF0ECB31DD055B03A1 /* libPods-SightSpecDemo-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3054F6E2642623F7942593EF /* libPods-SightSpecDemo-tvOSTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		E2A21A7E477E8CD1B5DD34F0 /* libPods-ChoiceCorner-ChoiceCornerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0ACAB84D92AD098B3AF3EC0 /* libPods-ChoiceCorner-ChoiceCornerTests.a */; };
+		E2A21A7E477E8CD1B5DD34F0 /* libPods-SightSpecDemo-SightSpecDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0ACAB84D92AD098B3AF3EC0 /* libPods-SightSpecDemo-SightSpecDemoTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,45 +28,45 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = ChoiceCorner;
+			remoteInfo = SightSpecDemo;
 		};
 		2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
-			remoteInfo = "ChoiceCorner-tvOS";
+			remoteInfo = "SightSpecDemo-tvOS";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
-		00E356EE1AD99517003FC87E /* ChoiceCornerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChoiceCornerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* SightSpecDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SightSpecDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* ChoiceCornerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChoiceCornerTests.m; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* ChoiceCorner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChoiceCorner.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ChoiceCorner/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ChoiceCorner/AppDelegate.m; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ChoiceCorner/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ChoiceCorner/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ChoiceCorner/main.m; sourceTree = "<group>"; };
-		1E7CAD881A0D4F10A646CE1F /* Pods-ChoiceCorner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChoiceCorner.debug.xcconfig"; path = "Target Support Files/Pods-ChoiceCorner/Pods-ChoiceCorner.debug.xcconfig"; sourceTree = "<group>"; };
-		2D02E47B1E0B4A5D006451C7 /* ChoiceCorner-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ChoiceCorner-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D02E4901E0B4A5D006451C7 /* ChoiceCorner-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ChoiceCorner-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3054F6E2642623F7942593EF /* libPods-ChoiceCorner-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChoiceCorner-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		31933A5495B08E568C7FBCB2 /* Pods-ChoiceCorner-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChoiceCorner-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-ChoiceCorner-tvOSTests/Pods-ChoiceCorner-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		6B7AC2F8E6B4620C348B13B3 /* Pods-ChoiceCorner-ChoiceCornerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChoiceCorner-ChoiceCornerTests.debug.xcconfig"; path = "Target Support Files/Pods-ChoiceCorner-ChoiceCornerTests/Pods-ChoiceCorner-ChoiceCornerTests.debug.xcconfig"; sourceTree = "<group>"; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ChoiceCorner/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		83BD9347CE40F3B4C5285EF5 /* libPods-ChoiceCorner-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChoiceCorner-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		86036EA126B29F088D5760A9 /* Pods-ChoiceCorner-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChoiceCorner-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-ChoiceCorner-tvOSTests/Pods-ChoiceCorner-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		A4E93A491FF91981A2264135 /* Pods-ChoiceCorner-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChoiceCorner-tvOS.release.xcconfig"; path = "Target Support Files/Pods-ChoiceCorner-tvOS/Pods-ChoiceCorner-tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		B3B0B9B550CD2633C0061B26 /* libPods-ChoiceCorner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChoiceCorner.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C0ACAB84D92AD098B3AF3EC0 /* libPods-ChoiceCorner-ChoiceCornerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ChoiceCorner-ChoiceCornerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C49DE87DC3ADB515C264AD4A /* Pods-ChoiceCorner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChoiceCorner.release.xcconfig"; path = "Target Support Files/Pods-ChoiceCorner/Pods-ChoiceCorner.release.xcconfig"; sourceTree = "<group>"; };
-		D408B12F893C9A0C55D91B87 /* Pods-ChoiceCorner-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChoiceCorner-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-ChoiceCorner-tvOS/Pods-ChoiceCorner-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* SightSpecDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SightSpecDemoTests.m; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* SightSpecDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SightSpecDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = SightSpecDemo/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = SightSpecDemo/AppDelegate.m; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SightSpecDemo/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SightSpecDemo/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = SightSpecDemo/main.m; sourceTree = "<group>"; };
+		1E7CAD881A0D4F10A646CE1F /* Pods-SightSpecDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SightSpecDemo.debug.xcconfig"; path = "Target Support Files/Pods-SightSpecDemo/Pods-SightSpecDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		2D02E47B1E0B4A5D006451C7 /* SightSpecDemo-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SightSpecDemo-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E4901E0B4A5D006451C7 /* SightSpecDemo-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SightSpecDemo-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3054F6E2642623F7942593EF /* libPods-SightSpecDemo-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SightSpecDemo-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		31933A5495B08E568C7FBCB2 /* Pods-SightSpecDemo-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SightSpecDemo-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-SightSpecDemo-tvOSTests/Pods-SightSpecDemo-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6B7AC2F8E6B4620C348B13B3 /* Pods-SightSpecDemo-SightSpecDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SightSpecDemo-SightSpecDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-SightSpecDemo-SightSpecDemoTests/Pods-SightSpecDemo-SightSpecDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = SightSpecDemo/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		83BD9347CE40F3B4C5285EF5 /* libPods-SightSpecDemo-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SightSpecDemo-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		86036EA126B29F088D5760A9 /* Pods-SightSpecDemo-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SightSpecDemo-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-SightSpecDemo-tvOSTests/Pods-SightSpecDemo-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		A4E93A491FF91981A2264135 /* Pods-SightSpecDemo-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SightSpecDemo-tvOS.release.xcconfig"; path = "Target Support Files/Pods-SightSpecDemo-tvOS/Pods-SightSpecDemo-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		B3B0B9B550CD2633C0061B26 /* libPods-SightSpecDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SightSpecDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0ACAB84D92AD098B3AF3EC0 /* libPods-SightSpecDemo-SightSpecDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SightSpecDemo-SightSpecDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C49DE87DC3ADB515C264AD4A /* Pods-SightSpecDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SightSpecDemo.release.xcconfig"; path = "Target Support Files/Pods-SightSpecDemo/Pods-SightSpecDemo.release.xcconfig"; sourceTree = "<group>"; };
+		D408B12F893C9A0C55D91B87 /* Pods-SightSpecDemo-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SightSpecDemo-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-SightSpecDemo-tvOS/Pods-SightSpecDemo-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		FB53EC441A4CB10B3960A5A4 /* Pods-ChoiceCorner-ChoiceCornerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChoiceCorner-ChoiceCornerTests.release.xcconfig"; path = "Target Support Files/Pods-ChoiceCorner-ChoiceCornerTests/Pods-ChoiceCorner-ChoiceCornerTests.release.xcconfig"; sourceTree = "<group>"; };
+		FB53EC441A4CB10B3960A5A4 /* Pods-SightSpecDemo-SightSpecDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SightSpecDemo-SightSpecDemoTests.release.xcconfig"; path = "Target Support Files/Pods-SightSpecDemo-SightSpecDemoTests/Pods-SightSpecDemo-SightSpecDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2A21A7E477E8CD1B5DD34F0 /* libPods-ChoiceCorner-ChoiceCornerTests.a in Frameworks */,
+				E2A21A7E477E8CD1B5DD34F0 /* libPods-SightSpecDemo-SightSpecDemoTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				462633760074044A11104751 /* libPods-ChoiceCorner.a in Frameworks */,
+				462633760074044A11104751 /* libPods-SightSpecDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,7 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				492FDAA3E59DEFED2A6BBE61 /* libPods-ChoiceCorner-tvOS.a in Frameworks */,
+				492FDAA3E59DEFED2A6BBE61 /* libPods-SightSpecDemo-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,20 +98,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56B882EF0ECB31DD055B03A1 /* libPods-ChoiceCorner-tvOSTests.a in Frameworks */,
+				56B882EF0ECB31DD055B03A1 /* libPods-SightSpecDemo-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* ChoiceCornerTests */ = {
+		00E356EF1AD99517003FC87E /* SightSpecDemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* ChoiceCornerTests.m */,
+				00E356F21AD99517003FC87E /* SightSpecDemoTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = ChoiceCornerTests;
+			path = SightSpecDemoTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -122,7 +122,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* ChoiceCorner */ = {
+		13B07FAE1A68108700A75B9A /* SightSpecDemo */ = {
 			isa = PBXGroup;
 			children = (
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
@@ -133,7 +133,7 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = ChoiceCorner;
+			name = SightSpecDemo;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -141,10 +141,10 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				B3B0B9B550CD2633C0061B26 /* libPods-ChoiceCorner.a */,
-				C0ACAB84D92AD098B3AF3EC0 /* libPods-ChoiceCorner-ChoiceCornerTests.a */,
-				83BD9347CE40F3B4C5285EF5 /* libPods-ChoiceCorner-tvOS.a */,
-				3054F6E2642623F7942593EF /* libPods-ChoiceCorner-tvOSTests.a */,
+				B3B0B9B550CD2633C0061B26 /* libPods-SightSpecDemo.a */,
+				C0ACAB84D92AD098B3AF3EC0 /* libPods-SightSpecDemo-SightSpecDemoTests.a */,
+				83BD9347CE40F3B4C5285EF5 /* libPods-SightSpecDemo-tvOS.a */,
+				3054F6E2642623F7942593EF /* libPods-SightSpecDemo-tvOSTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -152,14 +152,14 @@
 		45B11D3B523510B948F10687 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1E7CAD881A0D4F10A646CE1F /* Pods-ChoiceCorner.debug.xcconfig */,
-				C49DE87DC3ADB515C264AD4A /* Pods-ChoiceCorner.release.xcconfig */,
-				6B7AC2F8E6B4620C348B13B3 /* Pods-ChoiceCorner-ChoiceCornerTests.debug.xcconfig */,
-				FB53EC441A4CB10B3960A5A4 /* Pods-ChoiceCorner-ChoiceCornerTests.release.xcconfig */,
-				D408B12F893C9A0C55D91B87 /* Pods-ChoiceCorner-tvOS.debug.xcconfig */,
-				A4E93A491FF91981A2264135 /* Pods-ChoiceCorner-tvOS.release.xcconfig */,
-				31933A5495B08E568C7FBCB2 /* Pods-ChoiceCorner-tvOSTests.debug.xcconfig */,
-				86036EA126B29F088D5760A9 /* Pods-ChoiceCorner-tvOSTests.release.xcconfig */,
+				1E7CAD881A0D4F10A646CE1F /* Pods-SightSpecDemo.debug.xcconfig */,
+				C49DE87DC3ADB515C264AD4A /* Pods-SightSpecDemo.release.xcconfig */,
+				6B7AC2F8E6B4620C348B13B3 /* Pods-SightSpecDemo-SightSpecDemoTests.debug.xcconfig */,
+				FB53EC441A4CB10B3960A5A4 /* Pods-SightSpecDemo-SightSpecDemoTests.release.xcconfig */,
+				D408B12F893C9A0C55D91B87 /* Pods-SightSpecDemo-tvOS.debug.xcconfig */,
+				A4E93A491FF91981A2264135 /* Pods-SightSpecDemo-tvOS.release.xcconfig */,
+				31933A5495B08E568C7FBCB2 /* Pods-SightSpecDemo-tvOSTests.debug.xcconfig */,
+				86036EA126B29F088D5760A9 /* Pods-SightSpecDemo-tvOSTests.release.xcconfig */,
 			);
 			name = Pods;
 			path = Pods;
@@ -175,9 +175,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* ChoiceCorner */,
+				13B07FAE1A68108700A75B9A /* SightSpecDemo */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* ChoiceCornerTests */,
+				00E356EF1AD99517003FC87E /* SightSpecDemoTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				45B11D3B523510B948F10687 /* Pods */,
@@ -190,10 +190,10 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* ChoiceCorner.app */,
-				00E356EE1AD99517003FC87E /* ChoiceCornerTests.xctest */,
-				2D02E47B1E0B4A5D006451C7 /* ChoiceCorner-tvOS.app */,
-				2D02E4901E0B4A5D006451C7 /* ChoiceCorner-tvOSTests.xctest */,
+				13B07F961A680F5B00A75B9A /* SightSpecDemo.app */,
+				00E356EE1AD99517003FC87E /* SightSpecDemoTests.xctest */,
+				2D02E47B1E0B4A5D006451C7 /* SightSpecDemo-tvOS.app */,
+				2D02E4901E0B4A5D006451C7 /* SightSpecDemo-tvOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -201,9 +201,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* ChoiceCornerTests */ = {
+		00E356ED1AD99517003FC87E /* SightSpecDemoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "ChoiceCornerTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "SightSpecDemoTests" */;
 			buildPhases = (
 				88A5DC9994C0FE87BEA34A65 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -216,14 +216,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = ChoiceCornerTests;
-			productName = ChoiceCornerTests;
-			productReference = 00E356EE1AD99517003FC87E /* ChoiceCornerTests.xctest */;
+			name = SightSpecDemoTests;
+			productName = SightSpecDemoTests;
+			productReference = 00E356EE1AD99517003FC87E /* SightSpecDemoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* ChoiceCorner */ = {
+		13B07F861A680F5B00A75B9A /* SightSpecDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "ChoiceCorner" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "SightSpecDemo" */;
 			buildPhases = (
 				F20E2C460807BC095BEC8750 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -237,14 +237,14 @@
 			);
 			dependencies = (
 			);
-			name = ChoiceCorner;
-			productName = ChoiceCorner;
-			productReference = 13B07F961A680F5B00A75B9A /* ChoiceCorner.app */;
+			name = SightSpecDemo;
+			productName = SightSpecDemo;
+			productReference = 13B07F961A680F5B00A75B9A /* SightSpecDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E47A1E0B4A5D006451C7 /* ChoiceCorner-tvOS */ = {
+		2D02E47A1E0B4A5D006451C7 /* SightSpecDemo-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "ChoiceCorner-tvOS" */;
+			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "SightSpecDemo-tvOS" */;
 			buildPhases = (
 				482CC5E48362C8FC191F4A2E /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
@@ -257,14 +257,14 @@
 			);
 			dependencies = (
 			);
-			name = "ChoiceCorner-tvOS";
-			productName = "ChoiceCorner-tvOS";
-			productReference = 2D02E47B1E0B4A5D006451C7 /* ChoiceCorner-tvOS.app */;
+			name = "SightSpecDemo-tvOS";
+			productName = "SightSpecDemo-tvOS";
+			productReference = 2D02E47B1E0B4A5D006451C7 /* SightSpecDemo-tvOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E48F1E0B4A5D006451C7 /* ChoiceCorner-tvOSTests */ = {
+		2D02E48F1E0B4A5D006451C7 /* SightSpecDemo-tvOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "ChoiceCorner-tvOSTests" */;
+			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "SightSpecDemo-tvOSTests" */;
 			buildPhases = (
 				C74509F1F0FD9E6F57458EAD /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
@@ -276,9 +276,9 @@
 			dependencies = (
 				2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */,
 			);
-			name = "ChoiceCorner-tvOSTests";
-			productName = "ChoiceCorner-tvOSTests";
-			productReference = 2D02E4901E0B4A5D006451C7 /* ChoiceCorner-tvOSTests.xctest */;
+			name = "SightSpecDemo-tvOSTests";
+			productName = "SightSpecDemo-tvOSTests";
+			productReference = 2D02E4901E0B4A5D006451C7 /* SightSpecDemo-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -307,7 +307,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "ChoiceCorner" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "SightSpecDemo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -320,10 +320,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* ChoiceCorner */,
-				00E356ED1AD99517003FC87E /* ChoiceCornerTests */,
-				2D02E47A1E0B4A5D006451C7 /* ChoiceCorner-tvOS */,
-				2D02E48F1E0B4A5D006451C7 /* ChoiceCorner-tvOSTests */,
+				13B07F861A680F5B00A75B9A /* SightSpecDemo */,
+				00E356ED1AD99517003FC87E /* SightSpecDemoTests */,
+				2D02E47A1E0B4A5D006451C7 /* SightSpecDemo-tvOS */,
+				2D02E48F1E0B4A5D006451C7 /* SightSpecDemo-tvOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -383,7 +383,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ChoiceCorner/Pods-ChoiceCorner-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-SightSpecDemo/Pods-SightSpecDemo-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -392,7 +392,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChoiceCorner/Pods-ChoiceCorner-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SightSpecDemo/Pods-SightSpecDemo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
@@ -424,7 +424,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ChoiceCorner-tvOS-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-SightSpecDemo-tvOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -437,7 +437,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ChoiceCorner-ChoiceCornerTests/Pods-ChoiceCorner-ChoiceCornerTests-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-SightSpecDemo-SightSpecDemoTests/Pods-SightSpecDemo-SightSpecDemoTests-resources.sh",
 				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -446,7 +446,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ChoiceCorner-ChoiceCornerTests/Pods-ChoiceCorner-ChoiceCornerTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SightSpecDemo-SightSpecDemoTests/Pods-SightSpecDemo-SightSpecDemoTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		88A5DC9994C0FE87BEA34A65 /* [CP] Check Pods Manifest.lock */ = {
@@ -464,7 +464,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ChoiceCorner-ChoiceCornerTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-SightSpecDemo-SightSpecDemoTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -486,7 +486,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ChoiceCorner-tvOSTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-SightSpecDemo-tvOSTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -508,7 +508,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ChoiceCorner-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-SightSpecDemo-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -560,7 +560,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* ChoiceCornerTests.m in Sources */,
+				00E356F31AD99517003FC87E /* SightSpecDemoTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,7 +586,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DCD954D1E0B4F2C00145EB5 /* ChoiceCornerTests.m in Sources */,
+				2DCD954D1E0B4F2C00145EB5 /* SightSpecDemoTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,12 +595,12 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* ChoiceCorner */;
+			target = 13B07F861A680F5B00A75B9A /* SightSpecDemo */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 		2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2D02E47A1E0B4A5D006451C7 /* ChoiceCorner-tvOS */;
+			target = 2D02E47A1E0B4A5D006451C7 /* SightSpecDemo-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -608,14 +608,14 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6B7AC2F8E6B4620C348B13B3 /* Pods-ChoiceCorner-ChoiceCornerTests.debug.xcconfig */;
+			baseConfigurationReference = 6B7AC2F8E6B4620C348B13B3 /* Pods-SightSpecDemo-SightSpecDemoTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = ChoiceCornerTests/Info.plist;
+				INFOPLIST_FILE = SightSpecDemoTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -625,17 +625,17 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChoiceCorner.app/ChoiceCorner";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SightSpecDemo.app/SightSpecDemo";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FB53EC441A4CB10B3960A5A4 /* Pods-ChoiceCorner-ChoiceCornerTests.release.xcconfig */;
+			baseConfigurationReference = FB53EC441A4CB10B3960A5A4 /* Pods-SightSpecDemo-SightSpecDemoTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = ChoiceCornerTests/Info.plist;
+				INFOPLIST_FILE = SightSpecDemoTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -645,19 +645,19 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChoiceCorner.app/ChoiceCorner";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SightSpecDemo.app/SightSpecDemo";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1E7CAD881A0D4F10A646CE1F /* Pods-ChoiceCorner.debug.xcconfig */;
+			baseConfigurationReference = 1E7CAD881A0D4F10A646CE1F /* Pods-SightSpecDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = ChoiceCorner/Info.plist;
+				INFOPLIST_FILE = SightSpecDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -665,7 +665,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = ChoiceCorner;
+				PRODUCT_NAME = SightSpecDemo;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -674,12 +674,12 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C49DE87DC3ADB515C264AD4A /* Pods-ChoiceCorner.release.xcconfig */;
+			baseConfigurationReference = C49DE87DC3ADB515C264AD4A /* Pods-SightSpecDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				INFOPLIST_FILE = ChoiceCorner/Info.plist;
+				INFOPLIST_FILE = SightSpecDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -687,7 +687,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = ChoiceCorner;
+				PRODUCT_NAME = SightSpecDemo;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -695,7 +695,7 @@
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D408B12F893C9A0C55D91B87 /* Pods-ChoiceCorner-tvOS.debug.xcconfig */;
+			baseConfigurationReference = D408B12F893C9A0C55D91B87 /* Pods-SightSpecDemo-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -706,14 +706,14 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "ChoiceCorner-tvOS/Info.plist";
+				INFOPLIST_FILE = "SightSpecDemo-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.ChoiceCorner-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.SightSpecDemo-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -723,7 +723,7 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A4E93A491FF91981A2264135 /* Pods-ChoiceCorner-tvOS.release.xcconfig */;
+			baseConfigurationReference = A4E93A491FF91981A2264135 /* Pods-SightSpecDemo-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -734,14 +734,14 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "ChoiceCorner-tvOS/Info.plist";
+				INFOPLIST_FILE = "SightSpecDemo-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.ChoiceCorner-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.SightSpecDemo-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -751,7 +751,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 31933A5495B08E568C7FBCB2 /* Pods-ChoiceCorner-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = 31933A5495B08E568C7FBCB2 /* Pods-SightSpecDemo-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -761,24 +761,24 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "ChoiceCorner-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "SightSpecDemo-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.ChoiceCorner-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.SightSpecDemo-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChoiceCorner-tvOS.app/ChoiceCorner-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SightSpecDemo-tvOS.app/SightSpecDemo-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Debug;
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 86036EA126B29F088D5760A9 /* Pods-ChoiceCorner-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = 86036EA126B29F088D5760A9 /* Pods-SightSpecDemo-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -788,17 +788,17 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "ChoiceCorner-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "SightSpecDemo-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.ChoiceCorner-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.SightSpecDemo-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChoiceCorner-tvOS.app/ChoiceCorner-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SightSpecDemo-tvOS.app/SightSpecDemo-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Release;
@@ -919,7 +919,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "ChoiceCornerTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "SightSpecDemoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -928,7 +928,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "ChoiceCorner" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "SightSpecDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -937,7 +937,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "ChoiceCorner-tvOS" */ = {
+		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "SightSpecDemo-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4971E0B4A5E006451C7 /* Debug */,
@@ -946,7 +946,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "ChoiceCorner-tvOSTests" */ = {
+		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "SightSpecDemo-tvOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4991E0B4A5E006451C7 /* Debug */,
@@ -955,7 +955,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "ChoiceCorner" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "SightSpecDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

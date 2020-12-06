@@ -10,7 +10,7 @@ import {
 const styles = StyleSheet.create({
   ...ApplicationStyles.screen,
   textInput: {
-    marginTop: verticalScale(10)
+    marginVertical: verticalScale(10)
   },
   alertText: {
     color: Colors.red,

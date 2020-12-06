@@ -4,6 +4,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import React, { forwardRef, useEffect } from 'react';
 import HomeScreen from '../modules/Home/HomeScreen';
 import SplashScreen from 'react-native-splash-screen';
+import WelcomeScreen from '../modules/Welcome/WelcomeScreen';
 
 const Stack = createStackNavigator();
 
@@ -16,6 +17,7 @@ const RootStackScreen = (props, ref) => {
     <SafeAreaProvider>
       <NavigationContainer ref={ref}>
         <Stack.Navigator headerMode="none">
+          <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
           <Stack.Screen name="HomeScreen" component={HomeScreen} />
         </Stack.Navigator>
       </NavigationContainer>

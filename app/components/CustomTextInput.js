@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { TextInput, View } from 'react-native';
 import { Colors } from '../theme';
 import styles from './styles/CustomTextInputStyles';
@@ -33,4 +33,4 @@ CustomTextInput.propTypes = {
   returnKeyType: PropTypes.string
 };
 
-export default CustomTextInput;
+export default forwardRef(CustomTextInput);

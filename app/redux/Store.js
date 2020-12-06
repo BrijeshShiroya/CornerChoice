@@ -10,7 +10,7 @@ const sagaMiddleware = createSagaMiddleware({ sagaMonitor });
 const middleWare = [sagaMiddleware];
 
 const persistConfig = {
-  key: '@choicecorner',
+  key: '@SightSpectrum',
   storage: AsyncStorage,
   blacklist: ['nav']
 };

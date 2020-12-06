@@ -7,16 +7,19 @@ import {
   CustomHeader,
   Greets
 } from '../../components';
+import { Strings } from '../../constants';
 import { Icons } from '../../theme';
 import styles from './styles/HomeScreenStyle';
 const LoginScreen = ({ navigation }) => {
   const { user } = useSelector((state) => state.welcome);
 
-  const onContinuePress = () => {};
+  const onContinuePress = () => {
+    navigation.navigate('DetailScreenScreen');
+  };
   const renderFooter = () => {
     return (
       <CustomButton
-        title={'Continue'}
+        title={Strings.btnContinue}
         style={styles.btnContinue}
         onPress={onContinuePress}
       />
@@ -33,7 +36,7 @@ const LoginScreen = ({ navigation }) => {
           leftOnPress={() => navigation.goBack()}
         />
         <Content contentContainerStyle={styles.container}>
-          <Greets title={'Welcome to the Sight Spectrum demo'} />
+          <Greets title={Strings.txtWelcome} />
           {renderFooter()}
         </Content>
       </AppBackground>

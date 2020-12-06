@@ -34,7 +34,7 @@ const HomeScreen = ({ navigation }) => {
   const renderFooter = () => {
     return (
       <CustomButton
-        title={'Submit'}
+        title={Strings.btnSubmit}
         style={styles.btnLogin}
         onPress={onSubmitPress}
       />

@@ -1,15 +1,20 @@
 import { Container, Content, Text } from 'native-base';
+import React, { useState } from 'react';
 import { Alert } from 'react-native';
-import React from 'react';
 import { useSelector } from 'react-redux';
-import { AppBackground, CustomButton, CustomHeader } from '../../components';
-import { Strings } from '../../constants';
+import {
+  AppBackground,
+  CustomButton,
+  CustomHeader,
+  CustomSlider
+} from '../../components';
+import { AppConstants, Strings } from '../../constants';
 import { Colors, Icons } from '../../theme';
 import styles from './styles/DetailScreenScreenStyles';
 
 const DetailScreenScreen = ({ navigation }) => {
   const { user } = useSelector((state) => state.welcome);
-
+  const [slider, SetSlider] = useState(0);
   const onVariationPress = (type) => {
     Alert.alert(`You pressed variation ${type}`);
   };
@@ -51,6 +56,20 @@ const DetailScreenScreen = ({ navigation }) => {
         />
         <Content contentContainerStyle={styles.container}>
           {renderButtons()}
+          <CustomSlider
+            thumbIcon={Icons.diamond}
+            title={Strings.txtSlider}
+            sliderValue={slider}
+            onSliderValueChange={(value) => {
+              SetSlider(value);
+              if (value === 1) {
+                Alert.alert(
+                  AppConstants.applicationName,
+                  Strings.sliderCongratulations
+                );
+              }
+            }}
+          />
         </Content>
       </AppBackground>
     </Container>

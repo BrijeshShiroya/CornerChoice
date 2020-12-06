@@ -16,7 +16,8 @@ const styles = StyleSheet.create({
   buttonText: {
     color: Colors.white,
     fontSize: Fonts.size.label,
-    fontWeight: '500'
+    fontWeight: '500',
+    fontFamily: Fonts.type.bold
   }
 });
 

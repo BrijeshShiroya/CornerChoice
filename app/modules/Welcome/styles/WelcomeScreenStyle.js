@@ -23,7 +23,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: verticalScale(8)
   },
   input: {
-    paddingLeft: verticalScale(24),
+    height: verticalScale(61),
+    paddingLeft: verticalScale(30),
     color: Colors.txtPlaceholderColor,
     fontSize: scale(15)
   },

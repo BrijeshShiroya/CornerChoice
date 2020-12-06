@@ -2,10 +2,10 @@ import { NativeModules, Platform } from 'react-native';
 
 const info = NativeModules.DeviceTypeCheckerModule;
 let emulator;
-export function isEmulator() {
+export async function isEmulator() {
   if (emulator === undefined) {
     if (Platform.OS === 'android') {
-      emulator = info?.isEmulator();
+      emulator = await info?.isEmulator();
     } else {
       emulator = info?.isSimulator;
     }

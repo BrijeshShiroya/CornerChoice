@@ -27,6 +27,8 @@
     "@react-native-community/masked-view": "^0.1.10",
     "@react-navigation/native": "^5.7.3",
     "@react-navigation/stack": "^5.9.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
     "native-base": "^2.13.14",
     "react": "16.13.1",
     "react-native": "0.63.2",
@@ -52,15 +54,26 @@
     "@babel/runtime": "^7.11.2",
     "@react-native-community/eslint-config": "^2.0.0",
     "babel-jest": "^26.3.0",
+    "enzyme-react-16-adapter-setup": "^0.1.0",
     "eslint": "^7.7.0",
     "husky": "^4.2.5",
     "jest": "^26.4.2",
+    "jest-enzyme": "^7.1.2",
     "lint-staged": "^10.2.13",
     "metro-react-native-babel-preset": "^0.63.0",
     "plop": "^2.7.4",
-    "react-test-renderer": "16.13.1"
+    "react-dom": "^17.0.1",
+    "react-test-renderer": "16.13.1",
+    "redux-mock-store": "^1.5.4"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "setupFilesAfterEnv": [
+      "./jest/setup.js",
+      "./node_modules/jest-enzyme/lib/index.js"
+    ],
+    "setupFiles": [
+      "enzyme-react-16-adapter-setup"
+    ]
   }
 }

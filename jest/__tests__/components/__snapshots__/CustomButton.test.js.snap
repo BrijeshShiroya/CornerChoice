@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CustomButton disable 1`] = `
+<View
+  accessible={true}
+  focusable={false}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": undefined,
+      "borderRadius": 4,
+      "height": 78.85714285714286,
+      "justifyContent": "center",
+      "opacity": 1,
+      "width": 300,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "white",
+        "fontFamily": "AvenirNext-Bold",
+        "fontSize": 16,
+        "fontWeight": "500",
+      }
+    }
+  />
+</View>
+`;
+
+exports[`CustomButton render with loading 1`] = `
+<View
+  accessible={true}
+  focusable={false}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "rgb(248, 156, 33)",
+      "borderRadius": 4,
+      "height": 78.85714285714286,
+      "justifyContent": "center",
+      "opacity": 1,
+      "width": 300,
+    }
+  }
+>
+  <ActivityIndicator
+    animating={true}
+    color="white"
+    hidesWhenStopped={true}
+    size="small"
+  />
+</View>
+`;
+
+exports[`CustomButton renders correctly 1`] = `
+<View
+  accessible={true}
+  focusable={false}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "rgb(248, 156, 33)",
+      "borderRadius": 4,
+      "height": 78.85714285714286,
+      "justifyContent": "center",
+      "opacity": 1,
+      "width": 300,
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "color": "white",
+        "fontFamily": "AvenirNext-Bold",
+        "fontSize": 16,
+        "fontWeight": "500",
+      }
+    }
+  />
+</View>
+`;

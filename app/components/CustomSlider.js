@@ -39,7 +39,7 @@ CustomSlider.propTypes = {
   title: PropTypes.string,
   sliderValue: PropTypes.number,
   onSliderValueChange: PropTypes.func,
-  thumbIcon: PropTypes.string
+  thumbIcon: PropTypes.object
 };
 
 export default CustomSlider;

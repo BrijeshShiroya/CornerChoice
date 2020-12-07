@@ -6,5 +6,18 @@ import CustomButton from '../../../app/components/CustomButton';
 import renderer from 'react-test-renderer';
 
 it('CustomButton renders correctly', () => {
-  renderer.create(<CustomButton />);
+  const customButtonComponent = renderer.create(<CustomButton />).toJSON();
+  expect(customButtonComponent).toMatchSnapshot();
+});
+
+it('CustomButton render with loading', () => {
+  const customButtonComponent = renderer
+    .create(<CustomButton isLoading />)
+    .toJSON();
+  expect(customButtonComponent).toMatchSnapshot();
+});
+
+it('CustomButton disable', () => {
+  const customButtonComponent = renderer.create(<CustomButton disabled />);
+  expect(customButtonComponent).toMatchSnapshot();
 });

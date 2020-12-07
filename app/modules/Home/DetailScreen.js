@@ -14,7 +14,7 @@ import styles from './styles/DetailScreenStyles';
 
 const DetailScreenScreen = ({ navigation }) => {
   const { user } = useSelector((state) => state.welcome);
-  const [slider, SetSlider] = useState(0);
+  const [slider, setSlider] = useState(0);
   const onVariationPress = (type) => {
     Alert.alert(`You pressed variation ${type}`);
   };
@@ -61,7 +61,7 @@ const DetailScreenScreen = ({ navigation }) => {
             title={Strings.txtSlider}
             sliderValue={slider}
             onSliderValueChange={(value) => {
-              SetSlider(value);
+              setSlider(value);
               if (value === 1) {
                 Alert.alert(
                   AppConstants.applicationName,

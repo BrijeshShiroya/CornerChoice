@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CustomTextInput renders correctly 1`] = `
+<View>
+  <TextInput
+    allowFontScaling={true}
+    blurOnSubmit={false}
+    rejectResponderTermination={true}
+    returnKeyType="next"
+    style={
+      Array [
+        Object {
+          "marginVertical": 16.428571428571427,
+        },
+        undefined,
+      ]
+    }
+    underlineColorAndroid="transparent"
+  />
+</View>
+`;

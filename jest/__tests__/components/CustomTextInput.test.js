@@ -6,5 +6,8 @@ import CustomTextInput from '../../../app/components/CustomTextInput';
 import renderer from 'react-test-renderer';
 
 it('CustomTextInput renders correctly', () => {
-  renderer.create(<CustomTextInput />);
+  const customTextInputComponent = renderer
+    .create(<CustomTextInput />)
+    .toJSON();
+  expect(customTextInputComponent).toMatchSnapshot();
 });

@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CustomHeader renders correctly 1`] = `
+<RNCSafeAreaView
+  forceInset={
+    Object {
+      "bottom": "never",
+    }
+  }
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "rgb(0, 0, 0)",
+        "flexDirection": "row",
+        "height": 98.57142857142857,
+        "justifyContent": "space-between",
+        "paddingHorizontal": 24,
+        "width": "100%",
+      },
+      undefined,
+    ]
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "white",
+          "fontFamily": "AvenirNext-Bold",
+          "fontSize": 29.57142857142857,
+          "textAlign": "center",
+        },
+        undefined,
+      ]
+    }
+  >
+    Header
+  </Text>
+</RNCSafeAreaView>
+`;

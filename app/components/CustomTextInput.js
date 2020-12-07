@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { forwardRef } from 'react';
+import React from 'react';
 import { TextInput, View } from 'react-native';
 import { Colors } from '../theme';
 import styles from './styles/CustomTextInputStyles';
@@ -16,7 +16,6 @@ const CustomTextInput = (
 ) => (
   <View>
     <TextInput
-      ref={ref}
       style={[styles.textInput, style]}
       placeholderTextColor={placeholderTextColor}
       blurOnSubmit={blurOnSubmit}
@@ -33,4 +32,4 @@ CustomTextInput.propTypes = {
   returnKeyType: PropTypes.string
 };
 
-export default forwardRef(CustomTextInput);
+export default CustomTextInput;

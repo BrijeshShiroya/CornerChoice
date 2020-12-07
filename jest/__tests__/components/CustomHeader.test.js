@@ -6,5 +6,6 @@ import CustomHeader from '../../../app/components/CustomHeader';
 import renderer from 'react-test-renderer';
 
 it('CustomHeader renders correctly', () => {
-  renderer.create(<CustomHeader />);
+  const customHeaderComponent = renderer.create(<CustomHeader />).toJSON();
+  expect(customHeaderComponent).toMatchSnapshot();
 });

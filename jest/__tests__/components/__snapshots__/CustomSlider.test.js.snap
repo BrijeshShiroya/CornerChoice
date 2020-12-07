@@ -1,0 +1,150 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CustomSlider renders correctly 1`] = `
+<View>
+  <View
+    style={
+      Object {
+        "alignSelf": "center",
+        "bottom": 0,
+        "justifyContent": "center",
+        "position": "absolute",
+        "top": 16.428571428571427,
+        "width": "90%",
+      }
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "white",
+            "fontFamily": "AvenirNext-Bold",
+            "fontSize": 34,
+            "textAlign": "center",
+          },
+          Object {
+            "fontSize": 32,
+          },
+        ]
+      }
+    />
+  </View>
+  <View
+    animateTransitions={true}
+    animationType="timing"
+    onLayout={[Function]}
+    onValueChange={[Function]}
+    step={0}
+    style={
+      Array [
+        Object {
+          "height": 40,
+          "justifyContent": "center",
+        },
+        Object {
+          "alignSelf": "center",
+          "borderRadius": 4,
+          "marginTop": 19.714285714285715,
+          "width": "90%",
+        },
+      ]
+    }
+    thumbTouchSize={
+      Object {
+        "height": 40,
+        "width": 40,
+      }
+    }
+    value={0}
+  >
+    <View
+      onLayout={[Function]}
+      renderToHardwareTextureAndroid={true}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+          },
+          Object {
+            "borderRadius": 2,
+            "height": 4,
+          },
+          Object {
+            "borderColor": "rgb(135, 135, 137)",
+            "borderWidth": 1,
+            "height": 78.85714285714286,
+          },
+        ]
+      }
+    />
+    <View
+      renderToHardwareTextureAndroid={true}
+      style={
+        Object {
+          "backgroundColor": "rgb(247, 247, 247)",
+          "borderColor": "rgb(135, 135, 137)",
+          "borderRadius": 2,
+          "borderWidth": 1,
+          "height": 78.85714285714286,
+          "opacity": 0,
+          "position": "absolute",
+          "width": 0,
+        }
+      }
+    />
+    <View
+      onLayout={[Function]}
+      renderToHardwareTextureAndroid={true}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "rgb(248, 156, 33)",
+          "borderRadius": 4,
+          "height": 78.85714285714286,
+          "justifyContent": "center",
+          "opacity": 0,
+          "position": "absolute",
+          "transform": Array [
+            Object {
+              "translateX": 0,
+            },
+            Object {
+              "translateY": 0,
+            },
+          ],
+          "width": 78.85714285714286,
+        }
+      }
+    />
+    <View
+      onMoveShouldSetResponder={[Function]}
+      onMoveShouldSetResponderCapture={[Function]}
+      onResponderEnd={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderReject={[Function]}
+      onResponderRelease={[Function]}
+      onResponderStart={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      onStartShouldSetResponderCapture={[Function]}
+      renderToHardwareTextureAndroid={true}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+            "bottom": 0,
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          Object {},
+        ]
+      }
+    />
+  </View>
+</View>
+`;

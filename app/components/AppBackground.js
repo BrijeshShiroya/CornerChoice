@@ -12,7 +12,7 @@ const AppBackground = ({ children }) => (
 );
 
 AppBackground.propTypes = {
-  children: PropTypes.object
+  children: PropTypes.node
 };
 
 export default AppBackground;

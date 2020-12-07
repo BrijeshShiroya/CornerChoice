@@ -33,7 +33,7 @@ const CustomHeader = ({
 
 CustomHeader.propTypes = {
   left: PropTypes.bool,
-  leftIcon: PropTypes.number,
+  leftIcon: PropTypes.object,
   leftOnPress: PropTypes.func,
   leftIconStyle: PropTypes.object,
   title: PropTypes.string,

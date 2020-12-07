@@ -1,16 +1,27 @@
 import { View } from 'native-base';
-import React, { useCallback, useState } from 'react';
-import { Image } from 'react-native';
+import React, { useCallback, useEffect, useState } from 'react';
+import { Image, Platform } from 'react-native';
 import { useDispatch } from 'react-redux';
-import { AppBackground, CustomButton, CustomTextInput } from '../../components';
+import {
+  AppBackground,
+  CustomButton,
+  CustomTextInput,
+  Greets
+} from '../../components';
 import { Strings } from '../../constants';
 import WelcomeActions from '../../redux/WelcomeRedux';
 import { Colors, Icons } from '../../theme';
 import styles from './styles/WelcomeScreenStyle';
+import Info from '../../services/DeviceTypeChecker';
 
 const HomeScreen = ({ navigation }) => {
   const [userName, setUserName] = useState('');
+  const [emulator, setEmulator] = useState(null);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    Info.isEmulator().then((isEmulator) => setEmulator(isEmulator));
+  }, [setEmulator]);
   const renderUserName = () => {
     return (
       <View style={styles.inputContainer}>
@@ -41,9 +52,19 @@ const HomeScreen = ({ navigation }) => {
     );
   };
 
+  const renderIsEmulator = () => {
+    const title = emulator
+      ? `You are running app in ${
+          Platform.OS === 'ios' ? 'simulator' : 'emulator'
+        }`
+      : 'You are running app in real device';
+    return <Greets title={title} style={styles.greets} />;
+  };
+
   return (
     <AppBackground>
       <View style={styles.container}>
+        {renderIsEmulator()}
         {renderUserName()}
         {renderFooter()}
       </View>

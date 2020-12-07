@@ -114,3 +114,6 @@ buck-out/
 
 # CocoaPods
 /ios/Pods/
+
+coverage/
+reports/

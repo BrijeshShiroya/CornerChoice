@@ -38,6 +38,10 @@ const styles = StyleSheet.create({
     left: 8,
     justifyContent: 'center',
     paddingLeft: 5
+  },
+  greets: {
+    marginBottom: verticalScale(50),
+    fontSize: scale(20)
   }
 });
 

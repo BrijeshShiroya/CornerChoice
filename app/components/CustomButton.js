@@ -20,7 +20,7 @@ const CustomButton = ({ onPress, disabled, isLoading, style, title }) => (
 );
 
 CustomButton.propTypes = {
-  style: PropTypes.object,
+  style: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
   disabled: PropTypes.bool,
   isLoading: PropTypes.bool,
   onPress: PropTypes.func,

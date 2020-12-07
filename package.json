@@ -9,8 +9,7 @@
     "fixcode": "eslint --fix ./app",
     "podinstall": "cd ios && pod install && cd ..",
     "android": "npm run lint && npx react-native run-android",
-    "ios": "npm run lint && npx react-native run-ios",
-    "generate": "plop"
+    "ios": "npm run lint && npx react-native run-ios"
   },
   "lint-staged": {
     "app/**/*.js": [

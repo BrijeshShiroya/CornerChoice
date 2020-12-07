@@ -1,5 +1,6 @@
 import { Container, Content, Text } from 'native-base';
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Alert } from 'react-native';
 import { useSelector } from 'react-redux';
 import {
@@ -12,7 +13,7 @@ import { AppConstants, Strings } from '../../constants';
 import { Colors, Icons } from '../../theme';
 import styles from './styles/DetailScreenStyles';
 
-const DetailScreenScreen = ({ navigation }) => {
+const DetailScreen = ({ navigation }) => {
   const { user } = useSelector((state) => state.welcome);
   const [slider, setSlider] = useState(0);
   const onVariationPress = (type) => {
@@ -76,4 +77,7 @@ const DetailScreenScreen = ({ navigation }) => {
   );
 };
 
-export default DetailScreenScreen;
+DetailScreen.propTypes = {
+  navigation: PropTypes.object
+};
+export default DetailScreen;

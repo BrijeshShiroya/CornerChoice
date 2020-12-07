@@ -1,4 +1,5 @@
 import { Container, Content } from 'native-base';
+import PropTypes from 'prop-types';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import {
@@ -10,7 +11,7 @@ import {
 import { Strings } from '../../constants';
 import { Icons } from '../../theme';
 import styles from './styles/HomeScreenStyle';
-const LoginScreen = ({ navigation }) => {
+const HomeScreen = ({ navigation }) => {
   const { user } = useSelector((state) => state.welcome);
 
   const onContinuePress = () => {
@@ -44,4 +45,8 @@ const LoginScreen = ({ navigation }) => {
   );
 };
 
-export default LoginScreen;
+HomeScreen.propTypes = {
+  navigation: PropTypes.object
+};
+
+export default HomeScreen;

@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Image, Platform, View } from 'react-native';
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import {
   AppBackground,
@@ -14,7 +15,7 @@ import styles from './styles/WelcomeScreenStyle';
 import Info from '../../services/DeviceTypeChecker';
 import { showToast } from '../../services/Utils';
 
-const HomeScreen = ({ navigation }) => {
+const WelcomScreen = ({ navigation }) => {
   const [userName, setUserName] = useState('');
   const [emulator, setEmulator] = useState(null);
   const dispatch = useDispatch();
@@ -75,5 +76,8 @@ const HomeScreen = ({ navigation }) => {
     </AppBackground>
   );
 };
+WelcomScreen.propTypes = {
+  navigation: PropTypes.object
+};
 
-export default HomeScreen;
+export default WelcomScreen;

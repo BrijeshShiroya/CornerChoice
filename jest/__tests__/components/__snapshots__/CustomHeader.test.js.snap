@@ -13,7 +13,6 @@ exports[`CustomHeader renders correctly 1`] = `
         "alignItems": "center",
         "backgroundColor": "rgb(0, 0, 0)",
         "flexDirection": "row",
-        "height": 98.57142857142857,
         "justifyContent": "space-between",
         "paddingHorizontal": 24,
         "width": "100%",

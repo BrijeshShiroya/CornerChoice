@@ -1,6 +1,5 @@
-import { View } from 'native-base';
 import React, { useCallback, useEffect, useState } from 'react';
-import { Image, Platform } from 'react-native';
+import { Image, Platform, View } from 'react-native';
 import { useDispatch } from 'react-redux';
 import {
   AppBackground,
@@ -13,6 +12,7 @@ import WelcomeActions from '../../redux/WelcomeRedux';
 import { Colors, Icons } from '../../theme';
 import styles from './styles/WelcomeScreenStyle';
 import Info from '../../services/DeviceTypeChecker';
+import { showToast } from '../../services/Utils';
 
 const HomeScreen = ({ navigation }) => {
   const [userName, setUserName] = useState('');
@@ -38,8 +38,12 @@ const HomeScreen = ({ navigation }) => {
   };
 
   const onSubmitPress = useCallback(() => {
-    dispatch(WelcomeActions.welcomeRequest({ username: userName }));
-    navigation.navigate('HomeScreen');
+    if (userName === '') {
+      showToast('Please enter username');
+    } else {
+      dispatch(WelcomeActions.welcomeRequest({ username: userName }));
+      navigation.navigate('HomeScreen');
+    }
   }, [userName, dispatch, navigation]);
 
   const renderFooter = () => {

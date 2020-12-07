@@ -1,24 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CustomHeader renders correctly 1`] = `
-<RNCSafeAreaView
-  forceInset={
-    Object {
-      "bottom": "never",
-    }
-  }
+<View
+  forwardedRef={[Function]}
+  onLayout={[Function]}
+  pointerEvents="box-none"
   style={
-    Array [
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "rgb(0, 0, 0)",
-        "flexDirection": "row",
-        "justifyContent": "space-between",
-        "paddingHorizontal": 24,
-        "width": "100%",
-      },
-      undefined,
-    ]
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "rgb(0, 0, 0)",
+      "flexDirection": "row",
+      "height": 118.57142857142857,
+      "justifyContent": "space-between",
+      "paddingBottom": 0,
+      "paddingLeft": 24,
+      "paddingRight": 24,
+      "paddingTop": 20,
+      "width": "100%",
+    }
   }
 >
   <Text
@@ -36,5 +35,5 @@ exports[`CustomHeader renders correctly 1`] = `
   >
     Header
   </Text>
-</RNCSafeAreaView>
+</View>
 `;

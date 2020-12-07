@@ -16,6 +16,7 @@ const mockStore = configureStore();
 const store = mockStore(initialState);
 // Note: test renderer must be required after react-native.
 it('HomeScreen renders correctly', () => {
+  jest.useFakeTimers();
   renderer.create(
     <Provider store={store}>
       <HomeScreen />

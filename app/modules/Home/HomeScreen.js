@@ -27,14 +27,14 @@ const LoginScreen = ({ navigation }) => {
   };
   return (
     <Container>
+      <CustomHeader
+        right
+        left
+        title={user}
+        leftIcon={Icons.back}
+        leftOnPress={() => navigation.goBack()}
+      />
       <AppBackground>
-        <CustomHeader
-          right
-          left
-          title={user}
-          leftIcon={Icons.back}
-          leftOnPress={() => navigation.goBack()}
-        />
         <Content contentContainerStyle={styles.container}>
           <Greets title={Strings.txtWelcome} />
           {renderFooter()}

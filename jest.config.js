@@ -8,7 +8,7 @@ module.exports = {
   },
   setupFiles: ['<rootDir>/jest/setup.js'],
   transformIgnorePatterns: [
-    'node_modules/(?!(react-native|react-native-button|native-base-.*|react-native-.*|@react-native-community/.*|@codler)/)'
+    'node_modules/(?!(react-native|react-native-button|native-base-.*|react-native-.*|@react-native-community/.*|@codler)|react-navigation/)'
   ],
   moduleDirectories: ['node_modules', 'src'],
   coveragePathIgnorePatterns: ['/node_modules/', '/jest']

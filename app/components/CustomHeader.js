@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Image, Text, TouchableOpacity } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaView } from 'react-navigation';
 import styles from './styles/CustomHeaderStyles';
 
 const leftSection = (leftIcon, leftIconStyle, leftOnPress) => (

@@ -5,7 +5,7 @@ import React, { forwardRef, useEffect } from 'react';
 import HomeScreen from '../modules/Home/HomeScreen';
 import SplashScreen from 'react-native-splash-screen';
 import WelcomeScreen from '../modules/Welcome/WelcomeScreen';
-import DetailScreenScreen from '../modules/Home/DetailScreenScreen';
+import DetailScreen from '../modules/Home/DetailScreen';
 
 const Stack = createStackNavigator();
 
@@ -20,10 +20,7 @@ const RootStackScreen = (props, ref) => {
         <Stack.Navigator headerMode="none">
           <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
           <Stack.Screen name="HomeScreen" component={HomeScreen} />
-          <Stack.Screen
-            name="DetailScreenScreen"
-            component={DetailScreenScreen}
-          />
+          <Stack.Screen name="DetailScreen" component={DetailScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

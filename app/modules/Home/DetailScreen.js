@@ -10,7 +10,7 @@ import {
 } from '../../components';
 import { AppConstants, Strings } from '../../constants';
 import { Colors, Icons } from '../../theme';
-import styles from './styles/DetailScreenScreenStyles';
+import styles from './styles/DetailScreenStyles';
 
 const DetailScreenScreen = ({ navigation }) => {
   const { user } = useSelector((state) => state.welcome);

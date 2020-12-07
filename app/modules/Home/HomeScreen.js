@@ -14,7 +14,7 @@ const LoginScreen = ({ navigation }) => {
   const { user } = useSelector((state) => state.welcome);
 
   const onContinuePress = () => {
-    navigation.navigate('DetailScreenScreen');
+    navigation.navigate('DetailScreen');
   };
   const renderFooter = () => {
     return (

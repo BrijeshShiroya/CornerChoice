@@ -4,7 +4,7 @@ import { getError } from '../services/Utils';
 
 function* handleResponse(response) {
   if (response?.status) {
-    yield put(HomeActions.homeSwiperSuccess(response.data));
+    yield put(HomeActions.homeSwiperSuccess(response));
   } else {
     const error = yield call(getError, response);
     yield put(HomeActions.homeSwiperFailure(error));

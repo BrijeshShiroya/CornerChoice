@@ -13,7 +13,8 @@ const colors = {
   rosyBrown: '#FFC1C1',
   overlay: '#00000040',
   grey: 'grey',
-  orange: 'orange'
+  orange: 'orange',
+  red: 'red'
 };
 //#009846 /  / #F4F4F4 / #FFFFFF
 export default colors;

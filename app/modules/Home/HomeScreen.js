@@ -1,6 +1,6 @@
 import { Container } from 'native-base';
 import React, { useEffect } from 'react';
-import { FlatList } from 'react-native';
+import { FlatList, View } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   CategoryItem,
@@ -15,9 +15,11 @@ import strings from '../../constants/Strings';
 import { ApplicationStyles, Icons } from '../../theme';
 import HomeActions from '../../redux/HomeRedux';
 import styles from './styles/HomeScreenStyle';
+import MarqueeText from 'react-native-marquee';
 
 const HomeScreen = ({ navigation }) => {
   const { category, product } = useSelector((state) => state.products);
+  const { marque } = useSelector((state) => state.home);
   const { fetching } = useSelector((state) => state.home);
   const { count } = useSelector((state) => state.cart);
 
@@ -69,6 +71,20 @@ const HomeScreen = ({ navigation }) => {
       />
       <ImageBg style={styles.bg}>
         <SearchBar onSelect={navigateSearchProduct} />
+        {marque !== '' && (
+          <View style={styles.marqueContainer}>
+            <MarqueeText
+              style={styles.marque}
+              duration={12000}
+              marqueeOnStart
+              loop
+              marqueeDelay={1000}
+              marqueeResetDelay={1000}
+            >
+              {marque}
+            </MarqueeText>
+          </View>
+        )}
         <FlatList
           style={styles.listContainer}
           data={category}

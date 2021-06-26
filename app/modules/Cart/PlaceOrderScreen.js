@@ -24,13 +24,13 @@ const api = API.auth();
 
 const PlaceOrderScreen = ({ route, navigation }) => {
   const [terms, setTerms] = useState(false);
-  const [address, setAddress] = useState('Surat');
   const [city, setCity] = useState('Surat');
-  const [pincode, setPincode] = useState('');
   const [addState, setAddState] = useState('Gujarat');
   const [country, setCountry] = useState('India');
   const [fetching, setFetching] = useState(false);
   const { user } = useSelector((state) => state.auth);
+  const [pincode, setPincode] = useState(user?.customer_pincode || '');
+  const [address, setAddress] = useState(user?.customer_address || 'Surat');
   const { shipping, total, cartList } = route.params;
   const dispatch = useDispatch();
   const onLeftPress = () => {

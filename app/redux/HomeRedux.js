@@ -14,6 +14,7 @@ export default Creators;
 /* ------------- Initial State ------------- */
 export const INITIAL_STATE = Immutable({
   swiperData: [],
+  marque: '',
   fetching: false,
   error: null
 });
@@ -28,7 +29,8 @@ export const success = (state, action) => {
   return state.merge({
     fetching: false,
     error: false,
-    swiperData: payload
+    swiperData: payload?.data || [], 
+    marque: payload?.marque || ''
   });
 };
 
